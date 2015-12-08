@@ -1,0 +1,3677 @@
+@charset "UTF-8";
+/* Fonts Chanel */
+/* Fonts des langues */
+/*
+ * fonts loaded from typekit
+ */
+/* for size bigger than 22px */
+/* font title */
+/* for content */
+/* exception for each locale */
+/* line 4, src/scss/common/_helper.scss */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0; }
+
+/* line 12, src/scss/common/_helper.scss */
+.clearfix {
+  display: block; }
+
+/* line 15, src/scss/common/_helper.scss */
+html[xmlns] .clearfix {
+  display: block; }
+
+/* line 18, src/scss/common/_helper.scss */
+* html .clearfix {
+  height: 1%; }
+
+@media screen and (max-width: 1256px), screen and (max-height: 790px) {
+  /* POSITIONNEMENT 1024 x 768 */
+  /* line 2, src/scss/desktop/_small.scss */
+  #globaldiv {
+    width: 1000px;
+    height: 582px;
+    position: absolute;
+    margin-left: -500px;
+    margin-top: -291px;
+    top: 50%;
+    left: 50%;
+    text-align: left;
+    font-size: 10px;
+    z-index: 1; }
+
+  /* blocs principaux */
+  /* line 16, src/scss/desktop/_small.scss */
+  #leftblock {
+    width: 230px;
+    height: 562px; }
+
+  /* line 21, src/scss/desktop/_small.scss */
+  #centerblock {
+    width: 586px;
+    height: 551px; }
+
+  /* line 26, src/scss/desktop/_small.scss */
+  #mainrightvideo {
+    width: 184px;
+    height: 562px; }
+
+  /* blocs accueil */
+  /* line 33, src/scss/desktop/_small.scss */
+  #centerblock_wild {
+    width: 766px;
+    height: 562px; }
+
+  /* line 38, src/scss/desktop/_small.scss */
+  #roll_img {
+    width: 384px;
+    height: 562px; }
+
+  /* blocs collection */
+  /* line 45, src/scss/desktop/_small.scss */
+  #centerblock #productlist {
+    width: 190px; }
+
+  /* line 49, src/scss/desktop/_small.scss */
+  #centerblock #productSheet {
+    left: 198px;
+    width: 384px; }
+
+  /* blocs ecrin */
+  /* line 56, src/scss/desktop/_small.scss */
+  #centerblock #ecrin_productSheet {
+    width: 384px;
+    height: 562px; }
+
+  /* line 61, src/scss/desktop/_small.scss */
+  #ecrin_productSheet img {
+    -height: 520px; }
+
+  /* line 65, src/scss/desktop/_small.scss */
+  #centerblock #ecrin_detail {
+    left: 392px;
+    width: 134px;
+    height: 484px;
+    padding: 78px 28px 0px;
+    line-height: 1.6; }
+
+  /* line 73, src/scss/desktop/_small.scss */
+  #ecrin_detail #bloc_description {
+    width: 152px;
+    max-height: 320px;
+    height: auto; }
+    /* line 77, src/scss/desktop/_small.scss */
+    #ecrin_detail #bloc_description .description {
+      padding-right: 12px; }
+
+  /* line 82, src/scss/desktop/_small.scss */
+  #ecrin_detail .vslider {
+    top: 105px;
+    right: 10px;
+    height: 320px; }
+
+  /* line 88, src/scss/desktop/_small.scss */
+  #ecrin_detail .vhandler {
+    height: 60px; }
+
+  /* line 92, src/scss/desktop/_small.scss */
+  #ecrin_productlist {
+    padding-top: 78px; }
+
+  /* line 95, src/scss/desktop/_small.scss */
+  #ecrinSliderDetailRight {
+    top: 130px; }
+
+  /* blocs recherche */
+  /* line 100, src/scss/desktop/_small.scss */
+  #recherche_result {
+    width: 766px;
+    height: 321px; }
+
+  /* line 105, src/scss/desktop/_small.scss */
+  #recherche_productlist {
+    width: 766px;
+    height: 320px; }
+
+  /* line 110, src/scss/desktop/_small.scss */
+  #masque {
+    top: 315px;
+    width: 766px; }
+
+  /* line 115, src/scss/desktop/_small.scss */
+  #recherche_scrollbar {
+    top: 315px;
+    width: 766px; }
+
+  /* line 122, src/scss/desktop/_small.scss */
+  #recherche_critere {
+    width: 726px;
+    height: 201px;
+    padding-top: 25px;
+    bottom: 21px; }
+    /* line 128, src/scss/desktop/_small.scss */
+    #recherche_critere ul {
+      margin-top: 0; }
+      /* line 131, src/scss/desktop/_small.scss */
+      #recherche_critere ul li {
+        margin-bottom: 9px; }
+    /* line 136, src/scss/desktop/_small.scss */
+    #recherche_critere table td {
+      line-height: 1; }
+      /* line 139, src/scss/desktop/_small.scss */
+      #recherche_critere table td.info {
+        font-size: 10px;
+        padding: 0; }
+      /* line 143, src/scss/desktop/_small.scss */
+      #recherche_critere table td label {
+        font-size: 8px; }
+    /* line 149, src/scss/desktop/_small.scss */
+    #recherche_critere .filter-price {
+      bottom: 10px; }
+    /* line 153, src/scss/desktop/_small.scss */
+    #recherche_critere #background-slide {
+      top: 55px; }
+    /* line 157, src/scss/desktop/_small.scss */
+    #recherche_critere #sliderIpadConteneur {
+      top: 25px; }
+
+  /* Ajout Symane*/
+  /* line 163, src/scss/desktop/_small.scss */
+  #resetRecherche {
+    bottom: 16px;
+    font-size: 0.8em;
+    position: absolute;
+    right: 10px; }
+
+  /* blocs glossaire */
+  /* line 172, src/scss/desktop/_small.scss */
+  #glossaire_list .noPBalise {
+    height: 205px; }
+
+  /* line 176, src/scss/desktop/_small.scss */
+  #glossaire_list, #faq_list {
+    width: 766px;
+    height: 563px; }
+
+  /* line 181, src/scss/desktop/_small.scss */
+  #glossaire_scroll {
+    width: 766px;
+    height: 54px; }
+
+  /* line 186, src/scss/desktop/_small.scss */
+  #sliderIpadConteneur {
+    top: 60px; }
+
+  /* blocs callback */
+  /* line 192, src/scss/desktop/_small.scss */
+  #callback {
+    width: 348px;
+    height: 422px;
+    padding: 140px 18px 0px 18px; }
+
+  /* line 198, src/scss/desktop/_small.scss */
+  #colDeco {
+    left: 392px;
+    width: 190px;
+    height: 562px; }
+
+  /* blocs newsletter */
+  /* line 205, src/scss/desktop/_small.scss */
+  #newsletter {
+    width: 348px;
+    height: 507px;
+    padding: 55px 18px 0px 18px; }
+
+  /* POPIN */
+  /* line 212, src/scss/desktop/_small.scss */
+  #popin.centerleft {
+    left: 234px; }
+
+  /* line 215, src/scss/desktop/_small.scss */
+  #popin.centerright {
+    left: 428px; }
+
+  /* line 219, src/scss/desktop/_small.scss */
+  #chargement div.fond_gris {
+    left: 234px;
+    width: 766px;
+    height: 562px; }
+
+  /* line 224, src/scss/desktop/_small.scss */
+  #chargement.light div.fond_gris {
+    height: 321px; }
+
+  /* line 227, src/scss/desktop/_small.scss */
+  #chargement img {
+    width: 766px; }
+
+  /* page callback + Popin callback */
+  /* line 232, src/scss/desktop/_small.scss */
+  .callbackPopin {
+    width: 770px;
+    height: 562px;
+    background-image: url(/watches-finejewelry/template/desktop/img/back_centerdiv_small.jpg);
+    background-repeat: repeat-x; }
+
+  /* line 239, src/scss/desktop/_small.scss */
+  #callback h1 {
+    font-size: 11px;
+    margin-bottom: 30px; }
+
+  /* line 244, src/scss/desktop/_small.scss */
+  #callback .smallsize {
+    width: 30px; }
+
+  /* line 248, src/scss/desktop/_small.scss */
+  #callback .mediumsize {
+    width: 80px; }
+
+  /* line 252, src/scss/desktop/_small.scss */
+  #callback .longsize {
+    width: 205px; }
+
+  /* line 256, src/scss/desktop/_small.scss */
+  #callback select {
+    width: 242px; }
+
+  /* line 260, src/scss/desktop/_small.scss */
+  #callback textarea {
+    width: 332px;
+    height: 40px; }
+
+  /* Popin glossaire */
+  /* line 266, src/scss/desktop/_small.scss */
+  .widePopin {
+    width: 770px;
+    height: 562px; }
+
+  /* leftblock */
+  /* line 273, src/scss/desktop/_small.scss */
+  #leftblock .logo-wrapper {
+    margin-top: 50px; }
+
+  /* line 277, src/scss/desktop/_small.scss */
+  #leftblock #menuleft {
+    margin-top: 56px; }
+
+  /* line 281, src/scss/desktop/_small.scss */
+  #leftblock #menuleft .margin-top {
+    margin-top: 60px; }
+
+  /* line 285, src/scss/desktop/_small.scss */
+  #leftblock #menuleftbottom {
+    bottom: 0px; }
+
+  /* line 290, src/scss/desktop/_small.scss */
+  #leftblock ul li {
+    line-height: 14px;
+    /*	-line-height: 5px;
+            -margin-bottom: -3px;
+    */
+    /*height: 1%;*/ }
+
+  /* line 297, src/scss/desktop/_small.scss */
+  * html #leftblock ul li {
+    line-height: 8px; }
+
+  /* line 301, src/scss/desktop/_small.scss */
+  #leftblock ul li ul {
+    padding-left: 15px; }
+
+  /* line 304, src/scss/desktop/_small.scss */
+  #leftblock ul li ul li {
+    line-height: 14px; }
+
+  /* line 308, src/scss/desktop/_small.scss */
+  * html #leftblock ul li ul li {
+    line-height: 7px; }
+
+  /* line 313, src/scss/desktop/_small.scss */
+  #leftblock ul li ul li.first {
+    padding-top: 4px; }
+
+  /* line 317, src/scss/desktop/_small.scss */
+  #leftblock ul li ul li.last {
+    padding-bottom: 8px; }
+
+  /* page collection */
+  /* line 322, src/scss/desktop/_small.scss */
+  .widePopin #centerblock {
+    background-image: url(/watches-finejewelry/template/desktop/img/back_centerdiv_small.jpg);
+    background-repeat: repeat-x; }
+
+  /* line 327, src/scss/desktop/_small.scss */
+  #productSheet #products #imageLarge img {
+    -height: 520px; }
+
+  /* line 331, src/scss/desktop/_small.scss */
+  #centerblock #productSheet #productdetail {
+    top: 432px;
+    width: 364px; }
+
+  /* line 336, src/scss/desktop/_small.scss */
+  #centerblock #productlist #productscroll {
+    height: 130px;
+    width: 160px; }
+
+  /* line 341, src/scss/desktop/_small.scss */
+  #galerie {
+    height: 448px; }
+
+  /* line 345, src/scss/desktop/_small.scss */
+  #galerie li {
+    width: 190px;
+    height: 332px; }
+
+  /* line 350, src/scss/desktop/_small.scss */
+  div.clone {
+    top: 116px;
+    /*bottom: 192px;*/
+    width: 190px;
+    height: 332px; }
+
+  /* line 357, src/scss/desktop/_small.scss */
+  #productscroll #sliderCollection {
+    width: 160px; }
+
+  /* line 361, src/scss/desktop/_small.scss */
+  #suggestion #suggestiondetail {
+    height: 130px;
+    /*width: 100px;*/ }
+
+  /* line 366, src/scss/desktop/_small.scss */
+  #suggestion img {
+    top: 20px;
+    left: -40px; }
+
+  /* bloc details */
+  /* line 374, src/scss/desktop/_small.scss */
+  #detailright {
+    padding: 0 15px;
+    width: 154px; }
+
+  /* line 379, src/scss/desktop/_small.scss */
+  #detailright #product_title_right {
+    margin-top: 60px; }
+
+  /* line 383, src/scss/desktop/_small.scss */
+  #detailright #rightControl {
+    bottom: 40px;
+    _bottom: 0;
+    height: 170px;
+    padding: 0 15px; }
+    /* line 389, src/scss/desktop/_small.scss */
+    #detailright #rightControl #popinAddEcrin {
+      width: 185px; }
+    /* line 395, src/scss/desktop/_small.scss */
+    #detailright #rightControl .icons div {
+      margin-right: 30px; }
+
+  /* line 401, src/scss/desktop/_small.scss */
+  #detailright #show_universe_detail {
+    bottom: 0; }
+
+  /* line 405, src/scss/desktop/_small.scss */
+  #detailright #bloc_description {
+    height: 230px;
+    width: 146px;
+    padding-right: 16px; }
+
+  /* line 412, src/scss/desktop/_small.scss */
+  #detailright .vslider {
+    top: 80px;
+    height: 260px; }
+
+  /* line 417, src/scss/desktop/_small.scss */
+  #detailbottom {
+    top: 562px;
+    width: 362px; }
+
+  /* page ECRIN */
+  /* line 424, src/scss/desktop/_small.scss */
+  #ecrin_productlist h3 {
+    padding-left: 20px;
+    margin-bottom: 25px; }
+
+  /* line 429, src/scss/desktop/_small.scss */
+  #ecrin_productlist #ecrin_action {
+    height: 130px;
+    width: 154px; }
+
+  /* line 434, src/scss/desktop/_small.scss */
+  #ecrin_productlist #ecrin_action ul {
+    text-align: right;
+    margin-right: 10px; }
+
+  /* line 439, src/scss/desktop/_small.scss */
+  #ecrin_productlist .vslider {
+    right: 28px; }
+
+  /* line 443, src/scss/desktop/_small.scss */
+  .listItemBox {
+    width: 142px;
+    height: 108px;
+    margin-left: 23px;
+    margin-top: 25px;
+    margin-bottom: 25px; }
+
+  /* sous un autre angle */
+  /* line 453, src/scss/desktop/_small.scss */
+  .anglePopin, .puzzlePopin {
+    width: 1000px;
+    height: 551px;
+    overflow: hidden; }
+
+  /* line 458, src/scss/desktop/_small.scss */
+  .playerPopin {
+    width: 1000px;
+    height: 563px; }
+
+  /* line 463, src/scss/desktop/_small.scss */
+  .playerPopin.view360 {
+    height: 562px; }
+
+  /* line 467, src/scss/desktop/_small.scss */
+  #autreangle {
+    background: url(/watches-finejewelry/template/desktop/img/sous_un_autre_angle/00_fond_small.jpg) no-repeat; }
+
+  /* line 471, src/scss/desktop/_small.scss */
+  #zone_gauche {
+    width: 500px; }
+
+  /* line 475, src/scss/desktop/_small.scss */
+  #zone_droite {
+    width: 500px; }
+
+  /* line 479, src/scss/desktop/_small.scss */
+  #bijou_gauche {
+    bottom: 155px;
+    height: 390px; }
+
+  /* line 484, src/scss/desktop/_small.scss */
+  #bijou_droite {
+    bottom: 155px;
+    height: 390px; }
+
+  /* line 489, src/scss/desktop/_small.scss */
+  .reflet {
+    -width: 1000px; }
+
+  /* line 493, src/scss/desktop/_small.scss */
+  #bijou_centre {
+    bottom: 38px;
+    height: 510px; }
+
+  /* line 498, src/scss/desktop/_small.scss */
+  ul.gallery li {
+    width: 322px; }
+
+  /* line 502, src/scss/desktop/_small.scss */
+  #autreangle #logo, .puzzlePopin #logo {
+    top: 160px;
+    left: 34px; }
+
+  /* line 507, src/scss/desktop/_small.scss */
+  #autreangle #controls {
+    bottom: 38px; }
+
+  /* page AUDACE et EXPERTISE */
+  /* line 513, src/scss/desktop/_small.scss */
+  .audace_box {
+    float: left;
+    width: 379px;
+    height: 183px;
+    background-color: #000000;
+    margin-bottom: 0px;
+    margin: 3px 3px 0px 0px; }
+
+  /* line 522, src/scss/desktop/_small.scss */
+  .audace_box.top_box {
+    margin-bottom: 0px; }
+
+  /* line 526, src/scss/desktop/_small.scss */
+  .audace_box img {
+    -height: 183px;
+    width: 379px;
+    height: 183px; }
+
+  /* line 532, src/scss/desktop/_small.scss */
+  .audace_box h1 {
+    margin-top: 75px; }
+
+  /* line 536, src/scss/desktop/_small.scss */
+  .audace .detail {
+    padding: 20px;
+    height: 150px;
+    width: 340px;
+    font-size: 10px;
+    line-height: 1.4; }
+
+  /* line 544, src/scss/desktop/_small.scss */
+  .audace_box div.cartouche {
+    width: 379px;
+    height: 183px; }
+
+  /* line 548, src/scss/desktop/_small.scss */
+  #audace_detail img {
+    -height: 554px; }
+
+  /* page RECHERCHE */
+  /* line 553, src/scss/desktop/_small.scss */
+  #push_text {
+    /*right: 50px;*/
+    right: 15px;
+    /*	width: 200px; */ }
+
+  /* line 559, src/scss/desktop/_small.scss */
+  #push_text.left.premiere {
+    right: auto;
+    left: 3%;
+    width: 210px; }
+
+  /* line 565, src/scss/desktop/_small.scss */
+  #recherche_productlist li {
+    width: 253px;
+    height: 320px; }
+
+  /* line 570, src/scss/desktop/_small.scss */
+  #recherche_productlist li img {
+    width: 190px;
+    height: auto;
+    -height: 333px; }
+
+  /* page GLOSSAIRE */
+  /* line 577, src/scss/desktop/_small.scss */
+  #glossaire_list ul {
+    margin-top: 40px; }
+
+  /* line 580, src/scss/desktop/_small.scss */
+  #glossaire_scroll ul {
+    margin-top: 25px; }
+
+  /* line 584, src/scss/desktop/_small.scss */
+  #glossaire_scroll li {
+    margin-left: 10px;
+    margin-right: 10px; }
+
+  /* page mentions legales */
+  /* line 591, src/scss/desktop/_small.scss */
+  #mentions {
+    position: relative;
+    height: 458px;
+    padding-right: 20px;
+    overflow: hidden;
+    /*overflow-y: auto;*/ }
+
+  /* line 599, src/scss/desktop/_small.scss */
+  .mentions .vslider {
+    height: 458px; }
+
+  /* line 603, src/scss/desktop/_small.scss */
+  .mentions .vhandler {
+    height: 75px; }
+
+  /* page FAQ */
+  /* line 608, src/scss/desktop/_small.scss */
+  #questions {
+    margin-top: 60px;
+    height: 478px; }
+
+  /* line 613, src/scss/desktop/_small.scss */
+  #questions h2 {
+    font-size: 10px;
+    margin-bottom: 15px; }
+
+  /* line 618, src/scss/desktop/_small.scss */
+  #questions h3 {
+    font-size: 8px;
+    margin-bottom: 5px; }
+
+  /* line 623, src/scss/desktop/_small.scss */
+  #questions p {
+    margin-bottom: 15px; }
+
+  /* line 627, src/scss/desktop/_small.scss */
+  #questions ul {
+    margin-bottom: 15px; }
+
+  /* line 631, src/scss/desktop/_small.scss */
+  #columns div.column {
+    margin: 0px 20px;
+    width: 300px;
+    height: 470px; }
+
+  /* line 637, src/scss/desktop/_small.scss */
+  #columns #columnA {
+    /*width: 215px;*/
+    width: 135px; }
+
+  /* line 641, src/scss/desktop/_small.scss */
+  #columns #columnB {
+    width: 173px; }
+
+  /* line 645, src/scss/desktop/_small.scss */
+  #faq_scroll {
+    width: 766px;
+    height: 24px; }
+
+  /* line 650, src/scss/desktop/_small.scss */
+  .scroll-wrapper.faq {
+    bottom: 12px; }
+
+  /* page INSTANTS CHANEL */
+  /* line 656, src/scss/desktop/_small.scss */
+  #article {
+    padding: 40px 6% 0px; }
+
+  /* line 660, src/scss/desktop/_small.scss */
+  #article div.instants_image {
+    width: 382px;
+    height: 233px; }
+
+  /* line 665, src/scss/desktop/_small.scss */
+  #article div.instants_image.fullsize {
+    width: 500px;
+    height: 305px; }
+
+  /* line 669, src/scss/desktop/_small.scss */
+  #article div.instants_image.fullsize ul li {
+    position: absolute;
+    width: auto;
+    height: auto; }
+
+  /* line 675, src/scss/desktop/_small.scss */
+  #article div.instants_image.fullsize li img {
+    width: 100%;
+    height: 100%; }
+
+  /* line 680, src/scss/desktop/_small.scss */
+  #article div.instants_image ul li {
+    width: 382px;
+    height: 218px; }
+
+  /* line 685, src/scss/desktop/_small.scss */
+  #column_right {
+    width: 228px;
+    padding: 40px 0px; }
+
+  /* line 690, src/scss/desktop/_small.scss */
+  #instants_articles ul {
+    margin-top: 15px; }
+
+  /* line 693, src/scss/desktop/_small.scss */
+  .audace_box a.lien-cartouche {
+    top: 67px; }
+
+  /* line 698, src/scss/desktop/_small.scss */
+  .integrerPopin {
+    top: 160px;
+    left: 613px; }
+
+  /* editions exclusives */
+  /* line 705, src/scss/desktop/_small.scss */
+  #image_exclusive {
+    left: 150px;
+    height: 427px;
+    width: 458px; }
+
+  /* line 711, src/scss/desktop/_small.scss */
+  #menu_exclusive {
+    right: 115px;
+    padding-top: 215px; }
+
+  /* line 716, src/scss/desktop/_small.scss */
+  #menu_exclusive ul {
+    margin-bottom: 20px; }
+
+  /* line 719, src/scss/desktop/_small.scss */
+  #menu_exclusive ul li {
+    line-height: 14px;
+    -line-height: 5px; }
+
+  /* line 723, src/scss/desktop/_small.scss */
+  #menu_exclusive ul li ul {
+    -margin-top: 9px; }
+
+  /* line 727, src/scss/desktop/_small.scss */
+  #menu_exclusive ul li ul li {
+    line-height: 12px;
+    -line-height: 2px; }
+
+  /* expertise */
+  /* line 733, src/scss/desktop/_small.scss */
+  #expertise {
+    width: 370px;
+    height: 522px;
+    padding-left: 40px;
+    padding-top: 40px; }
+
+  /* line 740, src/scss/desktop/_small.scss */
+  #view {
+    width: 356px; }
+
+  /* line 744, src/scss/desktop/_small.scss */
+  #view img {
+    -height: 562px; }
+
+  /* line 748, src/scss/desktop/_small.scss */
+  #expertise #onglet_content {
+    width: 370px; }
+
+  /* line 752, src/scss/desktop/_small.scss */
+  #expertise #onglet_content .tabs {
+    width: 100%; }
+
+  /* line 756, src/scss/desktop/_small.scss */
+  #expertise #onglet_content .tabs.jspScrollable {
+    width: 100%; }
+
+  /* line 760, src/scss/desktop/_small.scss */
+  #expertise h3 {
+    margin-top: 50px; }
+
+  /* line 764, src/scss/desktop/_small.scss */
+  #expertise #film {
+    margin-top: 25px;
+    margin-bottom: 10px; }
+
+  /* line 769, src/scss/desktop/_small.scss */
+  #expertise #film #view_360 {
+    margin-top: 25px;
+    margin-bottom: 10px; }
+
+  /* line 775, src/scss/desktop/_small.scss */
+  #expertise #onglet_content p {
+    margin-bottom: 10px; }
+
+  /* line 779, src/scss/desktop/_small.scss */
+  #expertise #onglet_content ul {
+    margin-left: 30px;
+    margin-bottom: 10px; }
+
+  /* line 784, src/scss/desktop/_small.scss */
+  #expertise #onglet_content ol {
+    margin-left: 30px;
+    margin-bottom: 10px; }
+
+  /* global */
+  /* line 791, src/scss/desktop/_small.scss */
+  a.close {
+    top: 15px;
+    right: 15px; }
+
+  /* line 796, src/scss/desktop/_small.scss */
+  a.retour {
+    top: 5px;
+    height: 20px;
+    padding-top: 10px; }
+
+  /* line 802, src/scss/desktop/_small.scss */
+  .submitForm {
+    margin-top: 0px;
+    margin-bottom: 3px; }
+
+  /* line 807, src/scss/desktop/_small.scss */
+  #centerblock_wild.complication {
+    background-image: url(/watches-finejewelry/template/desktop/img/back_complications_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 812, src/scss/desktop/_small.scss */
+  #sliderControlLeft {
+    width: 40px;
+    left: 16px; }
+
+  /* line 817, src/scss/desktop/_small.scss */
+  #sliderControlRight {
+    width: 40px;
+    right: 9px; }
+
+  /* line 822, src/scss/desktop/_small.scss */
+  #glossaire_list #sliderControlLeft, #glossaire_list #sliderControlRight {
+    background-repeat: no-repeat;
+    _background-repeat: no-repeat;
+    background-position: center 57.5%;
+    _background-position: center 57.5%; }
+
+  /* aspect graphique general */
+  /* line 835, src/scss/desktop/_small.scss */
+  #centerdiv {
+    background: #000; }
+
+  /*
+  #centerblock #productlist:hover {
+          background-image: none;
+          background-color: #000000;
+  }
+  */
+  /* line 844, src/scss/desktop/_small.scss */
+  #recherche_productlist {
+    background-image: url(/watches-finejewelry/template/desktop/img/back_recherche_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 849, src/scss/desktop/_small.scss */
+  #centerblock.jewelry #ecrin_productSheet {
+    background-image: url(/watches-finejewelry/template/desktop/img/back_ecrinproductsheet_joail_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 854, src/scss/desktop/_small.scss */
+  #centerblock.watches #ecrin_productSheet {
+    background-image: url(/watches-finejewelry/template/desktop/img/back_ecrinproductsheet_horlo_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 859, src/scss/desktop/_small.scss */
+  #centerblock.vide #ecrin_productSheet {
+    background-image: url(/watches-finejewelry/template/desktop/img/back_ecrinproductsheet_vide_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 864, src/scss/desktop/_small.scss */
+  #ecrin_detail {
+    background-image: url(/watches-finejewelry/template/desktop/img/back_ecrindetail_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 869, src/scss/desktop/_small.scss */
+  #glossaire_list {
+    background-image: url(/watches-finejewelry/template/desktop/img/back_glossairelist_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 874, src/scss/desktop/_small.scss */
+  #faq_list {
+    background-color: black;
+    background-repeat: repeat; }
+
+  /* line 879, src/scss/desktop/_small.scss */
+  #colDeco {
+    background-image: url(/watches-finejewelry/template/desktop/img/back_ecrindetail_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 883, src/scss/desktop/_small.scss */
+  #mainrightvideo {
+    background-image: url(/watches-finejewelry/template/desktop/img/back_mainrightvideo_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 887, src/scss/desktop/_small.scss */
+  .exclusive {
+    background-image: url(/watches-finejewelry/template/desktop/img/back_exclusive_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* aspect graphique collections */
+  /* line 893, src/scss/desktop/_small.scss */
+  #rollover.C03 #roll_img {
+    background-image: url(/watches-finejewelry/template/desktop/img/roll/camelia_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 897, src/scss/desktop/_small.scss */
+  #rollover.C16 #roll_img {
+    background-image: url(/watches-finejewelry/template/desktop/img/roll/baroque_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 901, src/scss/desktop/_small.scss */
+  #rollover.C06 #roll_img {
+    background-image: url(/watches-finejewelry/template/desktop/img/roll/bridal_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 905, src/scss/desktop/_small.scss */
+  #rollover.C01 #roll_img {
+    background-image: url(/watches-finejewelry/template/desktop/img/roll/comete_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 909, src/scss/desktop/_small.scss */
+  #rollover.C13 #roll_img {
+    background-image: url(/watches-finejewelry/template/desktop/img/roll/ultra_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 913, src/scss/desktop/_small.scss */
+  #rollover.C17 #roll_img {
+    background-image: url(/watches-finejewelry/template/desktop/img/roll/1932_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 917, src/scss/desktop/_small.scss */
+  #rollover.C09 #roll_img {
+    background-image: url(/watches-finejewelry/template/desktop/img/roll/j12_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 921, src/scss/desktop/_small.scss */
+  #rollover.A33 #roll_img {
+    background-image: url(/watches-finejewelry/template/desktop/img/roll/premiere_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 925, src/scss/desktop/_small.scss */
+  #rollover.C11 #roll_img {
+    background-image: url(/watches-finejewelry/template/desktop/img/roll/camelia2_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 932, src/scss/desktop/_small.scss */
+  #centerblock.C03 #productSheet {
+    background-image: url(/watches-finejewelry/assets/collection/C03/desktop/back_productsheet_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 936, src/scss/desktop/_small.scss */
+  #centerblock.C03 #productlist {
+    background-image: url(/watches-finejewelry/assets/collection/C03/desktop/back_productlist_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 940, src/scss/desktop/_small.scss */
+  .C03 #mainrightvideo, .C03 #mainrightvideo #suggestion {
+    background-image: url(/watches-finejewelry/assets/collection/C03/desktop/back_mainrightvideo_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 944, src/scss/desktop/_small.scss */
+  #centerblock.C01 #productSheet {
+    background-image: url(/watches-finejewelry/assets/collection/C01/desktop/back_productsheet_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 948, src/scss/desktop/_small.scss */
+  #centerblock.C01 #productlist {
+    background-image: url(/watches-finejewelry/assets/collection/C01/desktop/back_productlist_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 952, src/scss/desktop/_small.scss */
+  .C01 #mainrightvideo, .C01 #mainrightvideo #suggestion {
+    background-image: url(/watches-finejewelry/assets/collection/C01/desktop/back_mainrightvideo_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 956, src/scss/desktop/_small.scss */
+  #centerblock.C16 #productSheet {
+    background-image: url(/watches-finejewelry/assets/collection/C16/desktop/back_productsheet_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 960, src/scss/desktop/_small.scss */
+  #centerblock.C16 #productlist {
+    background-image: url(/watches-finejewelry/assets/collection/C16/desktop/back_productlist_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 964, src/scss/desktop/_small.scss */
+  .C16 #mainrightvideo, .C16 #mainrightvideo #suggestion {
+    background-image: url(/watches-finejewelry/assets/collection/C16/desktop/back_mainrightvideo_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 968, src/scss/desktop/_small.scss */
+  #centerblock.C17 #productSheet {
+    background-image: url(/watches-finejewelry/assets/collection/C17/desktop/back_productsheet_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 972, src/scss/desktop/_small.scss */
+  #centerblock.C17 #productlist {
+    background-image: url(/watches-finejewelry/assets/collection/C17/desktop/back_productlist_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 976, src/scss/desktop/_small.scss */
+  .C17 #mainrightvideo, .C17 #mainrightvideo #suggestion {
+    background-image: url(/watches-finejewelry/assets/collection/C17/desktop/back_mainrightvideo_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 980, src/scss/desktop/_small.scss */
+  #centerblock.C13 #productSheet {
+    background-image: url(/watches-finejewelry/assets/collection/C13/desktop/back_productsheet_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 984, src/scss/desktop/_small.scss */
+  #centerblock.C13 #productlist {
+    background-image: url(/watches-finejewelry/assets/collection/C13/desktop/back_productlist_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 988, src/scss/desktop/_small.scss */
+  .C13 #mainrightvideo, .C13 #mainrightvideo #suggestion {
+    background-image: url(/watches-finejewelry/assets/collection/C13/desktop/back_mainrightvideo_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 992, src/scss/desktop/_small.scss */
+  #centerblock.C06 #productSheet {
+    background-image: url(/watches-finejewelry/assets/collection/C06/desktop/back_productsheet_small.jpg);
+    background-repeat: no-repeat;
+    color: #000000; }
+
+  /* line 997, src/scss/desktop/_small.scss */
+  #centerblock.C06 #productlist {
+    background-image: url(/watches-finejewelry/assets/collection/C06/desktop/back_productlist_small.jpg);
+    background-repeat: no-repeat;
+    color: #000000; }
+
+  /* line 1002, src/scss/desktop/_small.scss */
+  .C06 #mainrightvideo, .C06 #mainrightvideo #suggestion {
+    background-image: url(/watches-finejewelry/assets/collection/C06/desktop/back_mainrightvideo_small.jpg);
+    background-repeat: no-repeat;
+    color: #000000; }
+
+  /* line 1008, src/scss/desktop/_small.scss */
+  #centerblock.C09 #productSheet {
+    background-image: url(/watches-finejewelry/assets/collection/C09/desktop/back_productsheet_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 1012, src/scss/desktop/_small.scss */
+  #centerblock.C09 #productlist {
+    background-image: url(/watches-finejewelry/assets/collection/C09/desktop/back_productlist_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 1016, src/scss/desktop/_small.scss */
+  .C09 #mainrightvideo, .C09 #mainrightvideo #suggestion, .C09 #mainrightvideo #detailright {
+    background-image: url(/watches-finejewelry/assets/collection/C09/desktop/back_mainrightvideo_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 1020, src/scss/desktop/_small.scss */
+  #centerblock.MP1 #productSheet {
+    background-image: url(/watches-finejewelry/assets/collection/MP1/desktop/back_productsheet_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 1024, src/scss/desktop/_small.scss */
+  #centerblock.MP1 #productlist {
+    background-image: url(/watches-finejewelry/assets/collection/MP1/desktop/back_productlist_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 1028, src/scss/desktop/_small.scss */
+  .MP1 #mainrightvideo, .MP1 #mainrightvideo #suggestion, .MP1 #mainrightvideo #detailright {
+    background-image: url(/watches-finejewelry/assets/collection/MP1/desktop/back_mainrightvideo_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 1033, src/scss/desktop/_small.scss */
+  #centerblock.W12 #productSheet {
+    background-image: url(/watches-finejewelry/assets/collection/C09/desktop/back_productsheet_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 1037, src/scss/desktop/_small.scss */
+  #centerblock.W12 #productlist {
+    background-image: url(/watches-finejewelry/assets/collection/C09/desktop/back_productlist_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 1041, src/scss/desktop/_small.scss */
+  .W12 #mainrightvideo, .W12 #mainrightvideo #suggestion, .W12 #mainrightvideo #detailright {
+    background-image: url(/watches-finejewelry/assets/collection/C09/desktop/back_mainrightvideo_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 1046, src/scss/desktop/_small.scss */
+  #centerblock.B12 #productSheet {
+    background-image: url(/watches-finejewelry/assets/collection/C09/desktop/back_productsheet_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 1050, src/scss/desktop/_small.scss */
+  #centerblock.B12 #productlist {
+    background-image: url(/watches-finejewelry/assets/collection/C09/desktop/back_productlist_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 1054, src/scss/desktop/_small.scss */
+  .B12 #mainrightvideo, .B12 #mainrightvideo #suggestion, .B12 #mainrightvideo #detailright {
+    background-image: url(/watches-finejewelry/assets/collection/C09/desktop/back_mainrightvideo_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 1059, src/scss/desktop/_small.scss */
+  #centerblock.K12 #productSheet {
+    background-image: url(/watches-finejewelry/assets/collection/C09/desktop/back_productsheet_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 1063, src/scss/desktop/_small.scss */
+  #centerblock.K12 #productlist {
+    background-image: url(/watches-finejewelry/assets/collection/C09/desktop/back_productlist_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 1067, src/scss/desktop/_small.scss */
+  .K12 #mainrightvideo, .K12 #mainrightvideo #suggestion, .K12 #mainrightvideo #detailright {
+    background-image: url(/watches-finejewelry/assets/collection/C09/desktop/back_mainrightvideo_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 1072, src/scss/desktop/_small.scss */
+  #centerblock.A33 #productSheet {
+    background-image: url(/watches-finejewelry/assets/collection/A33/desktop/back_productsheet_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 1076, src/scss/desktop/_small.scss */
+  #centerblock.A33 #productlist {
+    background-image: url(/watches-finejewelry/assets/collection/A33/desktop/back_productlist_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 1080, src/scss/desktop/_small.scss */
+  .A33 #mainrightvideo, .A33 #mainrightvideo #suggestion, .A33 #mainrightvideo #detailright {
+    background-image: url(/watches-finejewelry/assets/collection/A33/desktop/back_mainrightvideo_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 1084, src/scss/desktop/_small.scss */
+  #centerblock.C11 #productSheet {
+    background-image: url(/watches-finejewelry/assets/collection/C11/desktop/back_productsheet_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 1088, src/scss/desktop/_small.scss */
+  #centerblock.C11 #productlist {
+    background-image: url(/watches-finejewelry/assets/collection/C11/desktop/back_productlist_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 1092, src/scss/desktop/_small.scss */
+  .C11 #mainrightvideo, .C11 #mainrightvideo #suggestion, .C11 #mainrightvideo #detailright {
+    background-image: url(/watches-finejewelry/assets/collection/C11/desktop/back_mainrightvideo_small.jpg);
+    background-repeat: no-repeat; }
+
+  /* line 1097, src/scss/desktop/_small.scss */
+  .rightspace {
+    width: 220px;
+    padding-right: 0; }
+
+  /* line 1102, src/scss/desktop/_small.scss */
+  .listItemBox li table {
+    width: 120px; }
+
+  /* line 1106, src/scss/desktop/_small.scss */
+  .listItemBox li table td.ecrinIcon {
+    width: 10px; }
+
+  /* line 1110, src/scss/desktop/_small.scss */
+  p#sliderPagination {
+    position: relative;
+    width: 60px;
+    padding-top: 5px;
+    margin: 0 auto;
+    top: 306px; }
+
+  /* line 1118, src/scss/desktop/_small.scss */
+  #glossaire_list #sliderControlLeft {
+    left: 175px;
+    width: 5%; }
+
+  /* line 1123, src/scss/desktop/_small.scss */
+  #glossaire_list #sliderControlRight {
+    right: 245px;
+    width: 5%; }
+
+  /* line 1128, src/scss/desktop/_small.scss */
+  .audace .detail #audacePagination {
+    bottom: 2px; }
+
+  /* line 1132, src/scss/desktop/_small.scss */
+  .audace .detail #audacePagination #pagePrev, .audace .detail #audacePagination #pageNext {
+    top: 3px; }
+
+  /* line 1135, src/scss/desktop/_small.scss */
+  * html p#sliderPagination {
+    width: 25px;
+    position: relative; }
+
+  /* line 1140, src/scss/desktop/_small.scss */
+  * html p#sliderPagination a#galleryPrev2 {
+    height: 9px;
+    width: 5px;
+    display: block;
+    position: absolute;
+    left: 0px; }
+
+  /* line 1148, src/scss/desktop/_small.scss */
+  * html p#sliderPagination a#galleryNext2 {
+    height: 9px;
+    width: 5px;
+    display: block;
+    position: absolute;
+    right: 0px; }
+
+  /* line 1156, src/scss/desktop/_small.scss */
+  #detailbottomright {
+    padding-top: 0px;
+    margin-top: 464px;
+    width: 155px; }
+
+  /* line 1162, src/scss/desktop/_small.scss */
+  a.link_J12_chromatic {
+    top: 447px;
+    width: 150px; }
+
+  /* line 1167, src/scss/desktop/_small.scss */
+  #centerblock_wild.bridal_anim {
+    background: url("/watches-finejewelry/img/trame_bridal-small.jpg") 261px 35px no-repeat #fff; }
+
+  /* line 1171, src/scss/desktop/_small.scss */
+  #centerblock_wild.bridal_anim #flashcontent {
+    _width: 1000px;
+    height: 562px; }
+
+  /* line 1176, src/scss/desktop/_small.scss */
+  #wrapper_bridal_anim {
+    width: 560px;
+    height: 445px;
+    left: 280px;
+    top: 51px; }
+
+  /* line 1183, src/scss/desktop/_small.scss */
+  #wrapper_element_left, #wrapper_element_right {
+    width: 30px;
+    height: 447px;
+    overflow: hidden;
+    position: absolute;
+    top: 49px; }
+
+  /* line 1191, src/scss/desktop/_small.scss */
+  #wrapper_element_left {
+    left: 278px; }
+
+  /* line 1196, src/scss/desktop/_small.scss */
+  #wrapper_element_right {
+    left: 814px; }
+
+  /* line 1200, src/scss/desktop/_small.scss */
+  #wrapper_element_close #btnCloseBridal {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: url("/watches-finejewelry/img/croix2_hover.gif") -20% 50% no-repeat; }
+
+  /* line 1207, src/scss/desktop/_small.scss */
+  #wrapper_element #moveRightPageAnim {
+    height: 480px; }
+
+  /* line 1211, src/scss/desktop/_small.scss */
+  #wrapper_element #moveLeftPageAnim {
+    height: 480px; }
+
+  /* line 1215, src/scss/desktop/_small.scss */
+  #wrapper_element_close #btnCloseBridal {
+    left: 827px;
+    top: 49px; }
+
+  /* line 1220, src/scss/desktop/_small.scss */
+  .slideshow .text_image {
+    position: absolute;
+    top: 0px;
+    left: 402px;
+    font-size: 10px;
+    color: #fff; }
+
+  /* line 1228, src/scss/desktop/_small.scss */
+  .slideshow .text_image a {
+    color: #fff;
+    display: block;
+    width: 190px;
+    height: 188px;
+    padding-top: 374px; }
+
+  /* line 1236, src/scss/desktop/_small.scss */
+  #haute_joaillerie_ul {
+    top: 231px;
+    right: 109px; }
+
+  /* line 1241, src/scss/desktop/_small.scss */
+  #inline_popup3 {
+    position: absolute;
+    top: 0px;
+    margin-top: 0px; }
+
+  /* line 1247, src/scss/desktop/_small.scss */
+  #popin3 {
+    /*    top:0px;
+        margin-top:0px;*/ }
+
+  /* line 1252, src/scss/desktop/_small.scss */
+  #popin3 #contentPopin3 {
+    background: #000; }
+
+  /* line 1257, src/scss/desktop/_small.scss */
+  #liste_articles video {
+    width: 100%; }
+
+  /* line 1261, src/scss/desktop/_small.scss */
+  .refs#centerblock_wild .vslider {
+    height: 540px; }
+
+  /* line 1265, src/scss/desktop/_small.scss */
+  .slideshow .text_mention {
+    position: absolute;
+    top: auto;
+    bottom: 10px;
+    right: 0px;
+    font-size: 9px;
+    color: #fff;
+    width: 160px;
+    text-align: justify;
+    padding: 10px; }
+
+  /* line 1277, src/scss/desktop/_small.scss */
+  .zh_TW .slideshow .text_mention {
+    font-size: 10px;
+    line-height: 130%; }
+
+  /* line 1282, src/scss/desktop/_small.scss */
+  .slideshow .text_mention a {
+    color: #fff; }
+
+  /* line 1286, src/scss/desktop/_small.scss */
+  .slideshow .text_image_mention {
+    position: absolute;
+    top: 305px;
+    right: 183px;
+    font-size: 10px;
+    color: #fff;
+    width: 170px;
+    padding: 10px; }
+
+  /* line 1296, src/scss/desktop/_small.scss */
+  .slideshow .text_image_mention a {
+    color: #fff; }
+
+  /* line 1300, src/scss/desktop/_small.scss */
+  .refs#centerblock_wild #list_refs li.product {
+    width: 17%; }
+
+  /*-----------------------------------------------------------------
+  CHANEL ULTRA WORLD
+  -----------------------------------------------------------------*/
+  /* line 1308, src/scss/desktop/_small.scss */
+  .ultra_world #logo_chanel_joaillerie, .ultra_world #logo_chanel_joaillerie_black {
+    top: 78px; }
+
+  /* line 1312, src/scss/desktop/_small.scss */
+  #cuw-bg {
+    top: 39px;
+    left: 0px;
+    width: 1000px;
+    height: 482px; }
+
+  /* line 1319, src/scss/desktop/_small.scss */
+  #cuw-bg img {
+    width: 1000px;
+    height: 482px; }
+
+  /* line 1324, src/scss/desktop/_small.scss */
+  #cuw-page-container {
+    width: 1000px;
+    height: 562px; }
+
+  /* line 1329, src/scss/desktop/_small.scss */
+  #cuw-page-container .page {
+    width: 1000px;
+    height: 562px; }
+
+  /* VIDEOS */
+  /* line 1335, src/scss/desktop/_small.scss */
+  .ultra_world video {
+    top: 39px;
+    left: 72px;
+    width: 857px;
+    height: 482px;
+    margin-left: 0px; }
+
+  /* INFO */
+  /* line 1344, src/scss/desktop/_small.scss */
+  #cuw-page-info-text {
+    right: 72px;
+    top: 74px;
+    width: 346px;
+    height: 408px; }
+
+  /* line 1351, src/scss/desktop/_small.scss */
+  .cuw-page-info-text-inner {
+    width: 346px;
+    height: 408px; }
+
+  /* line 1355, src/scss/desktop/_small.scss */
+  .cuw-page-info-text-inner hr {
+    width: 270px;
+    margin-left: -135px; }
+
+  /* line 1360, src/scss/desktop/_small.scss */
+  .cuw-page-info-text-inner-copy {
+    width: 270px;
+    margin-left: -135px;
+    line-height: 15px;
+    height: 250px;
+    /*height: 210px;*/
+    /*overflow-y: scroll;*/
+    /*good for ipad only*/ }
+
+  /* line 1371, src/scss/desktop/_small.scss */
+  .cuw-page-info-text-inner a.arrow-up {
+    top: 300px;
+    right: 13px;
+    display: block; }
+
+  /* line 1377, src/scss/desktop/_small.scss */
+  .cuw-page-info-text-inner a.arrow-down {
+    top: 330px;
+    right: 13px;
+    display: block; }
+
+  /* line 1383, src/scss/desktop/_small.scss */
+  .cuw-page-info-text-inner a.switch {
+    bottom: 20px; }
+
+  /* DOWNLOADS */
+  /* line 1388, src/scss/desktop/_small.scss */
+  #cuw-page-downloads-inner {
+    top: 190px;
+    right: 95px; }
+
+  /* line 1393, src/scss/desktop/_small.scss */
+  #cuw-page-downloads-inner.single {
+    right: 280px; }
+
+  /* INTRO */
+  /* line 1399, src/scss/desktop/_small.scss */
+  #cuw-intro {
+    top: 39px;
+    width: 1000px;
+    height: 482px; }
+
+  /* line 1404, src/scss/desktop/_small.scss */
+  img#cuw-intro-left-logo {
+    position: absolute;
+    left: 500px;
+    top: 241px;
+    margin-left: -182px;
+    margin-top: 1px; }
+
+  /* line 1412, src/scss/desktop/_small.scss */
+  img#cuw-intro-right-logo {
+    position: absolute;
+    right: 500px;
+    top: 241px;
+    margin-right: -182px;
+    margin-top: 1px; }
+
+  /* line 1420, src/scss/desktop/_small.scss */
+  #cuw-header {
+    height: 39px; }
+
+  /* line 1423, src/scss/desktop/_small.scss */
+  div#share-container {
+    top: 5px; }
+
+  /* line 1427, src/scss/desktop/_small.scss */
+  a#share-text {
+    padding-top: 10px; }
+
+  /* line 1431, src/scss/desktop/_small.scss */
+  div#share-icons {
+    top: -3px; }
+
+  /* line 1435, src/scss/desktop/_small.scss */
+  #cuw-footer {
+    height: 41px; }
+
+  /* line 1439, src/scss/desktop/_small.scss */
+  #cuw-footer ul {
+    margin-top: 13px; }
+
+  /* line 1443, src/scss/desktop/_small.scss */
+  .cuw-popup-embed {
+    top: 185px;
+    left: 291px; }
+
+  /* line 1448, src/scss/desktop/_small.scss */
+  .cuw-popup-email {
+    top: 102px;
+    left: 245px; }
+
+  /**** 360 View ****/
+  /* line 1458, src/scss/desktop/_small.scss */
+  #view_360_image {
+    position: relative;
+    width: 1000px;
+    height: 582px;
+    overflow: hidden; }
+
+  /* line 1465, src/scss/desktop/_small.scss */
+  #expertise #view_360,
+  #expertise #film {
+    width: 148px;
+    height: 100px; }
+
+  /* line 1471, src/scss/desktop/_small.scss */
+  #expertise #view_360 img,
+  #expertise #film img {
+    width: 100%; }
+
+  /* line 1476, src/scss/desktop/_small.scss */
+  #info_right p.text_mention {
+    bottom: 45px;
+    font-size: 9px; }
+
+  /* line 1481, src/scss/desktop/_small.scss */
+  #expertise #link a {
+    font-size: 8px; }
+
+  /* line 1486, src/scss/desktop/_small.scss */
+  #expertise .rewards {
+    width: 100px;
+    top: 70px; }
+
+  /* line 1492, src/scss/desktop/_small.scss */
+  .scroll-wrapper {
+    bottom: 12px; }
+
+  /* line 1496, src/scss/desktop/_small.scss */
+  #expertise #onglet_content p {
+    padding-right: 0px; }
+
+  /* line 1500, src/scss/desktop/_small.scss */
+  #expertise #onglet_content table {
+    width: auto; }
+
+  /* line 1505, src/scss/desktop/_small.scss */
+  #wrong_flash_version {
+    width: 770px; }
+
+  /* line 1509, src/scss/desktop/_small.scss */
+  .zh_TW .cuw-page-info-text-inner-copy {
+    width: 320px !important; }
+
+  /* fix nav corpo */
+  /* line 1516, src/scss/desktop/_small.scss */
+  #x-ccf-list li {
+    font-size: 8px; } }
+/* Global Small Media queries */
+@media screen and (max-height: 582px) {
+  /* line 25, src/scss/chanel-small.scss */
+  body {
+    overflow: auto; }
+
+  /* line 29, src/scss/chanel-small.scss */
+  #globaldiv {
+    position: absolute;
+    top: 0;
+    margin-top: 0px; } }
+@media screen and (max-width: 1000px) {
+  /* line 37, src/scss/chanel-small.scss */
+  body {
+    overflow: auto; }
+
+  /* line 41, src/scss/chanel-small.scss */
+  #globaldiv {
+    position: absolute;
+    left: 0;
+    margin-left: 0px; } }
+@media screen and (max-width: 1256px), screen and (max-height: 790px) {
+  /* line 2, src/scss/desktop/module/_coco-small.scss */
+  .coco .scrollable {
+    width: 770px; }
+  /* line 8, src/scss/desktop/module/_coco-small.scss */
+  .coco .collection-wrapper .logo-big {
+    display: none; }
+  /* line 11, src/scss/desktop/module/_coco-small.scss */
+  .coco .collection-wrapper .logo-small {
+    display: block; }
+
+  /* line 1, src/scss/desktop/module/_slideshow.scss */
+  #slideshow-visionneuse {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    -ms-touch-action: pan-y;
+    /*visibility: hidden;*/ }
+
+  /* line 12, src/scss/desktop/module/_slideshow.scss */
+  .slideshow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
+
+  /* line 21, src/scss/desktop/module/_slideshow.scss */
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
+
+  /* line 33, src/scss/desktop/module/_slideshow.scss */
+  .bang-slideshow-arrow-horizontal-tol,
+  .slide-prev {
+    /* tol = top or left */
+    position: absolute;
+    top: 50%;
+    margin-top: -7px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+    background: url(/watches-finejewelry/template/desktop/img/left_arrow.png) no-repeat center;
+    display: block; }
+
+  /* line 44, src/scss/desktop/module/_slideshow.scss */
+  .bang-slideshow-arrow-horizontal-bor,
+  .slide-next {
+    /* bor = bottom or right */
+    position: absolute;
+    margin-top: -7px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    background: url(/watches-finejewelry/template/desktop/img/right_arrow.png) no-repeat center;
+    display: block; }
+
+  /* line 56, src/scss/desktop/module/_slideshow.scss */
+  .slide-next,
+  .slide-prev {
+    top: auto; }
+
+  /* Bullet nav */
+  /* line 62, src/scss/desktop/module/_slideshow.scss */
+  .bang-slideshow-nav-horizontal {
+    position: absolute;
+    bottom: 46px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    text-align: center; }
+
+  /* line 70, src/scss/desktop/module/_slideshow.scss */
+  .bang-slideshow-bullet {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    width: 7px;
+    height: 7px;
+    margin: 5px;
+    background: url(/watches-finejewelry/template/desktop/img/dot.png) no-repeat center; }
+
+  /* line 79, src/scss/desktop/module/_slideshow.scss */
+  .bang-slideshow-bullet:hover,
+  .bang-slideshow-bullet.active {
+    background: url(/watches-finejewelry/template/desktop/img/dot_over.png) no-repeat center; }
+
+  /* line 3, src/scss/desktop/module/_collections-small.scss */
+  #centerblock {
+    /*GLOBAL AUX COLLECTIONS */ }
+    /* line 6, src/scss/desktop/module/_collections-small.scss */
+    #centerblock.jewelry .row .product {
+      width: 250px;
+      padding: 0; }
+      /* line 9, src/scss/desktop/module/_collections-small.scss */
+      #centerblock.jewelry .row .product img {
+        width: 250px;
+        height: 250px; }
+      /* line 13, src/scss/desktop/module/_collections-small.scss */
+      #centerblock.jewelry .row .product .prd-infos {
+        height: 250px;
+        line-height: 250px; }
+    /* line 21, src/scss/desktop/module/_collections-small.scss */
+    #centerblock.jewelry .more-collections .row, #centerblock.jewelry.dispatch .row {
+      padding: 0;
+      width: 720px; }
+      /* line 24, src/scss/desktop/module/_collections-small.scss */
+      #centerblock.jewelry .more-collections .row .product, #centerblock.jewelry.dispatch .row .product {
+        width: 190px;
+        padding: 12px 25px; }
+        /* line 27, src/scss/desktop/module/_collections-small.scss */
+        #centerblock.jewelry .more-collections .row .product img, #centerblock.jewelry.dispatch .row .product img {
+          width: 190px;
+          height: 90px; }
+    /* line 34, src/scss/desktop/module/_collections-small.scss */
+    #centerblock.jewelry.watches-jewelry .list .row .product {
+      width: 203px;
+      padding: 0 23px; }
+      /* line 37, src/scss/desktop/module/_collections-small.scss */
+      #centerblock.jewelry.watches-jewelry .list .row .product .prd-infos {
+        line-height: 278px;
+        height: 278px;
+        top: 20px; }
+      /* line 42, src/scss/desktop/module/_collections-small.scss */
+      #centerblock.jewelry.watches-jewelry .list .row .product img {
+        width: 203px;
+        height: 320px; }
+    /* line 50, src/scss/desktop/module/_collections-small.scss */
+    #centerblock.watches .row .product {
+      width: 203px;
+      padding: 0 23px; }
+      /* line 53, src/scss/desktop/module/_collections-small.scss */
+      #centerblock.watches .row .product img {
+        width: 203px;
+        height: 320px; }
+      /* line 57, src/scss/desktop/module/_collections-small.scss */
+      #centerblock.watches .row .product .prd-infos {
+        height: 278px;
+        line-height: 278px;
+        top: 20px; }
+    /* line 65, src/scss/desktop/module/_collections-small.scss */
+    #centerblock.watches .row-2 .product {
+      margin: 0 0 0 52px; }
+      /* line 67, src/scss/desktop/module/_collections-small.scss */
+      #centerblock.watches .row-2 .product img {
+        width: 306px;
+        height: 160px; }
+    /* line 74, src/scss/desktop/module/_collections-small.scss */
+    #centerblock.watches.dispatch .row {
+      padding: 0;
+      width: 720px; }
+      /* line 77, src/scss/desktop/module/_collections-small.scss */
+      #centerblock.watches.dispatch .row .product {
+        padding: 10px 25px 6px 25px;
+        width: 190px; }
+        /* line 80, src/scss/desktop/module/_collections-small.scss */
+        #centerblock.watches.dispatch .row .product img {
+          width: 190px;
+          height: 160px; }
+    /* line 86, src/scss/desktop/module/_collections-small.scss */
+    #centerblock.watches.dispatch .row2 {
+      width: 480px; }
+    /* line 93, src/scss/desktop/module/_collections-small.scss */
+    #centerblock.collections {
+      width: 770px;
+      /*LIGNE DE PRODUITS */
+      /* PAGE LIST SUBCOLLECTIONS */ }
+      /* line 96, src/scss/desktop/module/_collections-small.scss */
+      #centerblock.collections #camelia {
+        height: auto; }
+      /* line 100, src/scss/desktop/module/_collections-small.scss */
+      #centerblock.collections h1 {
+        margin: 21px 0; }
+      /* line 106, src/scss/desktop/module/_collections-small.scss */
+      #centerblock.collections .list_subcollection p {
+        width: 465px;
+        margin: 0 auto 88px auto; }
+      /* line 112, src/scss/desktop/module/_collections-small.scss */
+      #centerblock.collections.dispatch h1,
+      #centerblock.collections.dispatch .logo {
+        margin: 0 0 27px; }
+      /* line 117, src/scss/desktop/module/_collections-small.scss */
+      #centerblock.collections.dispatch .list_collections h1 {
+        margin: 27px 0; }
+      /* line 121, src/scss/desktop/module/_collections-small.scss */
+      #centerblock.collections.dispatch .center {
+        height: 300px;
+        line-height: 300px; }
+      /* line 127, src/scss/desktop/module/_collections-small.scss */
+      #centerblock.collections.watches.dispatch .list_collections h1 {
+        margin: 20px 0 18px 0; }
+
+  /* VISIONNEUSE */
+  /* line 134, src/scss/desktop/module/_collections-small.scss */
+  .visionneuse #close-visionneuse {
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px; }
+
+  /* line 147, src/scss/desktop/module/_collections-small.scss */
+  .ie7 #centerblock .row .product .prd-infos .inner-infos {
+    padding-top: 50px; }
+
+  /*====================================*/
+  /* Jardin de Camelias */
+  /*====================================*/
+  /* line 5, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+  #camelia {
+    height: 559px;
+    position: relative; }
+
+  /* line 10, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+  #camelia #intro {
+    right: 40px; }
+
+  /* line 14, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+  .desktop #camelia #intro h1 {
+    font-size: 38px; }
+
+  /* line 17, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+  .desktop #camelia #intro h3 {
+    font-size: 14px; }
+
+  /* line 21, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+  .desktop #camelia .text-area h2 {
+    font-size: 14px; }
+
+  /* line 25, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+  #camelia #intro ul {
+    /*margin: 50px 0 0 87px;*/ }
+
+  /* line 29, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+  .desktop #camelia #intro ul a {
+    font-size: 11px; }
+
+  /* line 33, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+  .desktop #camelia #intro li.hover {
+    background-position: 7px 50%; }
+
+  /* line 37, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+  .desktop #camelia #goto-video a {
+    font-size: 11px; }
+
+  /* line 41, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+  #camelia #logo {
+    top: 78px; }
+
+  /* line 45, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+  #camelia #scenes {
+    height: 562px; }
+
+  /* On desktop */
+  /* line 50, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+  .desktop #camelia .text-area p {
+    font-size: 9px; }
+
+  /* line 54, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+  #camelia #goto-video a {
+    /*background-position: 43% 14px;*/
+    margin-top: 12px; }
+
+  /* line 59, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+  #camelia #intro {
+    bottom: 154px; }
+
+  /* line 63, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+  #camelia #scene-1,
+  #camelia .camelia-image {
+    background-size: 100% auto; }
+
+  /* line 68, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+  #camelia #scene-video,
+  #camelia #flashcontent video {
+    height: 100%; }
+
+  /*#camelia object#flashcontent {
+  height: 587px;
+  bottom: 10px;
+  }*/
+  /*
+  .ie7 #camelia object#flashcontent,
+  .ie8 #camelia object#flashcontent {
+  height: 579px;
+  bottom: 5px;
+  }*/
+  /* line 84, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+  #camelia #prev.prevnext {
+    background-position: 0 50%; }
+
+  /* line 88, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+  #camelia #goto-video #back-to-site {
+    /*background-position: 33% 14px;*/ }
+
+  /* line 92, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+  .desktop #camelia .prevnext {
+    background-image: url("/watches-finejewelry/assets/jardin_de_camelias/img/sprite-prevnext-small-desktop.png");
+    width: 36px; }
+
+  /* line 97, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+  .desktop #camelia #next.prevnext {
+    background-position: -36px 50%; }
+
+  /* line 101, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+  .desktop #camelia .close-button {
+    top: 16px;
+    right: 16px;
+    padding: 10px;
+    background-image: url("/watches-finejewelry/assets/jardin_de_camelias/img/close-small-desktop.png"); }
+
+  /* line 108, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+  .desktop #camelia #scene-video .close-button {
+    background-image: url("/watches-finejewelry/assets/jardin_de_camelias/img/close-small-desktop-white.png"); }
+
+  /* line 112, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+  .desktop #camelia #play-now p {
+    background-image: url("/watches-finejewelry/assets/jardin_de_camelias/img/sprite-play-now-small-desktop.png");
+    padding-top: 54px; }
+
+  /** OVERRIDE '.text-area' FOR #scene-x **/
+  /* line 118, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+  #camelia .text-area {
+    margin-left: 70px;
+    padding-top: 150px; }
+
+  /* line 124, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+  #camelia .scene#scene-1 {
+    background: url("/watches-finejewelry/assets/jardin_de_camelias/img/img_01-small.jpg") no-repeat; }
+  /* line 127, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+  #camelia .scene#scene-2 {
+    left: 100%; }
+    /* line 128, src/scss/desktop/module/_jardin_de_camelias-small.scss */
+    #camelia .scene#scene-2 .camelia-image {
+      background: url("/watches-finejewelry/assets/jardin_de_camelias/img/img_09-small.jpg") no-repeat; }
+
+  /* line 1, src/scss/desktop/module/_home-small.scss */
+  .slideshowHome li .segment4 {
+    left: 81.35%; }
+
+  /* line 5, src/scss/desktop/module/_home-small.scss */
+  .slideshowHome li .segment1 img.visuel {
+    left: 0px\9; }
+
+  /* line 9, src/scss/desktop/module/_home-small.scss */
+  .slideshowHome li .segment2 img.visuel {
+    left: -392px\9; }
+
+  /* line 13, src/scss/desktop/module/_home-small.scss */
+  .slideshowHome li .segment3 img.visuel {
+    left: -591px\9; }
+
+  /* line 17, src/scss/desktop/module/_home-small.scss */
+  .slideshowHome li .segment4 img.visuel {
+    left: -628px\9; }
+
+  /* line 21, src/scss/desktop/module/_home-small.scss */
+  .slideshowHome li .link_to {
+    top: 0%;
+    /*left:52%;
+    padding-top:36%;
+    padding-bottom:53%;*/
+    padding-top: 275px;
+    padding-bottom: 300px;
+    left: 398px;
+    width: 180px; }
+
+  /* line 32, src/scss/desktop/module/_home-small.scss */
+  .slideshowHome li .second_link {
+    top: 0%;
+    /*left:52%;
+    padding-top:36%;
+    padding-bottom:53%;*/
+    padding-top: 260px;
+    padding-bottom: 300px;
+    left: 398px;
+    width: 180px; }
+
+  /* line 42, src/scss/desktop/module/_home-small.scss */
+  .ru_RU .slideshowHome li .text_mention, .ja_JP .slideshowHome li .text_mention {
+    font-family: 'HelveticaNeue', 'Helvetica', 'arial', sans-serif;
+    font-size: 8px;
+    font-weight: normal; }
+    /* line 55, src/scss/common/_fonts.scss */
+    .ja_JP .ru_RU .slideshowHome li .text_mention, .ja_JP .ja_JP .slideshowHome li .text_mention {
+      font-family: "abchanel-couture", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Arial, "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", "Roboto", "Droid Sans", sans-serif; }
+    /* line 59, src/scss/common/_fonts.scss */
+    .ru_RU .ru_RU .slideshowHome li .text_mention, .ru_RU .ja_JP .slideshowHome li .text_mention {
+      font-family: "abchanel-couture", Helvetica, Arial, sans-serif; }
+    /* line 63, src/scss/common/_fonts.scss */
+    .zh_CN .ru_RU .slideshowHome li .text_mention, .zh_CN .ja_JP .slideshowHome li .text_mention {
+      font-family: "abchanel-couture", "华文细黑", STXiHei, "微软雅黑", "Microsoft Yahei", "华文黑体", "ST Heiti", "MS黑体", "MS Hei", sans-serif; }
+    /* line 67, src/scss/common/_fonts.scss */
+    .zh_TW .ru_RU .slideshowHome li .text_mention, .zh_TW .ja_JP .slideshowHome li .text_mention {
+      font-family: "abchanel-couture", "微軟正黑體", "Microsoft JhengHei", "儷黑 Pro", "LiHei Pro", "Arial Unicode MS", sans-serif; }
+    /* line 71, src/scss/common/_fonts.scss */
+    .ko_KR .ru_RU .slideshowHome li .text_mention, .ko_KR .ja_JP .slideshowHome li .text_mention {
+      font-family: "abchanel-couture", "맑은고딕", "Malgun Gothic", "Apple Gothic", "돋움", Dotum, "굴림", Gulim, sans-serif; }
+
+  /* line 46, src/scss/desktop/module/_home-small.scss */
+  .slideshowHome li .text_mention {
+    width: 150px;
+    top: 47.5%; }
+
+  /* line 51, src/scss/desktop/module/_home-small.scss */
+  .slideshowHome li.n-slides-4 .segment1 {
+    width: 393px;
+    left: 0px; }
+
+  /* line 56, src/scss/desktop/module/_home-small.scss */
+  .slideshowHome li.n-slides-4 .segment2 {
+    width: 195px;
+    left: 393px; }
+
+  /* line 61, src/scss/desktop/module/_home-small.scss */
+  .slideshowHome li.n-slides-4 .segment3 {
+    width: 37px;
+    left: 588px; }
+
+  /* line 66, src/scss/desktop/module/_home-small.scss */
+  .slideshowHome li.n-slides-4 .segment4 {
+    width: 143px;
+    left: 625px; }
+
+  /* line 71, src/scss/desktop/module/_home-small.scss */
+  .slideshowHome li.n-slides-3 .segment1 {
+    width: 392px;
+    left: 0px; }
+
+  /* line 76, src/scss/desktop/module/_home-small.scss */
+  .slideshowHome li.n-slides-3 .segment2 {
+    width: 195px;
+    left: 392px; }
+
+  /* line 81, src/scss/desktop/module/_home-small.scss */
+  .slideshowHome li.n-slides-3 .segment3 {
+    width: 180px;
+    left: 587px; }
+
+  /* line 86, src/scss/desktop/module/_home-small.scss */
+  .slideshowHome li .segment1 img.visuel {
+    position: absolute;
+    left: 0px; }
+
+  /* line 91, src/scss/desktop/module/_home-small.scss */
+  .slideshowHome li .segment2 img.visuel {
+    position: absolute;
+    left: -393px; }
+
+  /* line 96, src/scss/desktop/module/_home-small.scss */
+  .slideshowHome li .segment3 img.visuel {
+    position: absolute;
+    left: -588px; }
+
+  /* line 101, src/scss/desktop/module/_home-small.scss */
+  .slideshowHome li .segment4 img.visuel {
+    position: absolute;
+    left: -625px; }
+
+  /* line 106, src/scss/desktop/module/_home-small.scss */
+  .slideshowHome li .link_to {
+    top: 0%;
+    /*left:52%;
+    padding-top:36%;
+    padding-bottom:53%;*/
+    padding-top: 275px;
+    padding-bottom: 300px;
+    left: 398px;
+    width: 180px;
+    -webkit-transition: 0s;
+    -moz-transition: 0s;
+    -o-transition: 0s;
+    -ms-transition: 0s;
+    transition: 0s; }
+
+  /* line 123, src/scss/desktop/module/_home-small.scss */
+  .slideshowHome li .second_link {
+    top: 0%;
+    /*left:52%;
+    padding-top:36%;
+    padding-bottom:53%;*/
+    padding-top: 260px;
+    padding-bottom: 300px;
+    left: 398px;
+    width: 180px; }
+
+  /* line 135, src/scss/desktop/module/_home-small.scss */
+  .slideshowHome li .text_mention {
+    width: 150px; }
+
+  /* line 139, src/scss/desktop/module/_home-small.scss */
+  .legal-popin {
+    width: 240px;
+    padding: 20px 25px 25px;
+    line-height: 16px; }
+    /* line 143, src/scss/desktop/module/_home-small.scss */
+    .legal-popin p {
+      font-family: 'HelveticaNeue', 'Helvetica', 'arial', sans-serif;
+      font-size: 10px;
+      font-weight: normal;
+      line-height: 16px; }
+      /* line 55, src/scss/common/_fonts.scss */
+      .ja_JP .legal-popin p {
+        font-family: "abchanel-couture", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Arial, "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", "Roboto", "Droid Sans", sans-serif; }
+      /* line 59, src/scss/common/_fonts.scss */
+      .ru_RU .legal-popin p {
+        font-family: "abchanel-couture", Helvetica, Arial, sans-serif; }
+      /* line 63, src/scss/common/_fonts.scss */
+      .zh_CN .legal-popin p {
+        font-family: "abchanel-couture", "华文细黑", STXiHei, "微软雅黑", "Microsoft Yahei", "华文黑体", "ST Heiti", "MS黑体", "MS Hei", sans-serif; }
+      /* line 67, src/scss/common/_fonts.scss */
+      .zh_TW .legal-popin p {
+        font-family: "abchanel-couture", "微軟正黑體", "Microsoft JhengHei", "儷黑 Pro", "LiHei Pro", "Arial Unicode MS", sans-serif; }
+      /* line 71, src/scss/common/_fonts.scss */
+      .ko_KR .legal-popin p {
+        font-family: "abchanel-couture", "맑은고딕", "Malgun Gothic", "Apple Gothic", "돋움", Dotum, "굴림", Gulim, sans-serif; }
+      /* line 147, src/scss/desktop/module/_home-small.scss */
+      .ru_RU .legal-popin p {
+        font-family: Helvetica, Arial, sans-serif; }
+    /* line 151, src/scss/desktop/module/_home-small.scss */
+    .legal-popin span {
+      font-size: 10px; }
+
+  /* line 157, src/scss/desktop/module/_home-small.scss */
+  #centerblock.hp-watches,
+  #centerblock.hp-jewelry {
+    width: 770px;
+    height: 552px; }
+    /* line 162, src/scss/desktop/module/_home-small.scss */
+    #centerblock.hp-watches .item,
+    #centerblock.hp-jewelry .item {
+      height: 100%; }
+    /* line 166, src/scss/desktop/module/_home-small.scss */
+    #centerblock.hp-watches h2,
+    #centerblock.hp-jewelry h2 {
+      font-family: "abchanel-couture", sans-serif;
+      font-size: 14px;
+      font-weight: normal;
+      bottom: 44px; }
+      /* line 55, src/scss/common/_fonts.scss */
+      .ja_JP #centerblock.hp-watches h2, .ja_JP
+      #centerblock.hp-jewelry h2 {
+        font-family: "abchanel-couture", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Arial, "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", "Roboto", "Droid Sans", sans-serif; }
+      /* line 59, src/scss/common/_fonts.scss */
+      .ru_RU #centerblock.hp-watches h2, .ru_RU
+      #centerblock.hp-jewelry h2 {
+        font-family: "abchanel-couture", Helvetica, Arial, sans-serif; }
+      /* line 63, src/scss/common/_fonts.scss */
+      .zh_CN #centerblock.hp-watches h2, .zh_CN
+      #centerblock.hp-jewelry h2 {
+        font-family: "abchanel-couture", "华文细黑", STXiHei, "微软雅黑", "Microsoft Yahei", "华文黑体", "ST Heiti", "MS黑体", "MS Hei", sans-serif; }
+      /* line 67, src/scss/common/_fonts.scss */
+      .zh_TW #centerblock.hp-watches h2, .zh_TW
+      #centerblock.hp-jewelry h2 {
+        font-family: "abchanel-couture", "微軟正黑體", "Microsoft JhengHei", "儷黑 Pro", "LiHei Pro", "Arial Unicode MS", sans-serif; }
+      /* line 71, src/scss/common/_fonts.scss */
+      .ko_KR #centerblock.hp-watches h2, .ko_KR
+      #centerblock.hp-jewelry h2 {
+        font-family: "abchanel-couture", "맑은고딕", "Malgun Gothic", "Apple Gothic", "돋움", Dotum, "굴림", Gulim, sans-serif; }
+    /* line 171, src/scss/desktop/module/_home-small.scss */
+    #centerblock.hp-watches img,
+    #centerblock.hp-jewelry img {
+      height: auto;
+      position: relative;
+      top: -6px; }
+    /* line 177, src/scss/desktop/module/_home-small.scss */
+    #centerblock.hp-watches .puce-nav,
+    #centerblock.hp-jewelry .puce-nav {
+      bottom: 15px; }
+      /* line 180, src/scss/desktop/module/_home-small.scss */
+      #centerblock.hp-watches .puce-nav li span,
+      #centerblock.hp-jewelry .puce-nav li span {
+        background: url(/watches-finejewelry/template/desktop/img/puce-slide-small.png) no-repeat left center; }
+      /* line 183, src/scss/desktop/module/_home-small.scss */
+      #centerblock.hp-watches .puce-nav li.active span,
+      #centerblock.hp-jewelry .puce-nav li.active span {
+        background: url(/watches-finejewelry/template/desktop/img/puce-slide-small.png) no-repeat right center; }
+
+  /* line 4, src/scss/desktop/module/_details_product-small.scss */
+  #centerblock .full-img img {
+    width: 95%; }
+  /* line 9, src/scss/desktop/module/_details_product-small.scss */
+  #centerblock.jewelry .prd_details_l img {
+    width: 337px;
+    height: 337px; }
+  /* line 14, src/scss/desktop/module/_details_product-small.scss */
+  #centerblock.jewelry #slideshow-container {
+    height: 337px; }
+    /* line 16, src/scss/desktop/module/_details_product-small.scss */
+    #centerblock.jewelry #slideshow-container #slideshow-prd {
+      height: 337px; }
+  /* line 23, src/scss/desktop/module/_details_product-small.scss */
+  #centerblock.watches .prd_details_l img {
+    width: 258px;
+    height: 405px; }
+  /* line 28, src/scss/desktop/module/_details_product-small.scss */
+  #centerblock.watches #slideshow-container {
+    height: 350px; }
+    /* line 30, src/scss/desktop/module/_details_product-small.scss */
+    #centerblock.watches #slideshow-container #slideshow-prd {
+      height: 350px; }
+  /* line 36, src/scss/desktop/module/_details_product-small.scss */
+  #centerblock .prd_details #more_product {
+    margin: 40px 0 0 0;
+    min-height: 510px; }
+    /* line 39, src/scss/desktop/module/_details_product-small.scss */
+    #centerblock .prd_details #more_product .changeslideshow {
+      margin: 50px 0 20px;
+      padding: 0 0 20px 0; }
+      /* line 42, src/scss/desktop/module/_details_product-small.scss */
+      #centerblock .prd_details #more_product .changeslideshow li {
+        margin: 0 32px; }
+    /* line 46, src/scss/desktop/module/_details_product-small.scss */
+    #centerblock .prd_details #more_product #slideshow-container {
+      width: 762px; }
+      /* line 48, src/scss/desktop/module/_details_product-small.scss */
+      #centerblock .prd_details #more_product #slideshow-container .slide-prev,
+      #centerblock .prd_details #more_product #slideshow-container .slide-next {
+        bottom: 25px; }
+  /* line 54, src/scss/desktop/module/_details_product-small.scss */
+  #centerblock .prd_details #prd_details_main {
+    padding: 20px 50px 0 20px;
+    min-height: 530px; }
+    /* line 57, src/scss/desktop/module/_details_product-small.scss */
+    #centerblock .prd_details #prd_details_main .nav_prd_coll {
+      right: 16px;
+      top: 30px; }
+    /* line 61, src/scss/desktop/module/_details_product-small.scss */
+    #centerblock .prd_details #prd_details_main .prd_details_l {
+      width: 379px; }
+    /* line 64, src/scss/desktop/module/_details_product-small.scss */
+    #centerblock .prd_details #prd_details_main .prd_details_r {
+      padding-top: 48px;
+      width: 295px; }
+      /* line 67, src/scss/desktop/module/_details_product-small.scss */
+      #centerblock .prd_details #prd_details_main .prd_details_r h1 {
+        margin: 0 0 26px;
+        width: 270px; }
+      /* line 73, src/scss/desktop/module/_details_product-small.scss */
+      #centerblock .prd_details #prd_details_main .prd_details_r .link_list li .contact-info {
+        height: 35px; }
+        /* line 75, src/scss/desktop/module/_details_product-small.scss */
+        #centerblock .prd_details #prd_details_main .prd_details_r .link_list li .contact-info span.contact-info-plus {
+          width: 195px; }
+  /* line 82, src/scss/desktop/module/_details_product-small.scss */
+  #centerblock .prd_details #prd_visual {
+    height: 550px;
+    line-height: 550px; }
+  /* line 86, src/scss/desktop/module/_details_product-small.scss */
+  #centerblock .prd_details #prd_txt {
+    padding: 0 108px; }
+    /* line 88, src/scss/desktop/module/_details_product-small.scss */
+    #centerblock .prd_details #prd_txt p {
+      line-height: 280px;
+      height: 280px; }
+  /* line 93, src/scss/desktop/module/_details_product-small.scss */
+  #centerblock .prd_details #prd_video {
+    height: 562px; }
+    /* line 95, src/scss/desktop/module/_details_product-small.scss */
+    #centerblock .prd_details #prd_video .inner_video {
+      line-height: 550px; }
+      /* line 97, src/scss/desktop/module/_details_product-small.scss */
+      #centerblock .prd_details #prd_video .inner_video .playerWrapper {
+        width: 670px !important;
+        height: 414px !important; }
+    /* line 102, src/scss/desktop/module/_details_product-small.scss */
+    #centerblock .prd_details #prd_video .inner_visuel {
+      padding: 20px 50px; }
+      /* line 104, src/scss/desktop/module/_details_product-small.scss */
+      #centerblock .prd_details #prd_video .inner_visuel .video_txt {
+        width: 670px;
+        height: 452px; }
+        /* line 107, src/scss/desktop/module/_details_product-small.scss */
+        #centerblock .prd_details #prd_video .inner_visuel .video_txt .video_border {
+          top: 70px;
+          left: 64px;
+          width: 538px;
+          height: 303px; }
+
+  /* Debug IE7 */
+  /* line 121, src/scss/desktop/module/_details_product-small.scss */
+  .ie7 .nav_prd_coll {
+    width: 50px !important; }
+
+  /* line 2, src/scss/desktop/module/_details_collection-small.scss */
+  #centerblock .details_collection {
+    padding-top: 34px; }
+    /* line 5, src/scss/desktop/module/_details_collection-small.scss */
+    #centerblock .details_collection .hr {
+      margin-bottom: 0; }
+    /* line 8, src/scss/desktop/module/_details_collection-small.scss */
+    #centerblock .details_collection .no-more-button {
+      margin-bottom: 90px; }
+    /* line 11, src/scss/desktop/module/_details_collection-small.scss */
+    #centerblock .details_collection .more-button {
+      margin: 30px 0 90px; }
+    /* line 16, src/scss/desktop/module/_details_collection-small.scss */
+    #centerblock .details_collection .more-button span,
+    #centerblock .details_collection .more-button a,
+    #centerblock .details_collection .less-button span,
+    #centerblock .details_collection .less-button a {
+      padding: 8px 15px; }
+    /* line 20, src/scss/desktop/module/_details_collection-small.scss */
+    #centerblock .details_collection .more-button.more-bracelets,
+    #centerblock .details_collection .less-button.more-bracelets {
+      margin-top: 40px; }
+    /* line 23, src/scss/desktop/module/_details_collection-small.scss */
+    #centerblock .details_collection .more-button.more-earrings,
+    #centerblock .details_collection .less-button.more-earrings {
+      margin-bottom: 90px; }
+    /* line 27, src/scss/desktop/module/_details_collection-small.scss */
+    #centerblock .details_collection .collection_push {
+      margin-bottom: 120px; }
+      /* line 29, src/scss/desktop/module/_details_collection-small.scss */
+      #centerblock .details_collection .collection_push .collection_push_inner {
+        padding: 28px 40px; }
+        /* line 31, src/scss/desktop/module/_details_collection-small.scss */
+        #centerblock .details_collection .collection_push .collection_push_inner h4 {
+          padding-bottom: 20px; }
+        /* line 34, src/scss/desktop/module/_details_collection-small.scss */
+        #centerblock .details_collection .collection_push .collection_push_inner .ico_arrow {
+          padding: 0 15px 0 0; }
+    /* line 40, src/scss/desktop/module/_details_collection-small.scss */
+    #centerblock .details_collection .prd-infos p {
+      line-height: 10px !important;
+      margin-bottom: 15px; }
+    /* line 45, src/scss/desktop/module/_details_collection-small.scss */
+    #centerblock .details_collection .prd-infos .ref .product-ref {
+      padding-right: 10px; }
+    /* line 48, src/scss/desktop/module/_details_collection-small.scss */
+    #centerblock .details_collection .prd-infos .ref .product-price {
+      padding-left: 10px; }
+    /* line 52, src/scss/desktop/module/_details_collection-small.scss */
+    #centerblock .details_collection .prd-infos .details_link {
+      margin-bottom: 30px; }
+      /* line 54, src/scss/desktop/module/_details_collection-small.scss */
+      #centerblock .details_collection .prd-infos .details_link .details {
+        display: inline-block;
+        width: 60%;
+        margin-bottom: 0 !important; }
+    /* line 60, src/scss/desktop/module/_details_collection-small.scss */
+    #centerblock .details_collection .prd-infos .object-desc {
+      padding: 0 24px 0;
+      font-weight: bold; }
+    /* line 66, src/scss/desktop/module/_details_collection-small.scss */
+    #centerblock .details_collection .star {
+      padding: 12px 12px 0 0; }
+    /* line 69, src/scss/desktop/module/_details_collection-small.scss */
+    #centerblock .details_collection .more-collections {
+      padding-bottom: 18px; }
+      /* line 71, src/scss/desktop/module/_details_collection-small.scss */
+      #centerblock .details_collection .more-collections h2 {
+        padding: 40px 0 50px; }
+    /* line 75, src/scss/desktop/module/_details_collection-small.scss */
+    #centerblock .details_collection .editions_exclusives {
+      height: 380px;
+      padding: 55px 50px; }
+      /* line 79, src/scss/desktop/module/_details_collection-small.scss */
+      #centerblock .details_collection .editions_exclusives .exclu-img .exclu-txt {
+        height: 380px;
+        line-height: 380px; }
+        /* line 83, src/scss/desktop/module/_details_collection-small.scss */
+        #centerblock .details_collection .editions_exclusives .exclu-img .exclu-txt span a {
+          display: inline-block;
+          border: 1px solid #fff;
+          padding: 0 30px;
+          height: 24px;
+          line-height: 24px; }
+    /* line 95, src/scss/desktop/module/_details_collection-small.scss */
+    #centerblock .details_collection .coco.description {
+      margin-top: -34px;
+      height: 340px;
+      padding-top: 30px; }
+    /* line 100, src/scss/desktop/module/_details_collection-small.scss */
+    #centerblock .details_collection .coco .coco-title {
+      padding-bottom: 30px; }
+      /* line 102, src/scss/desktop/module/_details_collection-small.scss */
+      #centerblock .details_collection .coco .coco-title img {
+        width: 70%; }
+    /* line 106, src/scss/desktop/module/_details_collection-small.scss */
+    #centerblock .details_collection .coco .desc {
+      padding: 0 15% 30px; }
+    /* line 111, src/scss/desktop/module/_details_collection-small.scss */
+    #centerblock .details_collection .univers_link .discover {
+      margin-bottom: 30px; }
+    /* line 117, src/scss/desktop/module/_details_collection-small.scss */
+    #centerblock .details_collection .boy-friend h1 span {
+      font-size: 32px; }
+    /* line 121, src/scss/desktop/module/_details_collection-small.scss */
+    #centerblock .details_collection .boy-friend .desc {
+      padding-left: 13%;
+      padding-right: 13%; }
+    /* line 126, src/scss/desktop/module/_details_collection-small.scss */
+    #centerblock .details_collection .boy-friend .discover {
+      margin-bottom: 10px; }
+
+  /* line 18, src/scss/desktop/module/_camelia_galbe-small.scss */
+  #camelia_galbe_mobile {
+    background: #000;
+    height: 100%;
+    text-align: center;
+    font-family: 'Chanel', arial, sans-serif; }
+    /* line 23, src/scss/desktop/module/_camelia_galbe-small.scss */
+    #camelia_galbe_mobile header {
+      padding: 15px 0 7px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #000;
+      border-bottom: 1px solid #808080;
+      z-index: 9;
+      font-size: 1.4em; }
+      /* line 34, src/scss/desktop/module/_camelia_galbe-small.scss */
+      #camelia_galbe_mobile header img {
+        display: block;
+        margin: 0 auto 5px;
+        width: 120px; }
+      /* line 39, src/scss/desktop/module/_camelia_galbe-small.scss */
+      #camelia_galbe_mobile header a {
+        color: #fff; }
+      /* line 42, src/scss/desktop/module/_camelia_galbe-small.scss */
+      #camelia_galbe_mobile header + section {
+        margin-top: 68px; }
+    /* line 46, src/scss/desktop/module/_camelia_galbe-small.scss */
+    #camelia_galbe_mobile section {
+      overflow: hidden; }
+      /* line 48, src/scss/desktop/module/_camelia_galbe-small.scss */
+      #camelia_galbe_mobile section .find_at_proximity {
+        font-size: 1.1em;
+        padding: 11px 0 10px; }
+      /* line 52, src/scss/desktop/module/_camelia_galbe-small.scss */
+      #camelia_galbe_mobile section .see-collection {
+        display: block;
+        padding: 5px 15px;
+        margin-bottom: 15px;
+        text-align: center;
+        font-size: 1.1em;
+        line-height: 1.5;
+        text-transform: uppercase;
+        color: #fff; }
+      /* line 62, src/scss/desktop/module/_camelia_galbe-small.scss */
+      #camelia_galbe_mobile section.home {
+        padding-bottom: 56px;
+        position: relative; }
+        /* line 65, src/scss/desktop/module/_camelia_galbe-small.scss */
+        #camelia_galbe_mobile section.home .camelia_title {
+          position: absolute;
+          width: 100%;
+          top: 20px;
+          font-size: 2.4em;
+          text-align: center;
+          left: 0; }
+          /* line 73, src/scss/desktop/module/_camelia_galbe-small.scss */
+          .ja_JP #camelia_galbe_mobile section.home .camelia_title {
+            font-size: 1.8em; }
+        /* line 77, src/scss/desktop/module/_camelia_galbe-small.scss */
+        #camelia_galbe_mobile section.home img {
+          max-width: 100%;
+          width: 100%;
+          display: block; }
+        /* line 82, src/scss/desktop/module/_camelia_galbe-small.scss */
+        #camelia_galbe_mobile section.home div.legals {
+          display: block;
+          background: #000;
+          border-top: 1px #808080 solid;
+          margin-bottom: 11px;
+          margin-top: 5px;
+          padding: 11px 0 0;
+          text-align: center;
+          z-index: 9999; }
+          /* line 91, src/scss/desktop/module/_camelia_galbe-small.scss */
+          #camelia_galbe_mobile section.home div.legals a {
+            display: inline-block;
+            text-align: center;
+            font-size: 1.1em;
+            line-height: 1.5;
+            text-transform: uppercase; }
+            /* line 97, src/scss/desktop/module/_camelia_galbe-small.scss */
+            #camelia_galbe_mobile section.home div.legals a + a {
+              margin-left: 10px; }
+      /* line 103, src/scss/desktop/module/_camelia_galbe-small.scss */
+      #camelia_galbe_mobile section.stores {
+        padding-bottom: 56px; }
+        /* line 105, src/scss/desktop/module/_camelia_galbe-small.scss */
+        #camelia_galbe_mobile section.stores .current-location {
+          display: block;
+          background: #171717;
+          padding: 0 15px;
+          text-align: center;
+          margin-bottom: 15px;
+          font-size: 1.1em;
+          line-height: 1.5;
+          text-transform: uppercase;
+          color: #fff; }
+          /* line 115, src/scss/desktop/module/_camelia_galbe-small.scss */
+          #camelia_galbe_mobile section.stores .current-location span {
+            display: inline-block;
+            padding: 15px 0 15px 40px;
+            background: url(/watches-finejewelry/assets/camelia_galbe/img/camelia_galbe_localisation.png) no-repeat 0 50%; }
+        /* line 121, src/scss/desktop/module/_camelia_galbe-small.scss */
+        #camelia_galbe_mobile section.stores form {
+          display: block;
+          background: #171717;
+          padding: 20px;
+          text-align: right; }
+          /* line 126, src/scss/desktop/module/_camelia_galbe-small.scss */
+          #camelia_galbe_mobile section.stores form span.placeholder {
+            left: 20px;
+            right: 20px;
+            height: 40px;
+            line-height: 40px;
+            padding-left: 8px;
+            position: absolute;
+            background: #FFF;
+            color: #7a7b7d;
+            text-transform: uppercase;
+            font-family: 'Chanel', arial, sans-serif;
+            text-align: left; }
+            /* line 138, src/scss/desktop/module/_camelia_galbe-small.scss */
+            #camelia_galbe_mobile section.stores form span.placeholder.selectable, #camelia_galbe_mobile section.stores form span.placeholder.country_placeholder {
+              pointer-events: none;
+              color: #000; }
+          /* line 143, src/scss/desktop/module/_camelia_galbe-small.scss */
+          #camelia_galbe_mobile section.stores form select {
+            -webkit-appearance: listbox;
+            display: block;
+            margin-bottom: 15px;
+            width: 100%;
+            color: #7a7b7d;
+            text-transform: uppercase;
+            font-family: 'Chanel', arial, sans-serif;
+            text-align: left;
+            height: 40px;
+            line-height: 40px;
+            border: 1px solid #999; }
+            /* line 155, src/scss/desktop/module/_camelia_galbe-small.scss */
+            #camelia_galbe_mobile section.stores form select.hidden {
+              display: none; }
+          /* line 159, src/scss/desktop/module/_camelia_galbe-small.scss */
+          #camelia_galbe_mobile section.stores form button {
+            background: none;
+            border: none;
+            color: #808080;
+            text-transform: uppercase;
+            font-family: 'Chanel', arial, sans-serif;
+            cursor: pointer; }
+            /* line 166, src/scss/desktop/module/_camelia_galbe-small.scss */
+            #camelia_galbe_mobile section.stores form button span {
+              text-decoration: underline; }
+        /* line 171, src/scss/desktop/module/_camelia_galbe-small.scss */
+        #camelia_galbe_mobile section.stores .search_result {
+          background: #fff;
+          color: #000;
+          display: block;
+          text-align: left;
+          position: relative;
+          opacity: 0;
+          height: 1px;
+          -moz-transition: opacity 200ms linear;
+          -webkit-transition: opacity 200ms linear;
+          transition: opacity 200ms linear; }
+          /* line 180, src/scss/desktop/module/_camelia_galbe-small.scss */
+          #camelia_galbe_mobile section.stores .search_result.displayed {
+            opacity: 1;
+            padding: 20px;
+            height: auto; }
+          /* line 185, src/scss/desktop/module/_camelia_galbe-small.scss */
+          #camelia_galbe_mobile section.stores .search_result strong {
+            font-size: 1.1em;
+            text-transform: uppercase;
+            font-weight: normal; }
+          /* line 190, src/scss/desktop/module/_camelia_galbe-small.scss */
+          #camelia_galbe_mobile section.stores .search_result span.back {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            text-transform: none;
+            color: #808080;
+            cursor: pointer;
+            padding: 5px; }
+          /* line 199, src/scss/desktop/module/_camelia_galbe-small.scss */
+          #camelia_galbe_mobile section.stores .search_result hr {
+            margin: 12px 0; }
+          /* line 202, src/scss/desktop/module/_camelia_galbe-small.scss */
+          #camelia_galbe_mobile section.stores .search_result article {
+            margin-bottom: 15px;
+            font-size: 0.91em;
+            line-height: 1.5; }
+            /* line 206, src/scss/desktop/module/_camelia_galbe-small.scss */
+            #camelia_galbe_mobile section.stores .search_result article a {
+              text-decoration: underline; }
+              /* line 208, src/scss/desktop/module/_camelia_galbe-small.scss */
+              #camelia_galbe_mobile section.stores .search_result article a:hover {
+                color: #999; }
+            /* line 212, src/scss/desktop/module/_camelia_galbe-small.scss */
+            #camelia_galbe_mobile section.stores .search_result article span {
+              color: #999; }
+            /* line 215, src/scss/desktop/module/_camelia_galbe-small.scss */
+            #camelia_galbe_mobile section.stores .search_result article:last-child {
+              margin-bottom: 35px; }
+        /* line 220, src/scss/desktop/module/_camelia_galbe-small.scss */
+        #camelia_galbe_mobile section.stores div.legals {
+          display: block;
+          background: #000;
+          border-top: 1px #808080 solid;
+          margin-top: 75px;
+          padding: 11px 0;
+          text-align: center;
+          z-index: 9999; }
+          /* line 228, src/scss/desktop/module/_camelia_galbe-small.scss */
+          #camelia_galbe_mobile section.stores div.legals a {
+            display: inline-block;
+            text-align: center;
+            font-size: 1.1em;
+            line-height: 1.5;
+            text-transform: uppercase; }
+            /* line 234, src/scss/desktop/module/_camelia_galbe-small.scss */
+            #camelia_galbe_mobile section.stores div.legals a + a {
+              margin-left: 10px; }
+        /* line 239, src/scss/desktop/module/_camelia_galbe-small.scss */
+        #camelia_galbe_mobile section.stores .search_result.displayed + div.legals {
+          margin-top: 0; }
+      /* line 243, src/scss/desktop/module/_camelia_galbe-small.scss */
+      #camelia_galbe_mobile section.specificities {
+        height: 100%;
+        position: relative; }
+        /* line 246, src/scss/desktop/module/_camelia_galbe-small.scss */
+        #camelia_galbe_mobile section.specificities .slideshow-arrow-prev, #camelia_galbe_mobile section.specificities .slideshow-arrow-next {
+          background-image: url("/watches-finejewelry/assets/camelia_galbe/img/css-sprites.png");
+          top: 50%;
+          margin-top: -82px; }
+        /* line 251, src/scss/desktop/module/_camelia_galbe-small.scss */
+        #camelia_galbe_mobile section.specificities .slideshow-arrow-prev {
+          background-position: -10px -5px;
+          left: 0; }
+        /* line 255, src/scss/desktop/module/_camelia_galbe-small.scss */
+        #camelia_galbe_mobile section.specificities .slideshow-arrow-next {
+          background-position: -64px -5px;
+          right: 0; }
+        /* line 259, src/scss/desktop/module/_camelia_galbe-small.scss */
+        #camelia_galbe_mobile section.specificities .slider_collection {
+          position: relative;
+          height: 100%;
+          display: none;
+          display: block !important;
+          opacity: 0.05; }
+          /* line 265, src/scss/desktop/module/_camelia_galbe-small.scss */
+          #camelia_galbe_mobile section.specificities .slider_collection .slide {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            padding-top: 0;
+            display: none; }
+            /* line 271, src/scss/desktop/module/_camelia_galbe-small.scss */
+            #camelia_galbe_mobile section.specificities .slider_collection .slide img {
+              width: 100%;
+              display: block;
+              margin: 0 auto; }
+            /* line 276, src/scss/desktop/module/_camelia_galbe-small.scss */
+            #camelia_galbe_mobile section.specificities .slider_collection .slide strong {
+              display: block;
+              font-size: 1.4em;
+              text-align: center; }
+            /* line 281, src/scss/desktop/module/_camelia_galbe-small.scss */
+            #camelia_galbe_mobile section.specificities .slider_collection .slide .more {
+              left: -5px;
+              position: relative; }
+              /* line 284, src/scss/desktop/module/_camelia_galbe-small.scss */
+              #camelia_galbe_mobile section.specificities .slider_collection .slide .more i {
+                display: inline-block;
+                width: 4px;
+                height: 7px;
+                margin-right: 10px;
+                background: url(/watches-finejewelry/assets/camelia_galbe/img/arrow-right_mobile.png) no-repeat 0 0; }
+            /* line 292, src/scss/desktop/module/_camelia_galbe-small.scss */
+            #camelia_galbe_mobile section.specificities .slider_collection .slide .more.deployed i {
+              background: url(/watches-finejewelry/assets/camelia_galbe/img/arrow-down.png) no-repeat 0 0;
+              width: 7px;
+              height: 4px;
+              margin-right: 7px;
+              margin-bottom: 3px; }
+            /* line 299, src/scss/desktop/module/_camelia_galbe-small.scss */
+            #camelia_galbe_mobile section.specificities .slider_collection .slide div {
+              display: none;
+              padding: 10px 20px;
+              line-height: 1.4; }
+              /* line 304, src/scss/desktop/module/_camelia_galbe-small.scss */
+              #camelia_galbe_mobile section.specificities .slider_collection .slide div.details_collection {
+                padding: 10px 20px 30px 20px; }
+              /* line 307, src/scss/desktop/module/_camelia_galbe-small.scss */
+              #camelia_galbe_mobile section.specificities .slider_collection .slide div span {
+                display: block; }
+                /* line 309, src/scss/desktop/module/_camelia_galbe-small.scss */
+                #camelia_galbe_mobile section.specificities .slider_collection .slide div span.descr {
+                  margin-bottom: 10px; }
+                /* line 312, src/scss/desktop/module/_camelia_galbe-small.scss */
+                #camelia_galbe_mobile section.specificities .slider_collection .slide div span.notice {
+                  color: #808080;
+                  font-family: Arial, Helvetica, sans-serif; }
+                /* line 316, src/scss/desktop/module/_camelia_galbe-small.scss */
+                #camelia_galbe_mobile section.specificities .slider_collection .slide div span.ref {
+                  margin-bottom: 10px; }
+                /* line 319, src/scss/desktop/module/_camelia_galbe-small.scss */
+                #camelia_galbe_mobile section.specificities .slider_collection .slide div span.price {
+                  font-size: 1.2em; }
+                /* line 322, src/scss/desktop/module/_camelia_galbe-small.scss */
+                #camelia_galbe_mobile section.specificities .slider_collection .slide div span.info_price {
+                  font-size: 0.9em;
+                  font-family: Arial, Helvetica, sans-serif; }
+              /* line 327, src/scss/desktop/module/_camelia_galbe-small.scss */
+              #camelia_galbe_mobile section.specificities .slider_collection .slide div hr {
+                margin-bottom: 10px; }
+              /* line 331, src/scss/desktop/module/_camelia_galbe-small.scss */
+              #camelia_galbe_mobile section.specificities .slider_collection .slide div #box-price {
+                display: block; }
+            /* line 335, src/scss/desktop/module/_camelia_galbe-small.scss */
+            #camelia_galbe_mobile section.specificities .slider_collection .slide div.legals {
+              display: block;
+              margin: 0 -20px;
+              padding: 11px 0 0; }
+            /* line 340, src/scss/desktop/module/_camelia_galbe-small.scss */
+            #camelia_galbe_mobile section.specificities .slider_collection .slide.slide_text {
+              display: block;
+              overflow: auto; }
+              /* line 343, src/scss/desktop/module/_camelia_galbe-small.scss */
+              #camelia_galbe_mobile section.specificities .slider_collection .slide.slide_text div.legals {
+                display: block;
+                margin: 0 0 0;
+                padding: 11px 0; }
+        /* line 351, src/scss/desktop/module/_camelia_galbe-small.scss */
+        #camelia_galbe_mobile section.specificities p {
+          text-align: center;
+          line-height: 1.5;
+          margin: 20px 25px 0;
+          color: #808080; }
+          /* line 357, src/scss/desktop/module/_camelia_galbe-small.scss */
+          #camelia_galbe_mobile section.specificities p span {
+            color: #fff;
+            font-size: 1.1em;
+            display: block; }
+        /* line 363, src/scss/desktop/module/_camelia_galbe-small.scss */
+        #camelia_galbe_mobile section.specificities div.legals {
+          display: block;
+          background: #000;
+          border-top: 1px #808080 solid;
+          margin-bottom: 11px;
+          padding: 11px 0 0;
+          text-align: center;
+          z-index: 9999; }
+          /* line 371, src/scss/desktop/module/_camelia_galbe-small.scss */
+          #camelia_galbe_mobile section.specificities div.legals a {
+            display: inline-block;
+            text-align: center;
+            font-size: 1.1em;
+            line-height: 1.5;
+            text-transform: uppercase; }
+            /* line 377, src/scss/desktop/module/_camelia_galbe-small.scss */
+            #camelia_galbe_mobile section.specificities div.legals a + a {
+              margin-left: 10px; }
+    /* line 384, src/scss/desktop/module/_camelia_galbe-small.scss */
+    #camelia_galbe_mobile nav {
+      background: #f00;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #000;
+      border-top: 1px #808080 solid;
+      padding: 11px 0;
+      text-align: justify;
+      z-index: 9999; }
+      /* line 395, src/scss/desktop/module/_camelia_galbe-small.scss */
+      #camelia_galbe_mobile nav > a {
+        float: left;
+        width: 50%;
+        text-align: center;
+        font-size: 1.1em;
+        line-height: 1.5;
+        text-transform: uppercase;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box; }
+        /* line 403, src/scss/desktop/module/_camelia_galbe-small.scss */
+        #camelia_galbe_mobile nav > a + a {
+          border-left: 2px solid #808080; }
+        /* line 406, src/scss/desktop/module/_camelia_galbe-small.scss */
+        #camelia_galbe_mobile nav > a.active {
+          color: #fff;
+          cursor: default; }
+      /* line 411, src/scss/desktop/module/_camelia_galbe-small.scss */
+      #camelia_galbe_mobile nav div {
+        display: block;
+        background: #000;
+        border-bottom: 1px #808080 solid;
+        margin-bottom: 11px;
+        padding: 0 0 5px;
+        text-align: center;
+        z-index: 9999; }
+        /* line 419, src/scss/desktop/module/_camelia_galbe-small.scss */
+        #camelia_galbe_mobile nav div a {
+          display: inline-block;
+          text-align: center;
+          font-size: 1.1em;
+          line-height: 1.5;
+          text-transform: uppercase; }
+          /* line 425, src/scss/desktop/module/_camelia_galbe-small.scss */
+          #camelia_galbe_mobile nav div a + a {
+            margin-left: 10px; }
+    /* line 431, src/scss/desktop/module/_camelia_galbe-small.scss */
+    #camelia_galbe_mobile nav.reduced {
+      padding: 11px 0; }
+      /* line 433, src/scss/desktop/module/_camelia_galbe-small.scss */
+      #camelia_galbe_mobile nav.reduced div {
+        display: none; }
+
+  /* line 1, src/scss/desktop/module/_customer_services-small.scss */
+  #customer-services {
+    /*====================================*/
+    /* ENTRETIEN  */
+    /*====================================*/
+    /*====================================*/
+    /* SEVICES  */
+    /*====================================*/
+    /*====================================*/
+    /* GARANTIES  */
+    /*====================================*/
+    /*====================================*/
+    /* DEPOSER  */
+    /*====================================*/
+    /*====================================*/
+    /* CREDITS  */
+    /*====================================*/
+    /*====================================*/
+    /* QUATRE VISUELS   */
+    /*====================================*/
+    /*====================================*/
+    /* MODE D'EMPLOIS  */
+    /*====================================	*/
+    /* JEWELRY */ }
+    /* line 4, src/scss/desktop/module/_customer_services-small.scss */
+    #customer-services #leftblock a.changesection {
+      bottom: 20px; }
+    /* line 10, src/scss/desktop/module/_customer_services-small.scss */
+    #customer-services #centerblock_wild {
+      height: 540px; }
+      /* line 13, src/scss/desktop/module/_customer_services-small.scss */
+      #customer-services #centerblock_wild.no-padding {
+        padding: 0;
+        height: 562px !important; }
+      /* line 21, src/scss/desktop/module/_customer_services-small.scss */
+      #customer-services #centerblock_wild section a h2 {
+        padding: 0;
+        height: 43px;
+        font-size: 10px; }
+      /* line 28, src/scss/desktop/module/_customer_services-small.scss */
+      #customer-services #centerblock_wild section a .img-block {
+        height: 234px; }
+    /* line 35, src/scss/desktop/module/_customer_services-small.scss */
+    #customer-services #main-nav ul {
+      height: 263px;
+      padding: 18px 0 0 27px; }
+    /* line 40, src/scss/desktop/module/_customer_services-small.scss */
+    #customer-services #ss-nav ul {
+      height: 284px;
+      padding: 18px 0 0 27px; }
+      /* line 44, src/scss/desktop/module/_customer_services-small.scss */
+      #customer-services #ss-nav ul li {
+        margin: 5px 0; }
+    /* line 50, src/scss/desktop/module/_customer_services-small.scss */
+    #customer-services .col {
+      width: 46.5%; }
+    /* line 57, src/scss/desktop/module/_customer_services-small.scss */
+    #customer-services .box-info .question.active h4 {
+      background: url("/watches-finejewelry/assets/customer_services/img/close-question.gif") no-repeat right 28px; }
+    /* line 62, src/scss/desktop/module/_customer_services-small.scss */
+    #customer-services .box-info .question h4 {
+      oultine: 0;
+      background: url("/watches-finejewelry/assets/customer_services/img/open-question.gif") no-repeat right 28px;
+      width: 80%; }
+    /* line 73, src/scss/desktop/module/_customer_services-small.scss */
+    #customer-services .entretien {
+      padding: 5px 0 0 45px;
+      width: 656px; }
+    /* line 81, src/scss/desktop/module/_customer_services-small.scss */
+    #customer-services .services {
+      padding: 5px 0 0 45px;
+      width: 656px; }
+    /* line 89, src/scss/desktop/module/_customer_services-small.scss */
+    #customer-services .garanties {
+      padding: 5px 0 0 45px;
+      width: 656px; }
+    /* line 97, src/scss/desktop/module/_customer_services-small.scss */
+    #customer-services .deposer {
+      padding: 5px 0 0 53px;
+      width: 656px; }
+    /* line 106, src/scss/desktop/module/_customer_services-small.scss */
+    #customer-services .credits {
+      padding: 96px 0 0 33px; }
+      /* line 109, src/scss/desktop/module/_customer_services-small.scss */
+      #customer-services .credits #credit-visuel {
+        width: 87%; }
+        /* line 112, src/scss/desktop/module/_customer_services-small.scss */
+        #customer-services .credits #credit-visuel img {
+          width: 31%; }
+    /* line 122, src/scss/desktop/module/_customer_services-small.scss */
+    #customer-services .four-visu div {
+      min-height: 300px; }
+    /* line 132, src/scss/desktop/module/_customer_services-small.scss */
+    #customer-services .mode-emploi {
+      /* UN VISUELS */
+      /* DEUX VISUELS */
+      /*TROIS VISUELS */
+      /* QUATRES VISUELS */
+      /* CINQ VISUELS */
+      /* SIX VISUELS */
+      /* SEPT VISUELS */
+      /* HUIT VISUELS */
+      /* NEUF VISUELS */
+      /* DIX VISUELS */
+      /* ONZE VISUELS */ }
+      /* line 138, src/scss/desktop/module/_customer_services-small.scss */
+      #customer-services .mode-emploi .grid-1 .download-emploi {
+        width: 99.9%;
+        padding: 68px 0 0 0;
+        height: 494px; }
+        /* line 143, src/scss/desktop/module/_customer_services-small.scss */
+        #customer-services .mode-emploi .grid-1 .download-emploi img {
+          width: 25%; }
+      /* line 152, src/scss/desktop/module/_customer_services-small.scss */
+      #customer-services .mode-emploi .grid-2 .download-emploi {
+        width: 49.5%;
+        padding: 68px 0 0 0;
+        height: 494px;
+        position: relative; }
+        /* line 159, src/scss/desktop/module/_customer_services-small.scss */
+        #customer-services .mode-emploi .grid-2 .download-emploi img {
+          height: 100%; }
+        /* line 163, src/scss/desktop/module/_customer_services-small.scss */
+        #customer-services .mode-emploi .grid-2 .download-emploi a {
+          height: 62%; }
+      /* line 168, src/scss/desktop/module/_customer_services-small.scss */
+      #customer-services .mode-emploi .grid-2 span {
+        display: block;
+        position: absolute;
+        bottom: 10%;
+        left: 0;
+        text-align: center;
+        width: 100%; }
+      /* line 180, src/scss/desktop/module/_customer_services-small.scss */
+      #customer-services .mode-emploi .grid-3 .download-emploi {
+        width: 33.2%;
+        padding: 144px 0 0 0;
+        height: 407px; }
+      /* line 189, src/scss/desktop/module/_customer_services-small.scss */
+      #customer-services .mode-emploi .grid-4 .download-emploi {
+        width: 49.8%;
+        padding: 34px 0 0 0;
+        height: 241px;
+        border-bottom: 1px solid #e5e5e5; }
+        /* line 195, src/scss/desktop/module/_customer_services-small.scss */
+        #customer-services .mode-emploi .grid-4 .download-emploi img {
+          width: 22%; }
+        /* line 199, src/scss/desktop/module/_customer_services-small.scss */
+        #customer-services .mode-emploi .grid-4 .download-emploi span {
+          margin-top: 17px;
+          font-size: 12px; }
+      /* line 208, src/scss/desktop/module/_customer_services-small.scss */
+      #customer-services .mode-emploi .grid-5 .download-emploi, #customer-services .mode-emploi .grid-6 .download-emploi {
+        padding: 51px 0 0 0;
+        height: 229px; }
+        /* line 212, src/scss/desktop/module/_customer_services-small.scss */
+        #customer-services .mode-emploi .grid-5 .download-emploi span, #customer-services .mode-emploi .grid-6 .download-emploi span {
+          margin-top: 15px;
+          height: 55px; }
+      /* line 226, src/scss/desktop/module/_customer_services-small.scss */
+      #customer-services .mode-emploi .grid-7 .download-emploi, #customer-services .mode-emploi .grid-8 .download-emploi {
+        width: 24.8%;
+        padding: 51px 0 0 0;
+        height: 229px; }
+        /* line 231, src/scss/desktop/module/_customer_services-small.scss */
+        #customer-services .mode-emploi .grid-7 .download-emploi span, #customer-services .mode-emploi .grid-8 .download-emploi span {
+          margin-top: 15px;
+          height: 55px; }
+      /* line 245, src/scss/desktop/module/_customer_services-small.scss */
+      #customer-services .mode-emploi .grid-9 .download-emploi, #customer-services .mode-emploi .grid-12 .download-emploi {
+        width: 19.8%;
+        padding: 51px 0 0 0;
+        height: 229px; }
+        /* line 250, src/scss/desktop/module/_customer_services-small.scss */
+        #customer-services .mode-emploi .grid-9 .download-emploi span, #customer-services .mode-emploi .grid-12 .download-emploi span {
+          margin-top: 15px;
+          height: 55px;
+          font-size: 10px; }
+    /* line 285, src/scss/desktop/module/_customer_services-small.scss */
+    #customer-services.customer_services_jewelry .entretien .one-visu p {
+      margin: 110px 0 0 0; }
+    /* line 295, src/scss/desktop/module/_customer_services-small.scss */
+    #customer-services.customer_services_jewelry #deposer-montre h1 {
+      margin: 60px 0; }
+    /* line 306, src/scss/desktop/module/_customer_services-small.scss */
+    #customer-services.ie7 section h2 span {
+      position: relative;
+      top: 13px; }
+
+  /* line 1, src/scss/desktop/module/_whats_new-small.scss */
+  #whats_new {
+    width: 766px;
+    height: 552px; }
+    /* line 7, src/scss/desktop/module/_whats_new-small.scss */
+    #whats_new #mediaplayer-articles .slideshow-visuel {
+      height: 360px; }
+    /* line 11, src/scss/desktop/module/_whats_new-small.scss */
+    #whats_new #mediaplayer-articles .article .player-content {
+      height: 360px;
+      width: 766px; }
+      /* line 16, src/scss/desktop/module/_whats_new-small.scss */
+      #whats_new #mediaplayer-articles .article .player-content #chanel-oocontrols .timeline .bar {
+        width: 560px; }
+      /* line 21, src/scss/desktop/module/_whats_new-small.scss */
+      #whats_new #mediaplayer-articles .article .player-content .playerWrapper {
+        height: 360px;
+        width: 766px; }
+    /* line 29, src/scss/desktop/module/_whats_new-small.scss */
+    #whats_new #mediaplayer-articles .description {
+      padding: 10px 0 0 30px;
+      max-width: 610px; }
+      /* line 33, src/scss/desktop/module/_whats_new-small.scss */
+      #whats_new #mediaplayer-articles .description h1 {
+        font-size: 12px;
+        margin: 5px 0 10px 0; }
+      /* line 38, src/scss/desktop/module/_whats_new-small.scss */
+      #whats_new #mediaplayer-articles .description .date {
+        font-size: 11px; }
+      /* line 42, src/scss/desktop/module/_whats_new-small.scss */
+      #whats_new #mediaplayer-articles .description p {
+        font-size: 11px; }
+      /* line 46, src/scss/desktop/module/_whats_new-small.scss */
+      #whats_new #mediaplayer-articles .description button {
+        padding: 5px 14px; }
+    /* line 52, src/scss/desktop/module/_whats_new-small.scss */
+    #whats_new #mediaplayer-articles .discover-link {
+      left: 30px; }
+      /* line 55, src/scss/desktop/module/_whats_new-small.scss */
+      #whats_new #mediaplayer-articles .discover-link li a {
+        font-size: 9px; }
+    /* line 62, src/scss/desktop/module/_whats_new-small.scss */
+    #whats_new .pagination {
+      bottom: 20px; }
+      /* line 65, src/scss/desktop/module/_whats_new-small.scss */
+      #whats_new .pagination .button-pagination {
+        margin-left: 53px;
+        width: 47px;
+        height: 95px; }
+      /* line 70, src/scss/desktop/module/_whats_new-small.scss */
+      #whats_new .pagination span.value {
+        font-size: 11px;
+        margin-right: 5px;
+        width: 95px; }
+      /* line 75, src/scss/desktop/module/_whats_new-small.scss */
+      #whats_new .pagination a {
+        width: 47px;
+        height: 47px; }
+        /* line 79, src/scss/desktop/module/_whats_new-small.scss */
+        #whats_new .pagination a.bang-slideshow-arrow-horizontal-tol {
+          top: 48px !important; }
+
+  /* line 1, src/scss/desktop/module/_share_product-small.scss */
+  #partager {
+    width: 640px;
+    margin-left: -409px;
+    margin-top: -271px;
+    padding: 40px 86px 43px 92px;
+    height: 460px; }
+    /* line 8, src/scss/desktop/module/_share_product-small.scss */
+    #partager h1 {
+      line-height: 24px; }
+    /* line 12, src/scss/desktop/module/_share_product-small.scss */
+    #partager #formcontainer {
+      margin: 20px 0 0 0;
+      padding-top: 30px; }
+    /* line 18, src/scss/desktop/module/_share_product-small.scss */
+    #partager #partagerForm input {
+      margin: 0 0 20px 0; }
+    /* line 23, src/scss/desktop/module/_share_product-small.scss */
+    #partager #partagerForm .asterisque span {
+      margin: 0 0 15px 0; }
+
+  /** LIST ARTICLE **/
+  /* line 4, src/scss/desktop/module/_mediaplayer-small.scss */
+  #mediaplayer {
+    width: 766px;
+    height: 563px; }
+    /* line 8, src/scss/desktop/module/_mediaplayer-small.scss */
+    #mediaplayer .read-more {
+      font-size: 10px;
+      font-weight: bold; }
+    /* line 13, src/scss/desktop/module/_mediaplayer-small.scss */
+    #mediaplayer .retour {
+      font-size: 11px; }
+    /* line 17, src/scss/desktop/module/_mediaplayer-small.scss */
+    #mediaplayer .scroll-wrapper {
+      bottom: 20px; }
+    /* line 22, src/scss/desktop/module/_mediaplayer-small.scss */
+    #mediaplayer #instants_articles .scroll-wrapper, #mediaplayer #diamants_articles .scroll-wrapper {
+      bottom: 10px; }
+    /* line 27, src/scss/desktop/module/_mediaplayer-small.scss */
+    #mediaplayer #sliderControlLeft,
+    #mediaplayer #sliderControlRight {
+      top: 0;
+      height: 510px; }
+    /* line 33, src/scss/desktop/module/_mediaplayer-small.scss */
+    #mediaplayer #sliderControlLeft {
+      left: 16px; }
+    /* line 37, src/scss/desktop/module/_mediaplayer-small.scss */
+    #mediaplayer #sliderControlRight {
+      right: 16px; }
+    /* line 45, src/scss/desktop/module/_mediaplayer-small.scss */
+    #mediaplayer #instants_articles #liste_articles,
+    #mediaplayer #diamants_articles #liste_articles,
+    #mediaplayer #mediaplayer_articles #liste_articles {
+      margin-top: 40px;
+      margin-left: 65px; }
+      /* line 49, src/scss/desktop/module/_mediaplayer-small.scss */
+      #mediaplayer #instants_articles #liste_articles .article,
+      #mediaplayer #diamants_articles #liste_articles .article,
+      #mediaplayer #mediaplayer_articles #liste_articles .article {
+        width: 636px;
+        height: 366px; }
+        /* line 53, src/scss/desktop/module/_mediaplayer-small.scss */
+        #mediaplayer #instants_articles #liste_articles .article .instants_image,
+        #mediaplayer #diamants_articles #liste_articles .article .instants_image,
+        #mediaplayer #mediaplayer_articles #liste_articles .article .instants_image {
+          width: 636px;
+          height: 377px; }
+          /* line 56, src/scss/desktop/module/_mediaplayer-small.scss */
+          #mediaplayer #instants_articles #liste_articles .article .instants_image ul,
+          #mediaplayer #diamants_articles #liste_articles .article .instants_image ul,
+          #mediaplayer #mediaplayer_articles #liste_articles .article .instants_image ul {
+            width: 100%;
+            height: 100%; }
+          /* line 61, src/scss/desktop/module/_mediaplayer-small.scss */
+          #mediaplayer #instants_articles #liste_articles .article .instants_image .scroll-wrapper.scroll-media,
+          #mediaplayer #diamants_articles #liste_articles .article .instants_image .scroll-wrapper.scroll-media,
+          #mediaplayer #mediaplayer_articles #liste_articles .article .instants_image .scroll-wrapper.scroll-media {
+            bottom: 0; }
+    /* line 68, src/scss/desktop/module/_mediaplayer-small.scss */
+    #mediaplayer #instants_articles h1, #mediaplayer #instants_articles h2,
+    #mediaplayer #diamants_articles h1,
+    #mediaplayer #diamants_articles h2,
+    #mediaplayer #mediaplayer_articles h1,
+    #mediaplayer #mediaplayer_articles h2 {
+      margin: 25px 0px 6px 0px;
+      font-size: 11px !important; }
+    /* line 73, src/scss/desktop/module/_mediaplayer-small.scss */
+    #mediaplayer #instants_articles p,
+    #mediaplayer #diamants_articles p,
+    #mediaplayer #mediaplayer_articles p {
+      margin: 0px 0 5px 0;
+      line-height: 12px;
+      font-size: 11px !important; }
+    /* line 79, src/scss/desktop/module/_mediaplayer-small.scss */
+    #mediaplayer #instants_articles .deeplink-id,
+    #mediaplayer #diamants_articles .deeplink-id,
+    #mediaplayer #mediaplayer_articles .deeplink-id {
+      font-size: 9px; }
+    /* line 87, src/scss/desktop/module/_mediaplayer-small.scss */
+    #mediaplayer #diamants_articles #liste_articles {
+      margin-top: 30px; }
+      /* line 91, src/scss/desktop/module/_mediaplayer-small.scss */
+      #mediaplayer #diamants_articles #liste_articles .article {
+        width: 636px;
+        height: 455px; }
+        /* line 95, src/scss/desktop/module/_mediaplayer-small.scss */
+        #mediaplayer #diamants_articles #liste_articles .article .img_legend {
+          bottom: 135px; }
+        /* line 98, src/scss/desktop/module/_mediaplayer-small.scss */
+        #mediaplayer #diamants_articles #liste_articles .article .instants_image {
+          width: 636px;
+          height: 381px; }
+        /* line 104, src/scss/desktop/module/_mediaplayer-small.scss */
+        #mediaplayer #diamants_articles #liste_articles .article h1, #mediaplayer #diamants_articles #liste_articles .article h2 {
+          margin-top: 10px; }
+    /* line 112, src/scss/desktop/module/_mediaplayer-small.scss */
+    #mediaplayer #diamants_filtre {
+      width: 766px;
+      height: 52px; }
+      /* line 116, src/scss/desktop/module/_mediaplayer-small.scss */
+      #mediaplayer #diamants_filtre .scroll-wrapper {
+        bottom: 37px; }
+      /* line 120, src/scss/desktop/module/_mediaplayer-small.scss */
+      #mediaplayer #diamants_filtre ul {
+        margin-top: 21px; }
+        /* line 123, src/scss/desktop/module/_mediaplayer-small.scss */
+        #mediaplayer #diamants_filtre ul li {
+          margin-left: 6px;
+          margin-right: 6px;
+          font-size: 9px; }
+
+  /** backgrounds **/
+  /* line 137, src/scss/desktop/module/_mediaplayer-small.scss */
+  #mediaplayer.C03 {
+    background-image: url(/watches-finejewelry/assets/collection/C03/desktop/back_mediaplayer_small.jpg);
+    background-repeat: no-repeat; }
+  /* line 142, src/scss/desktop/module/_mediaplayer-small.scss */
+  #mediaplayer.C01 {
+    background-image: url(/watches-finejewelry/assets/collection/C01/desktop/back_mediaplayer_small.jpg);
+    background-repeat: no-repeat; }
+  /* line 147, src/scss/desktop/module/_mediaplayer-small.scss */
+  #mediaplayer.C16 {
+    background-image: url(/watches-finejewelry/assets/collection/C16/desktop/back_mediaplayer_small.jpg);
+    background-repeat: no-repeat; }
+  /* line 152, src/scss/desktop/module/_mediaplayer-small.scss */
+  #mediaplayer.C17 {
+    background-image: url(/watches-finejewelry/assets/collection/C17/desktop/back_mediaplayer_small.jpg);
+    background-repeat: no-repeat; }
+  /* line 157, src/scss/desktop/module/_mediaplayer-small.scss */
+  #mediaplayer.C13 {
+    background-image: url(/watches-finejewelry/assets/collection/C13/desktop/back_mediaplayer_small.jpg);
+    background-repeat: no-repeat; }
+  /* line 162, src/scss/desktop/module/_mediaplayer-small.scss */
+  #mediaplayer.C06 {
+    background-image: url(/watches-finejewelry/assets/collection/C06/desktop/back_mediaplayer_small.jpg);
+    background-repeat: no-repeat; }
+  /* line 167, src/scss/desktop/module/_mediaplayer-small.scss */
+  #mediaplayer.A33 {
+    background-image: url(/watches-finejewelryassets/collection/A33/desktop/back_mediaplayer_small.jpg);
+    background-repeat: no-repeat; }
+  /* line 172, src/scss/desktop/module/_mediaplayer-small.scss */
+  #mediaplayer.C09 {
+    background-image: url(/watches-finejewelry/assets/collection/C09/desktop/back_mediaplayer_small.jpg);
+    background-repeat: no-repeat; }
+  /* line 177, src/scss/desktop/module/_mediaplayer-small.scss */
+  #mediaplayer.C11 {
+    background-image: url(/watches-finejewelry/assets/collection/C11/desktop/back_mediaplayer_small.jpg);
+    background-repeat: no-repeat; }
+
+  /** PAGE ARTICLE **/
+  /* line 187, src/scss/desktop/module/_mediaplayer-small.scss */
+  #centerblock_wild #article {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 88%;
+    padding: 40px 6% 0px; }
+    /* line 194, src/scss/desktop/module/_mediaplayer-small.scss */
+    #centerblock_wild #article .instants_image {
+      width: 382px;
+      height: 233px; }
+      /* line 200, src/scss/desktop/module/_mediaplayer-small.scss */
+      #centerblock_wild #article .instants_image ul li {
+        width: 382px;
+        height: 218px; }
+    /* line 207, src/scss/desktop/module/_mediaplayer-small.scss */
+    #centerblock_wild #article h1, #centerblock_wild #article h2 {
+      font-size: 11px;
+      margin: 10px 0px 6px 0px; }
+    /* line 212, src/scss/desktop/module/_mediaplayer-small.scss */
+    #centerblock_wild #article p {
+      margin: 4px 0;
+      line-height: 1.2;
+      font-size: 11px; }
+    /* line 218, src/scss/desktop/module/_mediaplayer-small.scss */
+    #centerblock_wild #article a {
+      font-size: 9px;
+      color: #000; }
+      /* line 222, src/scss/desktop/module/_mediaplayer-small.scss */
+      #centerblock_wild #article a:hover {
+        color: #666; }
+      /* line 226, src/scss/desktop/module/_mediaplayer-small.scss */
+      #centerblock_wild #article a.white {
+        color: #666; }
+        /* line 229, src/scss/desktop/module/_mediaplayer-small.scss */
+        #centerblock_wild #article a.white:hover {
+          color: #fff; }
+
+  /* line 3, src/scss/desktop/lang/_small-fr_CA.scss */
+  .fr_CA #columns div.column {
+    line-height: 10px;
+    width: 310px; }
+  /* line 8, src/scss/desktop/lang/_small-fr_CA.scss */
+  .fr_CA #instants_articles li p, .fr_CA #article p, .fr_CA #diamants_articles li p, .fr_CA #mediaplayer_articles li p {
+    line-height: 1.2; }
+
+  /* line 3, src/scss/desktop/lang/_small-fr_FR.scss */
+  .fr_FR #columns div.column {
+    line-height: 10px;
+    width: 310px; }
+  /* line 8, src/scss/desktop/lang/_small-fr_FR.scss */
+  .fr_FR #instants_articles li p, .fr_FR #article p, .fr_FR #diamants_articles li p, .fr_FR #mediaplayer_articles li p {
+    line-height: 1.2; }
+
+  /* line 4, src/scss/desktop/lang/_small-ja_JP.scss */
+  .ja_JP #leftblock #menuleft {
+    margin-top: 50px; }
+  /* line 10, src/scss/desktop/lang/_small-ja_JP.scss */
+  .ja_JP #recherche_critere ul {
+    font-size: 10px; }
+    /* line 12, src/scss/desktop/lang/_small-ja_JP.scss */
+    .ja_JP #recherche_critere ul li {
+      margin-bottom: 8px;
+      line-height: 9px; }
+      /* line 15, src/scss/desktop/lang/_small-ja_JP.scss */
+      .ja_JP #recherche_critere ul li label {
+        font-size: 10px; }
+  /* line 22, src/scss/desktop/lang/_small-ja_JP.scss */
+  .ja_JP .column {
+    line-height: 14px; }
+  /* line 26, src/scss/desktop/lang/_small-ja_JP.scss */
+  .ja_JP #mediaplayer_articles .article {
+    line-height: 11px; }
+  /* line 30, src/scss/desktop/lang/_small-ja_JP.scss */
+  .ja_JP #glossaire_list ul {
+    line-height: 11px; }
+  /* line 34, src/scss/desktop/lang/_small-ja_JP.scss */
+  .ja_JP #mediaplayer #instants_articles h1,
+  .ja_JP #mediaplayer #instants_articles h2,
+  .ja_JP #mediaplayer #diamants_articles h1,
+  .ja_JP #mediaplayer #diamants_articles h2,
+  .ja_JP #mediaplayer #mediaplayer_articles h1,
+  .ja_JP #mediaplayer #mediaplayer_articles h2 {
+    font-size: 11px; }
+  /* line 44, src/scss/desktop/lang/_small-ja_JP.scss */
+  .ja_JP #mediaplayer #instants_articles li p, .ja_JP #mediaplayer #article p, .ja_JP #mediaplayer #diamants_articles li p, .ja_JP #mediaplayer #mediaplayer_articles li p {
+    line-height: 12px !important;
+    font-size: 1.3 !important; }
+  /* line 48, src/scss/desktop/lang/_small-ja_JP.scss */
+  .ja_JP #centerblock_wild #article p {
+    font-size: 9px; }
+  /* line 51, src/scss/desktop/lang/_small-ja_JP.scss */
+  .ja_JP #hj_page_video div {
+    font-size: 16px; }
+  /* line 54, src/scss/desktop/lang/_small-ja_JP.scss */
+  .ja_JP #ecrin_detail .description {
+    font-size: 10px; }
+  /* line 59, src/scss/desktop/lang/_small-ja_JP.scss */
+  .ja_JP #popin.C06 {
+    background: url("/watches-finejewelry/assets/collection/C06/ipad/back_mediaplayer_small.jpg") right repeat; }
+  /* line 63, src/scss/desktop/lang/_small-ja_JP.scss */
+  .ja_JP #popin.C06 #colDeco {
+    width: 395px;
+    left: 376px; }
+  /* line 68, src/scss/desktop/lang/_small-ja_JP.scss */
+  .ja_JP .show_universe .wanted {
+    bottom: 5%; }
+  /* line 72, src/scss/desktop/lang/_small-ja_JP.scss */
+  .ja_JP #partager #partage_form {
+    top: 158px; }
+  /* line 76, src/scss/desktop/lang/_small-ja_JP.scss */
+  .ja_JP #popin.C06 #colDeco img {
+    width: 100%; }
+  /* line 80, src/scss/desktop/lang/_small-ja_JP.scss */
+  .ja_JP #detailright {
+    font-size: 10px; }
+    /* line 83, src/scss/desktop/lang/_small-ja_JP.scss */
+    .ja_JP #detailright .description {
+      font-size: 10px; }
+    /* line 86, src/scss/desktop/lang/_small-ja_JP.scss */
+    .ja_JP #detailright #rightControl {
+      font-size: 10px; }
+      /* line 89, src/scss/desktop/lang/_small-ja_JP.scss */
+      .ja_JP #detailright #rightControl #price_bloc {
+        font-size: 9px; }
+    /* line 94, src/scss/desktop/lang/_small-ja_JP.scss */
+    .ja_JP #detailright #bloc_description {
+      height: 190px; }
+
+  /* line 1, src/scss/desktop/lang/_small-ko_KR.scss */
+  .ko_KR {
+    /* CSS Document */ }
+    /* line 4, src/scss/desktop/lang/_small-ko_KR.scss */
+    .ko_KR #hj_page_video div {
+      font-size: 12px; }
+    /* line 8, src/scss/desktop/lang/_small-ko_KR.scss */
+    .ko_KR #liste_articles div.noPBalise {
+      margin: -10px 0px; }
+    /* line 12, src/scss/desktop/lang/_small-ko_KR.scss */
+    .ko_KR #expertise #onglet_content {
+      width: 360px; }
+    /* line 16, src/scss/desktop/lang/_small-ko_KR.scss */
+    .ko_KR #detailright #bloc_description {
+      height: 200px; }
+    /* line 19, src/scss/desktop/lang/_small-ko_KR.scss */
+    .ko_KR #mediaplayer #instants_articles h1,
+    .ko_KR #mediaplayer #instants_articles h2,
+    .ko_KR #mediaplayer #diamants_articles h1,
+    .ko_KR #mediaplayer #diamants_articles h2,
+    .ko_KR #mediaplayer #mediaplayer_articles h1,
+    .ko_KR #mediaplayer #mediaplayer_articles h2 {
+      font-size: 11px; }
+    /* line 28, src/scss/desktop/lang/_small-ko_KR.scss */
+    .ko_KR #mediaplayer #diamants_articles p,
+    .ko_KR #mediaplayer #instants_articles p {
+      font-size: 11px !important; }
+    /* line 33, src/scss/desktop/lang/_small-ko_KR.scss */
+    .ko_KR #instants_articles li p, .ko_KR #article p, .ko_KR #diamants_articles li p {
+      font-size: 11px !important; }
+    /* line 37, src/scss/desktop/lang/_small-ko_KR.scss */
+    .ko_KR #mediaplayer_articles li p {
+      font-size: 10px !important; }
+    /* line 43, src/scss/desktop/lang/_small-ko_KR.scss */
+    .ko_KR #recherche_critere table td {
+      line-height: 1; }
+    /* line 46, src/scss/desktop/lang/_small-ko_KR.scss */
+    .ko_KR #recherche_critere table td.info span {
+      font-size: 9px; }
+    /* line 51, src/scss/desktop/lang/_small-ko_KR.scss */
+    .ko_KR #recherche_critere li {
+      line-height: 9px;
+      margin-bottom: 8px; }
+      /* line 54, src/scss/desktop/lang/_small-ko_KR.scss */
+      .ko_KR #recherche_critere li label {
+        font-size: 10px; }
+
+  /* line 3, src/scss/desktop/lang/_small-pt_BR.scss */
+  .pt_BR .cuw-page-info-text-inner a.arrow-up,
+  .pt_BR .cuw-page-info-text-inner a.arrow-down {
+    display: none; }
+  /* line 9, src/scss/desktop/lang/_small-pt_BR.scss */
+  .pt_BR #columns div.column {
+    line-height: 13px; }
+
+  /* line 1, src/scss/desktop/lang/_small-ru_RU.scss */
+  .ru_RU {
+    /* CSS Document */ }
+    /* line 4, src/scss/desktop/lang/_small-ru_RU.scss */
+    .ru_RU #detailright h2 {
+      margin-top: 30px;
+      font-size: 10px; }
+    /* line 9, src/scss/desktop/lang/_small-ru_RU.scss */
+    .ru_RU #detailright .vslider {
+      top: 60px; }
+    /* line 13, src/scss/desktop/lang/_small-ru_RU.scss */
+    .ru_RU #detailright .description {
+      padding-right: 11px; }
+    /* line 18, src/scss/desktop/lang/_small-ru_RU.scss */
+    .ru_RU #hj_page_video div {
+      font-size: 16px; }
+    /* line 22, src/scss/desktop/lang/_small-ru_RU.scss */
+    .ru_RU #detailright .vslider {
+      height: 215px; }
+    /* line 26, src/scss/desktop/lang/_small-ru_RU.scss */
+    .ru_RU #detailright #bloc_description {
+      height: 190px; }
+    /* line 30, src/scss/desktop/lang/_small-ru_RU.scss */
+    .ru_RU #detailright #rightControl {
+      font-size: 10px; }
+    /* line 34, src/scss/desktop/lang/_small-ru_RU.scss */
+    .ru_RU #price_bloc {
+      font-size: 9px; }
+    /* line 38, src/scss/desktop/lang/_small-ru_RU.scss */
+    .ru_RU #mediaplayer #mediaplayer_articles h1,
+    .ru_RU #mediaplayer #mediaplayer_articles h2,
+    .ru_RU #mediaplayer #instants_articles h1,
+    .ru_RU #mediaplayer #instants_articles h2,
+    .ru_RU #mediaplayer #diamants_articles h1,
+    .ru_RU #mediaplayer #diamants_articles h2 {
+      font-size: 11px; }
+    /* line 47, src/scss/desktop/lang/_small-ru_RU.scss */
+    .ru_RU #mediaplayer #instants_articles p,
+    .ru_RU #mediaplayer #diamants_articles p,
+    .ru_RU #mediaplayer #mediaplayer_articles p {
+      font-size: 11px; }
+    /* line 53, src/scss/desktop/lang/_small-ru_RU.scss */
+    .ru_RU #instants_articles li p, .ru_RU #article p, .ru_RU #diamants_articles li p, .ru_RU #mediaplayer_articles li p {
+      line-height: 1.1;
+      font-size: 11px; }
+    /* line 58, src/scss/desktop/lang/_small-ru_RU.scss */
+    .ru_RU #columns div.column {
+      line-height: 13px; }
+    /* line 62, src/scss/desktop/lang/_small-ru_RU.scss */
+    .ru_RU #columns div#column16 {
+      width: 260px; }
+    /* line 67, src/scss/desktop/lang/_small-ru_RU.scss */
+    .ru_RU .show_universe .wanted {
+      bottom: 5%;
+      font-size: 12px; }
+    /* line 74, src/scss/desktop/lang/_small-ru_RU.scss */
+    .ru_RU #recherche_critere li {
+      line-height: 9px;
+      margin-bottom: 8px; }
+    /* line 78, src/scss/desktop/lang/_small-ru_RU.scss */
+    .ru_RU #recherche_critere table td.info span {
+      position: relative;
+      top: -30px;
+      font-size: 10px; }
+    /* line 85, src/scss/desktop/lang/_small-ru_RU.scss */
+    .ru_RU #centerblock_wild #article p {
+      font-size: 11px; }
+      /* line 87, src/scss/desktop/lang/_small-ru_RU.scss */
+      .ru_RU #centerblock_wild #article p a {
+        font-size: 11px; }
+    /* line 93, src/scss/desktop/lang/_small-ru_RU.scss */
+    .ru_RU #whats_new #mediaplayer-articles .discover-link li a {
+      font-size: 11px; }
+
+  /* line 3, src/scss/desktop/lang/_small-zh_CN.scss */
+  .zh_CN #glossaire_list li h2 {
+    margin: 0.5px 0px 10px 0px;
+    _margin-bottom: 0px; }
+  /* line 8, src/scss/desktop/lang/_small-zh_CN.scss */
+  .zh_CN #glossaire_list li p.noPBalise {
+    margin: 0px;
+    padding: 0px; }
+  /* line 13, src/scss/desktop/lang/_small-zh_CN.scss */
+  .zh_CN #glossaire_list li p {
+    text-align: justify;
+    width: 190px; }
+  /* line 18, src/scss/desktop/lang/_small-zh_CN.scss */
+  .zh_CN .audace .detail {
+    line-height: 1.2; }
+  /* line 22, src/scss/desktop/lang/_small-zh_CN.scss */
+  .zh_CN #recherche_critere table td.info {
+    font-size: 11px; }
+  /* line 26, src/scss/desktop/lang/_small-zh_CN.scss */
+  .zh_CN #recherche_critere li {
+    margin-bottom: 7px;
+    line-height: 9px; }
+    /* line 30, src/scss/desktop/lang/_small-zh_CN.scss */
+    .zh_CN #recherche_critere li label {
+      font-size: 10px; }
+  /* line 35, src/scss/desktop/lang/_small-zh_CN.scss */
+  .zh_CN #detailright #bloc_description {
+    height: 212px; }
+    /* line 37, src/scss/desktop/lang/_small-zh_CN.scss */
+    .zh_CN #detailright #bloc_description .description {
+      padding-right: 0;
+      margin-bottom: 0; }
+  /* line 44, src/scss/desktop/lang/_small-zh_CN.scss */
+  .zh_CN #detailright .vslider {
+    height: 212px; }
+  /* line 48, src/scss/desktop/lang/_small-zh_CN.scss */
+  .zh_CN #leftblock ul li {
+    line-height: 15px; }
+  /* line 52, src/scss/desktop/lang/_small-zh_CN.scss */
+  .zh_CN #leftblock ul li ul li {
+    line-height: 15px; }
+  /* line 56, src/scss/desktop/lang/_small-zh_CN.scss */
+  .zh_CN #instants_articles li h1, .zh_CN #article h1, .zh_CN #diamants_articles li h1, .zh_CN #mediaplayer_articles li h1 {
+    font-size: 11px !important; }
+  /* line 60, src/scss/desktop/lang/_small-zh_CN.scss */
+  .zh_CN #instants_articles li p, .zh_CN #article p, .zh_CN #diamants_articles li p, .zh_CN #mediaplayer_articles li p {
+    line-height: 1.2;
+    font-size: 10px !important; }
+  /* line 65, src/scss/desktop/lang/_small-zh_CN.scss */
+  .zh_CN a.read-more {
+    font-size: 10px !important; }
+  /* line 69, src/scss/desktop/lang/_small-zh_CN.scss */
+  .zh_CN #push_text {
+    right: -100px; }
+  /* line 73, src/scss/desktop/lang/_small-zh_CN.scss */
+  .zh_CN #ecrin_detail #bloc_description .description {
+    padding-right: 0; }
+
+  /* line 4, src/scss/desktop/lang/_small-zh_TW.scss */
+  .zh_TW .slideshow .text_mention {
+    font-family: "abchanel-couture", sans-serif;
+    font-size: 10px;
+    font-weight: normal;
+    line-height: 130%; }
+    /* line 55, src/scss/common/_fonts.scss */
+    .ja_JP .zh_TW .slideshow .text_mention {
+      font-family: "abchanel-couture", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Arial, "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", "Roboto", "Droid Sans", sans-serif; }
+    /* line 59, src/scss/common/_fonts.scss */
+    .ru_RU .zh_TW .slideshow .text_mention {
+      font-family: "abchanel-couture", Helvetica, Arial, sans-serif; }
+    /* line 63, src/scss/common/_fonts.scss */
+    .zh_CN .zh_TW .slideshow .text_mention {
+      font-family: "abchanel-couture", "华文细黑", STXiHei, "微软雅黑", "Microsoft Yahei", "华文黑体", "ST Heiti", "MS黑体", "MS Hei", sans-serif; }
+    /* line 67, src/scss/common/_fonts.scss */
+    .zh_TW .zh_TW .slideshow .text_mention {
+      font-family: "abchanel-couture", "微軟正黑體", "Microsoft JhengHei", "儷黑 Pro", "LiHei Pro", "Arial Unicode MS", sans-serif; }
+    /* line 71, src/scss/common/_fonts.scss */
+    .ko_KR .zh_TW .slideshow .text_mention {
+      font-family: "abchanel-couture", "맑은고딕", "Malgun Gothic", "Apple Gothic", "돋움", Dotum, "굴림", Gulim, sans-serif; }
+  /* line 8, src/scss/desktop/lang/_small-zh_TW.scss */
+  .zh_TW #recherche_critere ul {
+    font-size: 10px; }
+    /* line 10, src/scss/desktop/lang/_small-zh_TW.scss */
+    .zh_TW #recherche_critere ul li {
+      margin-bottom: 8px;
+      line-height: 9px; }
+      /* line 14, src/scss/desktop/lang/_small-zh_TW.scss */
+      .zh_TW #recherche_critere ul li label {
+        font-size: 10px; }
+  /* line 20, src/scss/desktop/lang/_small-zh_TW.scss */
+  .zh_TW #detailright #bloc_description {
+    width: 150px; }
+  /* line 24, src/scss/desktop/lang/_small-zh_TW.scss */
+  .zh_TW .column {
+    line-height: 14px; }
+  /* line 28, src/scss/desktop/lang/_small-zh_TW.scss */
+  .zh_TW #mediaplayer_articles .article {
+    line-height: 11px; }
+  /* line 32, src/scss/desktop/lang/_small-zh_TW.scss */
+  .zh_TW #glossaire_list ul {
+    line-height: 11px; }
+  /* line 36, src/scss/desktop/lang/_small-zh_TW.scss */
+  .zh_TW #instants_articles li h1, .zh_TW #article h1, .zh_TW #diamants_articles li h1, .zh_TW #mediaplayer_articles li h1,
+  .zh_TW #instants_articles li h2, .zh_TW #article h2, .zh_TW #diamants_articles li h2, .zh_TW #mediaplayer_articles li h2 {
+    font-size: 11px !important; }
+  /* line 42, src/scss/desktop/lang/_small-zh_TW.scss */
+  .zh_TW #instants_articles li p, .zh_TW #article p, .zh_TW #diamants_articles li p {
+    /*font-size:11px;*/
+    line-height: 16px !important;
+    font-family: "HelveticaNeue", Helvetica, Arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Arial, "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", "Roboto", "Droid Sans", sans-serif !important; }
+  /* line 48, src/scss/desktop/lang/_small-zh_TW.scss */
+  .zh_TW #mediaplayer #mediaplayer_articles li p {
+    line-height: 16px !important;
+    font-size: 10px !important; }
+  /* line 53, src/scss/desktop/lang/_small-zh_TW.scss */
+  .zh_TW #expertise #onglet_content {
+    width: 360px; }
+  /* line 57, src/scss/desktop/lang/_small-zh_TW.scss */
+  .zh_TW.ie6 #menu_exclusive ul li ul li {
+    line-height: 8px; }
+  /* line 61, src/scss/desktop/lang/_small-zh_TW.scss */
+  .zh_TW.ie6 .audace_box div.cartouche {
+    width: 379px;
+    height: 183px; }
+  /* line 66, src/scss/desktop/lang/_small-zh_TW.scss */
+  .zh_TW #push_text {
+    right: -100px; }
+  /* line 70, src/scss/desktop/lang/_small-zh_TW.scss */
+  .zh_TW #product_title {
+    font-size: 12px; }
+  /* line 74, src/scss/desktop/lang/_small-zh_TW.scss */
+  .zh_TW #ecrin_detail #bloc_description .description {
+    padding-right: 0; }
+  /* line 78, src/scss/desktop/lang/_small-zh_TW.scss */
+  .zh_TW #centerblock_wild #article p {
+    font-size: 10px; }
+
+  /* line 3, src/scss/desktop/lang/_small-en_US.scss */
+  .en_US #columns div.column {
+    line-height: 13px; }
+
+  /* line 3, src/scss/desktop/lang/_small-en_GB.scss */
+  .en_GB #columns div.column {
+    line-height: 13px; }
+
+  /* line 3, src/scss/desktop/lang/_small-en_AS.scss */
+  .en_AS #columns div.column {
+    line-height: 13px; }
+
+  /* line 3, src/scss/desktop/lang/_small-en_AU.scss */
+  .en_AU #columns div.column {
+    line-height: 13px; }
+
+  /* line 3, src/scss/desktop/lang/_small-en_CA.scss */
+  .en_CA #columns div.column {
+    line-height: 13px; }
+
+  /* line 3, src/scss/desktop/lang/_small-en_ME.scss */
+  .en_ME #columns div.column {
+    line-height: 13px; }
+
+  /* line 3, src/scss/desktop/lang/_small-en_WW.scss */
+  .en_WW #columns div.column {
+    line-height: 13px; }
+
+  /* line 3, src/scss/desktop/lang/_small-it_IT.scss */
+  .it_IT #columns div.column {
+    line-height: 13px; }
+
+  /* line 3, src/scss/desktop/lang/_small-pt_BR.scss */
+  .pt_BR .cuw-page-info-text-inner a.arrow-up,
+  .pt_BR .cuw-page-info-text-inner a.arrow-down {
+    display: none; }
+  /* line 9, src/scss/desktop/lang/_small-pt_BR.scss */
+  .pt_BR #columns div.column {
+    line-height: 13px; }
+
+  /* line 3, src/scss/desktop/lang/_small-de_DE.scss */
+  .de_DE #columns div.column {
+    line-height: 10px;
+    width: 310px; }
+  /* line 8, src/scss/desktop/lang/_small-de_DE.scss */
+  .de_DE #columns div#column16 {
+    width: 260px; }
+
+  /* line 4, src/scss/desktop/lang/_small-es_ES.scss */
+  .es_ES #recherche_critere table td.info span {
+    position: relative;
+    top: -19px; }
+
+  /* line 4, src/scss/desktop/lang/_small-es_LX.scss */
+  .es_LX #recherche_critere table td.info span {
+    position: relative;
+    top: -19px; } }

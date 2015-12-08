@@ -1,0 +1,131 @@
+@charset "UTF-8";
+/**
+ * +-------------------------------------------------------+
+ * common define begin
+ * +-------------------------------------------------------+
+ */
+*{margin:0;padding:0}
+body{margin:0 auto;padding:0;color:#4b4b4b;font-size:12px;font-family:'微软雅黑';background-color:#ffffff;}
+body div{margin-right:auto;margin-left:auto;}
+div,form,ul,ol,li,span,p,dl,dt,dd,img{margin:0;padding:0;border:0;}
+h1,h2,h3,h4,h5,h6{margin:0;padding:0;font-size:12px;font-weight:normal;}
+ul,ol,li{list-style:none;list-style-position:outside}
+table,th,td,input,textarea{font-size:12px}
+table,th,td{text-align:left;vertical-align:top; }
+a{color:#fff;text-decoration:none}
+a:hover{/*color:#ff3674;text-decoration:underline;*/}
+em{font-style:normal}
+.width_1200{ width:1200px;}
+
+.clr{#zoom:1;clear:both}
+.clr:before,.clr:after{display:block;content:".";height:0!important;line-height:0!important;visibility:hidden}
+.clr:after{clear:both}
+/* IE 6/7娴忚鍣  (瑙﹀彂hasLayout) */
+.clr{*zoom:1;}
+
+
+.fl{float:left;width:auto;}
+.fr{float:right;width:auto;}
+.dspI{display:inline}
+.clear{clear:both;height:0px;width:0px;font-size:0px;line-height:0px;visibility:hidden;}
+
+.fB{font-weight:bold}
+.fI{font-style:italic}
+.tU{text-decoration:underline}
+.tL{text-align:left}
+.tR{text-align:right}
+.tC{text-align:center}
+.hC{display:none;}
+
+/* color define 
+	尴尬的问题，因为优先级问题，即使这样定义到A上，颜色也不会生效，除非 .c01, a.c01, .c01 a 真有这个必要？？ 
+	如果定义了A.c05 还需要定义A.c05:hover，问题又来了。
+*/
+.c01{color:#4b4b4b;}
+.c02{color:#707070;}
+.c03{color:#ff3674;}
+.c04{color:#c7aca1;}
+.c05, a.c05{color:#5e5e5e;}
+
+
+/* blank */
+.blankH4,.blankH5,.blankH6,.blankH8,.blankH9,.blankH10,.blankH20{width:1px;height:auto;font-size:0px;line-height:0px;overflow:hidden;clear:both;}
+.blankH4{height:4px;}
+.blankH5{height:5px;}
+.blankH6{height:6px;}
+.blankH8{height:8px;}
+.blankH9{height:8px;}
+.blankH10{height:10px;}
+.blankH20{height:20px;}
+
+.blankW5,.blankW6,.blankW8,.blankW9,.blankW10{width:auto;height:1px;font-size:0px;line-height:0px;overflow:hidden;clear:none;}
+.blankW5{width:5px;}
+.blankW6{width:6px;}
+.blankW8{width:8px;}
+.blankW9{width:9px;}
+.blankW10{width:10px;}
+
+.copyMark{font-size:14px;}
+.yuan, .yuan12, .yuan14, .yuan16{font-size:12px;font-family:'Arial','微软雅黑'}
+.yuan14{font-size:14px;}
+.yuan16{font-size:16px;}
+/**
+ * common define begin
+ * +-------------------------------------------------------+
+ */
+
+
+
+.topCont{width:1200px;height:30px;margin:0px auto;border-top:1px solid #e9e9e9;border-bottom:1px solid #e9e9e9;background-color:#fcfcfc}
+.headerCont{width:1200px;height:130px;margin:0px auto;}
+.navCont{width:100%;height:48px;margin:0px auto;background:url('../images/bgx.png') repeat-x 0px 0px;}
+.navCont .navContInner{width:1200px;height:48px;margin:0px auto;}
+
+.indexCont1{width:1200px;height:620px;margin:0px auto;}
+.indexCont1 .lCont{width:120px;height:360px;float:left;display:inline;margin:0px 10px 0px 0px;background-color:#fcfcfc;position:relative;top:0px;left:0px;}
+.indexCont1 .focusCont{width:850px;height:360px;float:left;display:inline;margin:0px 10px 0px 0px;}
+.indexCont1 .rCont{width:210px;height:360px;float:left;display:inline;margin:0px 0px 0px 0px;}
+.indexCont1 .bCont{width:1200px;height:230px;float:left;display:inline;margin:10px 0px 0px 0px;}
+
+
+
+
+
+
+
+.indexCont2{width:1200px;height:632px;margin:0px auto;}
+.indexCont2 .lCont{width:140px;height:580px;float:left;display:inline;margin:0px 0px 0px 0px;}
+.indexCont2 .rCont{width:1060px;height:580px;float:left;display:inline;margin:0px 0px 0px 0px;}
+
+
+
+
+/* 2010-6-14 分页 */
+.page{
+	clear:both;
+	text-align:center;
+	padding:30px 30px;
+	 font-size:14px;
+}
+.page a{
+	margin:0 5px; display:inline-table; *display:inline; zoom:1;
+}
+.page a:link,.page a:visited,.page a:active{
+	border:1px solid #bbb; 
+	text-align:center;
+	margin-right:4px; 
+	font-family: "宋体"; 
+	background:#ffffff; 
+	padding:4px 8px; 
+	color:#144B9E;
+	line-height:12px;
+}
+.page a:hover{
+	background:#111; border:1px solid #000; color:#FFF; font-weight:bold;padding:4px 8px;
+}
+.page a.on:link,.page a.on:visited,.page a.on:hover,.page a.on:active{
+	background:#111; border:1px solid #000; color:#FFF; font-weight:bold;padding:4px 8px;
+}
+
+
+

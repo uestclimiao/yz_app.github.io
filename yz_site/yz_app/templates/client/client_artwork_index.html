@@ -1,0 +1,109 @@
+{% extends 'client/client_Base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+
+
+<!--<link rel="stylesheet" href="/static/client/artwork/demo_files/reveal.css">-->
+<!--<link href="/static/client/artwork/artwork_recommend_files/wfj.css" media="" rel="stylesheet" type="text/css">-->
+<link href="/static/client/artwork/artwork_recommend_files/chanel-global.css" media="" rel="stylesheet" type="text/css">
+<link href="/static/client/artwork/artwork_recommend_files/chanel-modules.css" media="" rel="stylesheet" type="text/css">
+<link href="/static/client/artwork/artwork_recommend_files/chanel-small.css" media="" rel="stylesheet" type="text/css">
+
+
+<style  type="text/css">
+#global_div{ position:relative;top:12px;width:1000px; margin-left:auto; margin-right:auto;}
+
+.STYLE1 {font-size: 150%}
+</style>
+{% endblock %}
+
+{% block options %}
+  <body >
+  <!--导航-->
+<div id="global_div" >
+            <div id="leftblock">
+
+
+<div id="menuleft">
+
+    <ul>
+        <li class="">
+            <a  href="#" name="centerdiv" class="deeplink-id delay_stats STYLE1">当代艺术家</a>        </li>
+    </ul>
+    <ul>
+        <li class="">
+            <a  href="{% url 'client_artwork_exhibition' %}" name="centerdiv" class="deeplink-id delay_stats STYLE1">当代艺术展</a>        </li>
+    </ul>
+	 <ul>
+        <li class="">
+            <a  href="#" name="centerdiv" class="deeplink-id delay_stats STYLE1">艺术品投资</a>        </li>
+    </ul>
+	<ul>
+        <li class="STYLE1">
+            <a  href="#" name="centerdiv" class="deeplink-id delay_stats ">艺术品资讯</a>        </li>
+    </ul>
+
+
+    <div class="annexe">
+
+        <ul>
+				<li class=" ">
+			<a href="#" name="centerdiv" class="deeplink-id STYLE1" data-tag="Search"> 搜 索</a>		</li>
+				<li class=" ">
+			 <a href="#" name="centerdiv" class="link-ecrin deeplink-id STYLE1" data-tag="Selection"> 愿望清单 </a>		</li>
+				<li class="  ">
+			 <a href="#" name="centerdiv" class="deeplink-id STYLE1" data-tag="Customer Service">客户服务</a>			</li>
+        </ul>
+    </div>
+</div>
+</div>
+
+	<!-- 推荐-->
+			<div id="centerblock" class="hp-jewelry" >
+				<div class="flexslider">
+					  <ul class="slides" >
+						<li>
+							<img src="/static/client/artwork/artwork_recommend_files/watches-prive_camelia_nacre.jpg">
+							<a href="#">
+								<h2>产品A</h2>
+							</a>
+
+						</li>
+						<li>
+							<img src="/static/client/artwork/artwork_recommend_files/watches-boyfriend.jpg">
+							<a href="#">
+								<h2>产品B</h2>
+							</a>
+						</li>
+						<li>
+							<img src="/static/client/artwork/artwork_recommend_files/watches-j12_365_white.jpg">
+							<a href="#">
+								<h2>产品C</h2>
+							</a>
+						</li>
+				     </ul>
+				</div>
+			</div>
+
+</div>
+
+  </div>
+
+      </div>
+</body>
+<script type="text/javascript" src="/static/client/artwork/demo_files/jquery-1.js"></script>
+<script type="text/javascript" src="/static/client/artwork/demo_files/jquery_002.js"></script>
+<script type="text/javascript" src="/static/client/artwork/demo_files/jquery.js"></script>
+<script type="text/javascript" src="/static/client/artwork/demo_files/layer.js"></script>
+<script type="text/javascript" src="/static/client/artwork/artwork_recommend_files/jquery.flexslider-min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+    $(".flexslider").flexslider({
+		slideshowSpeed: 2000, //展示时间间隔ms
+		animationSpeed: 400 //滚动时间ms
+	});
+});
+    </script>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'manage_index.html' %}
+{% block manager_register_css %}
+<link href="/static/css/signin.css" rel="stylesheet">
+{% endblock %}
+{% block page_container %}
+    <div class="container">
+
+      <form id="style-form" class="form-signin" action="{% url 'add_style' %}" method="post">
+        <h2 class="form-signin-heading">添加颜色/款式</h2>
+          <p class="text-danger">{{ message }}</p>
+
+          <label for="style_name">颜色/款式名称:</label>
+          <input id="style_name" name="style_name" class="form-control" placeholder="请输入颜色/款式名称" autofocus type="text"><br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+      </form>
+
+    </div> <!-- /container -->
+{% endblock %}
+{% block manager_register_login_options_js %}
+<script src="/static/js/jquery.validate.js"></script>
+<script type="text/javascript">
+    $().ready(function(){
+        $("#style-form").validate({
+            rules:{
+                style_name: {
+                    required:true
+                }
+            },
+            messages:{
+                style_name: {
+                    required: "请输入颜色/款式名称"
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}
+

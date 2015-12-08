@@ -1,0 +1,211 @@
+#! /usr/bin/env python
+# coding=utf-8
+
+from pymongo import *
+import bson
+
+def mongodb_init():
+    connection_string = 'mongodb://127.0.0.1:27017'
+    client = MongoClient(connection_string)
+    db = client.yz
+    if not client:
+        print '[INFO]: MongoDB can not be connected, please check !'
+    else:
+        print '[INFO]: MongoDB is connected !'
+    return db
+
+def insert_user(db, username, password, email, phone_num):
+    db.users.insert({'username': username, 'password': password, 'email': email, 'phone_num': phone_num})
+
+def find_user_by_username(db, username):
+    user = db.users.find_one({'username': username})    # 存在的话，返回一条记录，否则返回NoneType类型的变量，即返回空
+    return user
+
+def find_user_by_username_password(db, username, password):
+    user = db.users.find_one({'username': username, 'password': password})    # 存在的话，返回一条记录，否则返回NoneType类型的变量，即返回空
+    return user
+
+def insert_commodity(db, c_id, c_name, c_price, c_description, c_postage, c_num, c_class, c_brand, c_size, c_style):
+    db.commoditys.insert({'c_id': c_id, 'c_name': c_name, 'c_price': c_price, 'c_description': c_description, 'c_postage': c_postage, 'c_num': c_num, 'c_class': c_class, 'c_brand': c_brand, 'c_size': c_size, 'c_style': c_style})
+
+def find_commoditys(db):
+    commoditys_list = []
+    commoditys = db.commoditys.find()
+    for commodity in commoditys:
+        commoditys_list.append(commodity)
+    return commoditys_list
+
+def del_commodity(db, c_id):
+    uid = bson.binary.UUID(c_id)
+    db.commoditys.remove({'c_id': uid})
+
+def find_commodity_by_cid(db, cid):
+    uid = bson.binary.UUID(cid)
+    commodity = db.commoditys.find_one({'c_id': uid})
+    return commodity
+
+def update_commodity(db, c_id, c_name, c_price, c_description, c_postage, c_num, c_class, c_brand, c_size, c_style):
+    uid = bson.binary.UUID(c_id)
+    db.commoditys.update({'c_id': uid}, {'$set': {'c_name': c_name, 'c_price': c_price, 'c_description': c_description, 'c_postage': c_postage, 'c_num': c_num, 'c_class': c_class, 'c_brand': c_brand, 'c_size': c_size, 'c_style': c_style}})
+
+def find_brand_by_bname(db, b_name):
+    brand = db.brands.find_one({'b_name': b_name})    # 存在的话，返回一条记录，否则返回NoneType类型的变量，即返回空
+    return brand
+
+def insert_brand(db, b_id, b_name, b_description, isdesign):
+    db.brands.insert({'b_id': b_id, 'b_name': b_name, 'b_description': b_description, 'isdesign': isdesign})
+
+def find_brands(db):
+    brands_list = []
+    brands = db.brands.find()
+    for brand in brands:
+        brands_list.append(brand)
+    return brands_list
+
+def del_brand(db, b_id):
+    uid = bson.binary.UUID(b_id)
+    db.brands.remove({'b_id': uid})
+
+def find_brand_by_bid(db, bid):
+    uid = bson.binary.UUID(bid)
+    brand = db.brands.find_one({'b_id': uid})
+    return brand
+
+def update_brand(db, b_id, b_name, b_description, isdesign):
+    uid = bson.binary.UUID(b_id)
+    db.brands.update({'b_id': uid}, {'$set': {'b_name': b_name, 'b_description': b_description, 'isdesign': isdesign}})
+
+def find_classes(db):
+    classes_list = []
+    classes = db.classes.find()
+    for my_class in classes:
+        classes_list.append(my_class)
+    return classes_list
+
+def find_class_by_class_name(db, class_name):
+    my_class = db.classes.find_one({'class_name': class_name})    # 存在的话，返回一条记录，否则返回NoneType类型的变量，即返回空
+    return my_class
+
+def insert_class(db, class_id, class_name):
+    db.classes.insert({'class_id': class_id, 'class_name': class_name})
+
+def del_class(db, class_id):
+    uid = bson.binary.UUID(class_id)
+    db.classes.remove({'class_id': uid})
+
+def find_class_by_id(db, class_id):
+    uid = bson.binary.UUID(class_id)
+    my_class = db.classes.find_one({'class_id': uid})
+    return my_class
+
+def update_class(db, class_id, class_name):
+    uid = bson.binary.UUID(class_id)
+    db.classes.update({'class_id': uid}, {'$set': {'class_name': class_name}})
+
+def find_clients(db):
+    clients_list = []
+    clients = db.clients.find()
+    for client in clients:
+        clients_list.append(client)
+    return clients_list
+
+def insert_client(db, client_id, username, password, gender, age, date, email, phone_num):
+    db.clients.insert({'client_id': client_id, 'username': username, 'password': password, 'gender': gender, 'age': age, 'date': date, 'email': email, 'phone_num': phone_num})
+
+def find_client_by_username(db, username):
+    client = db.clients.find_one({'username': username})
+    return client
+
+def del_client(db, username):
+    db.clients.remove({'username': username})
+
+def update_client(db, client_id, username, password, gender, age, date, email, phone_num):
+    uid = bson.binary.UUID(client_id)
+    db.clients.update({'client_id': uid}, {'$set': {'username': username, 'password': password, 'gender': gender, 'age': age, 'date': date, 'email': email, 'phone_num': phone_num}})
+
+def find_admins(db):
+    admins_list = []
+    admins = db.users.find()
+    for admin in admins:
+        admins_list.append(admin)
+    return admins_list
+
+def del_admin(db, username):
+    db.users.remove({'username': username})
+
+def find_styles(db):
+    styles_list = []
+    styles = db.styles.find()
+    for style in styles:
+        styles_list.append(style)
+    return styles_list
+
+def find_style_by_style_name(db, style_name):
+    style = db.styles.find_one({'style_name': style_name})    # 存在的话，返回一条记录，否则返回NoneType类型的变量，即返回空
+    return style
+
+def insert_style(db, style_id, style_name):
+    db.styles.insert({'style_id': style_id, 'style_name': style_name})
+
+def del_style(db, style_id):
+    uid = bson.binary.UUID(style_id)
+    db.styles.remove({'style_id': uid})
+
+def find_style_by_id(db, style_id):
+    uid = bson.binary.UUID(style_id)
+    style = db.styles.find_one({'style_id': uid})
+    return style
+
+def update_style(db, style_id, style_name):
+    uid = bson.binary.UUID(style_id)
+    db.styles.update({'style_id': uid}, {'$set': {'style_name': style_name}})
+
+def find_sizes(db):
+    sizes_list = []
+    sizes = db.sizes.find()
+    for size in sizes:
+        sizes_list.append(size)
+    return sizes_list
+
+def find_size_by_size_name(db, size_name):
+    size = db.sizes.find_one({'size_name': size_name})    # 存在的话，返回一条记录，否则返回NoneType类型的变量，即返回空
+    return size
+
+def insert_size(db, size_id, size_name):
+    db.sizes.insert({'size_id': size_id, 'size_name': size_name})
+
+def del_size(db, size_id):
+    uid = bson.binary.UUID(size_id)
+    db.sizes.remove({'size_id': uid})
+
+def find_size_by_id(db, size_id):
+    uid = bson.binary.UUID(size_id)
+    size = db.sizes.find_one({'size_id': uid})
+    return size
+
+def update_size(db, size_id, size_name):
+    uid = bson.binary.UUID(size_id)
+    db.sizes.update({'size_id': uid}, {'$set': {'size_name': size_name}})
+
+def find_shop_addrs(db):
+    shop_addrs_list = []
+    shop_addrs = db.shop_addrs.find()
+    for shop_addr in shop_addrs:
+        shop_addrs_list.append(shop_addr)
+    return shop_addrs_list
+
+def insert_shop_addr(db, shop_addr_id, province_domain, city_domain, town_domain, info_addr):
+    db.shop_addrs.insert({'shop_addr_id': shop_addr_id, 'province_domain': province_domain, 'city_domain': city_domain, 'town_domain': town_domain, 'info_addr': info_addr})
+
+def del_shop_addr(db, shop_addr_id):
+    uid = bson.binary.UUID(shop_addr_id)
+    db.shop_addrs.remove({'shop_addr_id': uid})
+
+def find_shop_addr_by_id(db, shop_addr_id):
+    uid = bson.binary.UUID(shop_addr_id)
+    shop_addr = db.shop_addrs.find_one({'shop_addr_id': uid})
+    return shop_addr
+
+def update_shop_addr(db, shop_addr_id, province_domain, city_domain, town_domain, info_addr):
+    uid = bson.binary.UUID(shop_addr_id)
+    db.shop_addrs.update({'shop_addr_id': uid}, {'$set': {'province_domain': province_domain, 'city_domain': city_domain, 'town_domain': town_domain, 'info_addr': info_addr}})

@@ -1,0 +1,75 @@
+{% extends 'manage_index.html' %}
+{% block manager_register_css %}
+<link href="/static/css/signin.css" rel="stylesheet">
+{% endblock %}
+{% block page_container %}
+<div class="container">
+
+    <form enctype="multipart/form-data" id="brand-form" class="form-signin" action="{% url 'add_brand' %}" method="post">
+        <h2 class="form-signin-heading">添加品牌</h2>
+        <p class="text-danger">{{ message }}</p>
+
+        <label for="bname">品牌名称:</label>
+        <input id="bname" name="bname" class="form-control" placeholder="请输入品牌名称" autofocus type="text"><br>
+        <label for="bdesc">品牌介绍:</label>
+        <textarea id="bdesc" name="bdesc" class="form-control" placeholder="请输入品牌介绍" type="text"></textarea><br>
+        <label for="bimg">品牌图片上传:</label>
+        <input type="file" name="bimg" id="bimg"><br>
+
+        <div class="input-group">
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown">
+                    请选择
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="javascript:void(0);" id="yes">是</a></li>
+                    <li><a href="javascript:void(0);" id="no">否</a></li>
+                </ul>
+            </div>
+            <input type="text" class="form-control" name="isdesign" id="isdesign" value="是否为独立设计师品牌" readonly>
+        </div><br>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+    </form>
+
+</div> <!-- /container -->
+{% endblock %}
+{% block manager_register_login_options_js %}
+<script src="/static/js/jquery.validate.js"></script>
+<script type="text/javascript">
+    $("#yes").click(function(){
+        $("#isdesign").val("是独立设计师品牌");
+    });
+    $("#no").click(function(){
+        $("#isdesign").val("不是独立设计师品牌");
+    });
+    $().ready(function () {
+        $("#brand-form").validate({
+            rules: {
+                bname: {
+                    required: true
+                },
+                bdesc: {
+                    required: true
+                },
+                bimg: {
+                    required: true
+                }
+            },
+            messages: {
+                bname: {
+                    required: "请输入品牌名称"
+                },
+                bdesc: {
+                    required: "请输入品牌介绍"
+                },
+                bimg: {
+                    required: "请上传商品图片"
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}
+

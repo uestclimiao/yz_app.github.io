@@ -1,0 +1,145 @@
+{% extends 'manage_index.html' %}
+{% block manager_register_css %}
+<link href="/static/css/signin.css" rel="stylesheet">
+<link href="/static/css/jquery.searchableSelect.css" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/jquery.multiselect.css" />
+<link rel="stylesheet" href="/static/css/style.css" />
+<link rel="stylesheet" href="/static/css/prettify.css" />
+<link rel="stylesheet" href="/static/css/jquery-ui.css" />
+{% endblock %}
+{% block page_container %}
+<div class="container">
+
+    <form enctype="multipart/form-data" id="commodity-form" class="form-signin" action="{% url 'modify_commodity' %}"
+          method="post">
+        <h2 class="form-signin-heading">修改商品</h2>
+        <input id="cid" name="cid" value="{{ commodity.c_id }}" type="hidden">
+        <label for="cname">商品名称:</label>
+        <input id="cname" name="cname" class="form-control" value="{{ commodity.c_name }}" autofocus type="text"><br>
+        <label for="cprice">商品价格:</label>
+        <input id="cprice" name="cprice" class="form-control" value="{{ commodity.c_price }}" type="text"><br>
+        <label for="cdesc">商品介绍:</label>
+        <textarea id="cdesc" name="cdesc" class="form-control" type="text">{{ commodity.c_description }}</textarea><br>
+        <label for="cpostage">商品邮费:</label>
+        <input id="cpostage" name="cpostage" class="form-control" value="{{ commodity.c_postage }}" type="text"><br>
+        <label for="cnum">剩余商品个数:</label>
+        <input id="cnum" name="cnum" class="form-control" value="{{ commodity.c_num }}" type="number"><br>
+        <label for="cimg">商品图片上传:</label>
+        <input type="file" name="cimg" id="cimg"><br>
+        <label>提供的尺寸</label><br>
+        <select id="c_size" class="multi_select" multiple="multiple" name="c_size" size="5">
+            {% for size in sizes_list %}
+            <option value="{{ size.size_name }}">{{ size.size_name }}</option>
+            {% endfor %}
+        </select><br><br>
+        <label>提供的颜色/款式</label>
+        <select id="c_style" class="multi_select" multiple="multiple" name="c_style" size="5">
+            {% for style in styles_list %}
+            <option value="{{ style.style_name }}">{{ style.style_name }}</option>
+            {% endfor %}
+        </select><br><br>
+        <label>所属类别:</label>
+        <select name="c_class" class="belong">
+            {% for class in classes_list %}
+            <option value="{{ class.class_name }}">{{ class.class_name }}</option>
+            {% endfor %}
+        </select><br><br>
+        <label>所属品牌:</label>
+        <select name="c_brand" class="belong">
+            {% for brand in brands_list %}
+            <option value="{{ brand.b_name }}">{{ brand.b_name }}</option>
+            {% endfor %}
+        </select><br><br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+    </form>
+
+</div> <!-- /container -->
+{% endblock %}
+{% block manager_register_login_options_js %}
+<script src="/static/js/jquery.validate.js"></script>
+<script src="/static/js/jquery.searchableSelect.js"></script>
+<script src="/static/js/jquery.ui.core.js"></script>
+<script src="/static/js/jquery.ui.widget.js"></script>
+<script src="/static/js/prettify.js"></script>
+<script src="/static/js/jquery.multiselect.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('.belong').searchableSelect();
+        $(".multi_select").multiselect({
+            noneSelectedText: "==请选择==",
+            checkAllText: "全选",
+            uncheckAllText: '全不选',
+            selectedList:4
+        });
+    });
+    $().ready(function () {
+        $("#commodity-form").validate({
+            rules: {
+                cname: {
+                    required: true
+                },
+                cprice: {
+                    required: true,
+                    min: 0,
+                    number: true
+                },
+                cdesc: {
+                    required: true
+                },
+                cpostage: {
+                    required: true,
+                    min: 0,
+                    number: true
+                },
+                cnum: {
+                    required: true,
+                    min: 0,
+                    digits: true
+                },
+                cimg: {
+                    required: true
+                },
+                c_size: {
+                    required: true
+                },
+                c_style: {
+                    required: true
+                }
+            },
+            messages: {
+                cname: {
+                    required: "请输入商品名称"
+                },
+                cprice: {
+                    required: "请输入商品价格",
+                    min: "商品价格不能小于0",
+                    number: "商品价格必须是合法数字"
+                },
+                cdesc: {
+                    required: "请输入商品介绍"
+                },
+                cpostage: {
+                    required: "请输入商品邮费",
+                    min: "商品邮费不能小于0",
+                    number: "商品邮费必须是合法数字"
+                },
+                cnum: {
+                    required: "请输入剩余商品个数",
+                    min: "剩余商品个数不能小于0",
+                    digits: "剩余商品个数必须是整数"
+                },
+                cimg: {
+                    required: "请上传商品图片"
+                },
+                c_size: {
+                    required: "请至少选择1个尺寸"
+                },
+                c_style: {
+                    required: "请至少选择1个颜色/款式"
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}
+

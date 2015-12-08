@@ -1,0 +1,109 @@
+﻿{% extends 'client/client_Base.html' %}
+{% load staticfiles %}
+{% block background %}{% endblock %}
+{% block options %}
+
+<!--
+<script type="text/javascript" src="{% static 'client/js/jquery-1.11.3.min.js' %}"></script>
+-->
+<script type="text/javascript" src="{% static 'client/js/jquery.cityselect.js' %}"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#city_1").citySelect({
+            prov: "湖北",
+            city: "孝感",
+            dist: "孝南区",
+            nodata: "none"
+        });
+
+    });
+
+    function del_items() {
+        if (window.confirm("您确定要删除吗？")) {
+
+            var url = "/client/delete_address/";
+            var i = 0;
+            var deleList = new Array();
+            $("input[name='del_addresss']:checked").each(function () {
+                i++;
+                deleList[i] = $(this).attr('id');
+            });
+            $.post(url,
+                    {
+                        del_object: 'address',
+                        del_item_list: deleList.toString()
+                    }, function (data) {
+                        for (var i = 1; i < deleList.length; i++) {
+                            var del_node = document.getElementById(deleList[i]);
+                            var del_tr = del_node.parentNode.parentNode;
+                            del_tr.parentNode.removeChild(del_tr);
+                        }
+                        var del_box_list = document.getElementsByName("del_addresss");
+                        for (var i = 0; i < del_box_list.length; i++) {
+                            del_box_list[i].checked = false;
+                        }
+                        //   alert(data);
+                    });
+        }
+    }
+</script>
+
+<div class="member_index width_900">
+    <div class="center_tle">
+        <h3>我的账户</h3>
+
+        <p>欢迎您 {{username}}，这是您的YAZEE个人账户。点击进入以下部分来查看您需要的信息。</p>
+    </div>
+    <ul class="member_meun">
+        <li><a href="#">我的账户</a></li>
+        <li class="on"><a href="#">地址</a></li>
+        <li><a href="#">账户信息</a></li>
+        <li><a href="#">我的雅币</a></li>
+        <li><a href="#">我的订单</a></li>
+        <li><a href="#">我的收藏</a></li>
+        <li><a href="#">我的关注品牌</a></li>
+    </ul>
+    <div class="member_rightbox address">
+        <h3 class="tle">送货地址</h3>
+
+        <div id="city_1">
+            <form action="{% url 'client_add_address' %}" method="get">
+                <select class="prov" name="provincedomain"></select>
+                <select class="city" name="citydomain" disabled="disabled"></select>
+                <select class="dist" name="towndomain" disabled="disabled"></select>
+                <input type="text" style="width:150px; height:24px;" name="detail_address" placeholder="请输入详细地址"/>
+                <input type="submit" style="width:50px;height:24px;" value="提交"/>
+            </form>
+        </div>
+        <br><br>
+
+        <div class="col-xs-14 col-lg-24">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>
+                        详细地址
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for address in address_list %}
+                <tr>
+                    <td><input type="checkbox" name="del_addresss" id="{{ address.addr_id }}"></td>
+                    <td>
+                        {{ address.province_domain }}{{ address.city_domain }}{{ address.town_domain }}{{ address.detail_domain }}
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <a class="btn btn-default  btn-sm" href="javascript:void(0);" onclick="del_items()"
+               role="button">删除选中的送货地址</a>
+
+        </div>
+        <!--/.col-xs-6.col-lg-4-->
+    </div>
+
+</div>
+{% endblock %}

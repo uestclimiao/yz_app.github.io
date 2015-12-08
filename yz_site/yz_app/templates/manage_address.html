@@ -1,0 +1,79 @@
+{% extends 'manage_index.html' %}
+{% block content %}
+<div class="col-xs-14 col-lg-24">
+    <h4>门店地址</h4>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th></th>
+            <th><small>省/特别行政区/国外</small></th>
+            <th><small>市</small></th>
+            <th><small>区</small></th>
+            <th><small>详细地址</small></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for shop_addr in shop_addrs_list %}
+        <tr>
+            <td><input type="checkbox" name="del_shop_addrs" id="{{ shop_addr.shop_addr_id }}"></td>
+            <td><small>{{ shop_addr.province_domain }}</small></td>
+            <td><small>{{ shop_addr.city_domain }}</small></td>
+            <td><small>{{ shop_addr.town_domain }}</small></td>
+            <td><small>{{ shop_addr.info_addr }}</small></td>
+            <td><p><a class="btn btn-default  btn-sm" href="{% url 'req_modify_shop_addr' %}?shop_addr_id={{ shop_addr.shop_addr_id }}" role="button">修改门店地址</a></p></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a class="btn btn-default  btn-sm" href="javascript:void(0);" onclick="del_items()" role="button">删除选中的门店地址</a>
+    <a class="btn btn-default  btn-sm" href="{% url 'req_add_shop_addr' %}" role="button">添加门店地址</a>
+</div><!--/.col-xs-6.col-lg-4-->
+{% endblock %}
+{% block options %}
+<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+    <div class="list-group">
+        <a href="{% url 'index' %}" class="list-group-item">商品管理</a>
+        <a href="{% url 'req_brand' %}" class="list-group-item">品牌管理</a>
+        <a href="{% url 'req_class' %}" class="list-group-item">分类管理</a>
+        <a href="{% url 'req_style' %}" class="list-group-item">颜色/款式管理</a>
+        <a href="{% url 'req_size' %}" class="list-group-item">尺寸管理</a>
+        <a href="#" class="list-group-item">订单管理</a>
+        <a href="#" class="list-group-item">发货管理</a>
+        <a href="{% url 'req_shop_addr' %}" class="list-group-item active">门店管理</a>
+        <a href="{% url 'req_admin' %}" class="list-group-item">管理员管理</a>
+        <a href="{% url 'req_client' %}" class="list-group-item">会员管理</a>
+    </div>
+</div><!--/.sidebar-offcanvas-->
+{% endblock %}
+{% block manager_register_login_options_js %}
+<script type="text/javascript">
+    function del_items() {
+        if (window.confirm("您确定要删除吗？")) {
+            //var username = "{{login_user}}";
+            var url = "/manage/delete_items/";
+            var i = 0;
+            var deleList = new Array();
+            $("input[name='del_shop_addrs']:checked").each(function () {
+                i++;
+                deleList[i] = $(this).attr('id');
+            });
+            $.post(url,
+                    {
+                        del_object: 'shop_addr',
+                        del_item_list: deleList.toString()
+                    }, function (data) {
+                        for (var i = 1; i < deleList.length; i++) {
+                            var del_node = document.getElementById(deleList[i]);
+                            var del_tr = del_node.parentNode.parentNode;
+                            del_tr.parentNode.removeChild(del_tr);
+                        }
+                        var del_box_list = document.getElementsByName("del_shop_addrs");
+                        for (var i = 0; i < del_box_list.length; i++) {
+                            del_box_list[i].checked = false;
+                        }
+                        alert(data);
+                    });
+        }
+    }
+</script>
+{% endblock %}

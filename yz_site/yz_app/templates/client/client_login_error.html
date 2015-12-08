@@ -1,0 +1,27 @@
+{% extends 'client/client_Base.html' %}
+{% load staticfiles %}
+{% block background %}{% endblock %}
+{% block options %}
+
+<!--
+<meta http-equiv="refresh" content="3;url=/client/login/">
+-->
+
+<div class="list_main">
+  <div class="showmessage" align="center">
+    <caption>
+    <h2>&nbsp;</h2>
+    <h2>信息提示</h2>
+    </caption>
+    <p>对不起,用户名或密码不对,登录失败,请重新登录。</p>
+    <p class="op">  <a href="{% url 'client_req_login' %}">返回上一页</a> | <a href="{% url 'client_index' %}">返回首页</a>  </p>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+  </div>
+  <div class="clear"></div>
+</div>
+
+{% endblock %}

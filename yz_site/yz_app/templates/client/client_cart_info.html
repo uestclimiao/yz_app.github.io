@@ -1,0 +1,24 @@
+{% extends 'client/client_Base.html' %}
+{% load staticfiles %}
+{% block background %}{% endblock %}
+{% block options %}
+
+
+<div class="list_main">
+  <div class="showmessage" align="center">
+    <caption>
+    <h2>&nbsp;</h2>
+    <h2>信息提示</h2>
+    </caption>
+    <p>你已经成功地将商品加入到购物车去</p>
+    <p class="op">  <a href="{% url 'client_commodity_detail' %}?commodity_id={{commodity_id}}">返回到商品页面中</a> | <a href="{% url 'client_show_cart' %}">去购物车结算</a>  </p>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+  </div>
+  <div class="clear"></div>
+</div>
+
+{% endblock %}

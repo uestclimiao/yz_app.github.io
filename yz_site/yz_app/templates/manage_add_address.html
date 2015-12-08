@@ -1,0 +1,52 @@
+{% extends 'manage_index.html' %}
+{% block manager_register_css %}
+<link href="/static/css/signin.css" rel="stylesheet">
+{% endblock %}
+{% block page_container %}
+<div id="MD_addr" class="container">
+
+    <form id="MD-form" class="form-signin" action="{% url 'add_shop_addr' %}" method="post">
+        <h2 class="form-signin-heading">添加门店地址</h2>
+        <select class="prov" name="provincedomain"></select>
+        <select class="city" name="citydomain" disabled="disabled"></select>
+        <select class="dist" name="towndomain" disabled="disabled"></select>
+        <br><br>
+        <div class="row">
+            <div class="input-group col-xs-12 col-lg-4">
+                <span class="input-group-addon">详细地址:</span>
+                <input class="form-control" name="info_addr" placeholder="请输入详细地址" autofocus type="text">
+            </div>
+        </div>
+        <br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+    </form>
+
+</div> <!-- /container -->
+{% endblock %}
+{% block manager_register_login_options_js %}
+<script src="/static/js/jquery.validate.js"></script>
+<script type="text/javascript" src="/static/js/jquery.cityselect.js"></script>
+<script type="text/javascript">
+    $().ready(function () {
+        $("#MD_addr").citySelect({
+            prov:"广东",
+            city:"深圳",
+            dist:"罗湖区",
+            nodata:"none"
+        });
+        $("#MD-form").validate({
+            rules: {
+                info_addr: {
+                    required: true
+                }
+            },
+            messages: {
+                info_addr: {
+                    required: "请输入详细地址"
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}
+

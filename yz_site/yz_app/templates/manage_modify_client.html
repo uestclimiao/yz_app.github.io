@@ -1,0 +1,124 @@
+{% extends 'manage_index.html' %}
+{% block manager_register_css %}
+<link href="/static/css/signin.css" rel="stylesheet">
+<link href="/static/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+{% endblock %}
+{% block page_container %}
+    <div class="container">
+
+      <form id="client-form" class="form-signin" action="{% url 'modify_client' %}" method="post">
+        <h2 class="form-signin-heading">修改会员信息</h2>
+          <p class="text-danger">{{ message }}</p>
+
+          <input id="client_id" name="client_id" value="{{ client.client_id }}" type="hidden">
+          <input id="original_username" name="original_username" value="{{ client.username }}" type="hidden">
+          <label for="username">用户名:</label>
+          <input id="username" name="username" class="form-control" value="{{ client.username }}" autofocus type="text"><br>
+          <label for="password">密码:</label>
+          <input id="password" name="password" class="form-control" placeholder="请输入密码" type="password"><br>
+          <label for="confirm_password">重复密码:</label>
+          <input id="confirm_password" name="confirm_password" class="form-control" placeholder="请重复输入密码" type="password"><br>
+
+          <div class="row">
+              <div class="col-xs-6 col-lg-4">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                        <input id="male" name="gender" value="male" type="radio">
+                    </span>
+                      <input type="text" class="form-control" value="男" disabled>
+                  </div>
+              </div>
+              <div class="col-xs-6 col-lg-4">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                        <input id="female" name="gender" value="female" type="radio">
+                    </span>
+                      <input type="text" class="form-control" value="女" disabled>
+                  </div>
+              </div>
+              <label class="error" for="gender" generated="true" style="display:none"></label>
+          </div><br>
+
+          <div class="form-group">
+              <div class="input-group date form_date col-md-24" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                  <input id='date' class="form-control" size="16" name="date" type="text" value="" readonly placeholder="请选择出生日期">
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+              </div>
+              <label class="error" for="date" generated="true" style="display:none"></label>
+          </div>
+
+          <label for="email">邮箱地址:</label>
+          <input id="email" name="email" class="form-control" value="{{ client.email }}" type="text"><br>
+          <label for="phone_num">手机号码:</label>
+          <input id="phone_num" name="phone_num" class="form-control" value="{{ client.phone_num }}" type="text"><br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+      </form>
+
+    </div> <!-- /container -->
+{% endblock %}
+{% block manager_register_login_options_js %}
+<script src="/static/js/jquery.validate.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="/static/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script type="text/javascript">
+    $('.form_date').datetimepicker({
+        language:  'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0
+    });
+
+    $().ready(function(){
+        $("#client-form").validate({
+            rules:{
+                email: {
+                    required: true,
+                    email: true
+                },
+                phone_num: {
+                    required: true
+                },
+                password: {
+                    required: true
+                },
+                confirm_password: {
+                    equalTo: "#password"
+                },
+                date:{
+                    required: true
+                },
+                gender:{
+                    required: true
+                }
+            },
+            messages:{
+                email: {
+                    required: "请输入邮箱地址",
+                    email: "输入的邮箱地址不符合格式"
+                },
+                phone_num: {
+                    required: "请输入电话号码"
+                },
+                password: {
+                    required: "请输入密码"
+                },
+                confirm_password: {
+                    equalTo: "两次输入的密码不一致"
+                },
+                date:{
+                    required: "请选择出生日期"
+                },
+                gender:{
+                    required: "请选择性别"
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}
+

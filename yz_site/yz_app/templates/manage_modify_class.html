@@ -1,0 +1,39 @@
+{% extends 'manage_index.html' %}
+{% block manager_register_css %}
+<link href="/static/css/signin.css" rel="stylesheet">
+{% endblock %}
+{% block page_container %}
+    <div class="container">
+
+      <form id="class-form" class="form-signin" action="{% url 'modify_class' %}" method="post">
+        <h2 class="form-signin-heading">修改分类</h2>
+          <p class="text-danger">{{ message }}</p>
+
+          <input id="class_id" name="class_id" value="{{ class.class_id }}" type="hidden">
+          <label for="class_name">分类名称:</label>
+          <input id="class_name" name="class_name" class="form-control" value="{{ class.class_name }}" autofocus type="text"><br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+      </form>
+
+    </div> <!-- /container -->
+{% endblock %}
+{% block manager_register_login_options_js %}
+<script src="/static/js/jquery.validate.js"></script>
+<script type="text/javascript">
+    $().ready(function(){
+        $("#class-form").validate({
+            rules:{
+                class_name: {
+                    required:true
+                }
+            },
+            messages:{
+                class_name: {
+                    required: "请输入分类名称"
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}
+

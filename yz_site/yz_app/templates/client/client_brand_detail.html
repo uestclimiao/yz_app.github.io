@@ -1,0 +1,93 @@
+{% extends 'client/client_Base.html' %}
+{% load staticfiles %}
+
+{% block background %}
+{% endblock %}
+
+{% block options %}
+
+<div class="shop_tle width_1035">
+		<div class="left">
+			<!---品牌图片--->
+			<img src="/static/files/brand_imgs/{{ brand.b_id }}.png" height="143px">
+			<!---品牌介绍--->
+			<p>{{ brand.b_description }}</p>
+		</div>
+
+		<div class="right">
+			<img src="/static/files/brand_imgs/{{ brand.b_id }}.png" height="266px">
+			<a href="#">探索更多</a>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="shop_contTle">
+		<div class="width_1035 clr conter">
+			<!----品牌名称Armani--->
+			<!--<img class="shop_contTle_img" src="./商品列表&#45;&#45;雅歭奢品_files/shop_contTle_img.jpg">-->
+			<div class="left sort_order">
+				<span class="val">排序方式<i></i></span>
+				<div>
+					<p><a href="#">价格升序</a></p>
+					<p><a href="#">价格降序</a></p>
+					<p><a href="#">销量升序</a></p>
+					<p><a href="#">销量降序</a></p>
+				</div>
+			</div>
+			<div class="right"></div>
+		</div>
+	</div>
+	<div class="shop_box width_1035">
+		<div class="shop_menu">
+			<h3>
+				<span class="on"><a href="#">全部</a></span>
+				<span><a href="#">男士</a></span>
+				<span><a href="#">女士</a></span>
+			</h3>
+				<p class="p"><a href="#">全部</a></p>
+                <p><a href="#">99999</a></p>
+		</div>
+		<!----商品展示列表：12个--->
+		<ul class="shop_list">
+            {% for commodity in commodity_list %}
+							<li><a href="{% url 'client_commodity_detail' %}?commodity_id={{commodity.c_id}}">
+					<img src="/static/files/commodity_imgs/{{ commodity.c_id }}.png" width="200px" title="{{ commodity.c_name }}">
+					<!---<img src="" />--->
+					<div>
+						<p style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; ">{{ commodity.c_name }}</p>
+						<p>{{ commodity.c_price }}RMB</p>
+					</div>
+				</a></li>
+            {% endfor %}
+		</ul>
+	</div>
+	<div class="clear"></div>
+	<div class="page"></div>
+	<div class="footer">
+	<div class="width_1035">
+		<div class="fl">
+			<h3>服务信息</h3>
+			<p><a href="#">联系我们</a></p>
+			<p><a href="#">配送信息</a></p>
+			<p><a href="#">退换货信息</a></p>
+			<p><a href="#">付款相关</a></p>
+			<p><a href="#">关于雅币</a></p>
+			<p><a href="#">常见问题</a></p>
+		</div>
+		<div class="fl">
+			<h3>&nbsp;</h3>
+			<p><a href="#">联盟入驻</a></p>
+			<p><a href="#">广告</a></p>
+			<p><a href="#">服务条款</a></p>
+			<p><a href="#">隐私与COOKIE条款</a></p>
+			<p><a href="#">我们的APP</a></p>
+		</div>
+		<div class="fr">
+			<h3>订阅雅歭</h3>
+			<input name="" type="text" placeholder="订阅YAZEE 电子快报">
+		</div>
+		<div class="clear"></div>
+		<p>蜀ICP备15018040</p>
+	</div>
+</div>
+{% endblock %}
+

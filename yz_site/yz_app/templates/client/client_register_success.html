@@ -1,0 +1,27 @@
+{% extends 'client/client_Base.html' %}
+{% load staticfiles %}
+{% block background %}{% endblock %}
+{% block options %}
+
+
+<meta http-equiv="refresh" content="3;url={% url 'client_req_login' %}">
+
+
+<div class="list_main">
+  <div class="showmessage" align="center">
+    <caption>
+    <h2>&nbsp;</h2>
+    <h2>信息提示</h2>
+    </caption>
+    <p>恭喜您,注册成功！正跳转到登录页面……</p>
+    
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+  </div>
+  <div class="clear"></div>
+</div>
+
+{% endblock %}

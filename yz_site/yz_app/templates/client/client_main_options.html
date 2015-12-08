@@ -1,0 +1,51 @@
+{% extends 'client/client_Base.html' %}
+{% load staticfiles %}
+{% block background %}{% endblock %}
+{% block options %}
+	 
+	
+	<div class="member_index width_1035">
+		<div class="center_tle">
+			<h3>我的账户</h3>
+			<p>欢迎您 {{username}} ，这是您的YAZEE个人账户。点击进入以下部分来查看您需要的信息。</p>
+		</div>
+		<ul class="mem_indexul">
+			<li><a href="{% url 'client_req_address' %}">
+				<h4>地址管理</h4>
+				<p>添加或修改送货地址</p>
+			</a></li>
+			<li><a href="{% url 'client_show_order' %}">
+				<h4>我的订单</h4>
+				<p>退换商品，追踪订单配送状态，查看订单记录</p>
+			</a></li>
+			<li><a href="#">
+				<h4>账户信息</h4>
+				<p>查看或修改您的登录信息</p>
+			</a></li>
+			<li><a href="#">
+				<h4>我的关注品牌</h4>
+				<p>预览新品，获取上架通知</p>
+			</a></li>
+			<li><a href="#">
+				<h4>我的雅币</h4>
+				<p>充值雅币或管理雅币</p>
+			</a></li>
+			<li><a href="#">
+				<h4>我的收藏</h4>
+				<p>查看收藏清单，加入心爱商品，接受到货提醒</p>
+			</a></li>
+			<div class="clear"></div>
+			<div class="blankH20"></div>
+			<p><a href="{% url 'client_logout' %}">退出</a></p>
+			<div class="blankH20"></div>
+		</ul>
+		
+	</div>
+	<div class="clear"></div>
+{% endblock %}
+
+
+
+
+
+

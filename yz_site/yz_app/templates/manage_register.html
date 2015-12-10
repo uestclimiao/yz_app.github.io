@@ -1,9 +1,7 @@
 {% extends 'manage_index.html' %}
-{% block manager_register_css %}
-<link href="/static/css/signin.css" rel="stylesheet">
-{% endblock %}
-{% block page_container %}
-    <div class="container">
+
+{% block content %}
+    <div class="col-md-4 col-md-offset-4">
 
       <form id="register-form" class="form-signin" action="{% url 'admin_register' %}" method="post">
         <h2 class="form-signin-heading">请注册</h2>

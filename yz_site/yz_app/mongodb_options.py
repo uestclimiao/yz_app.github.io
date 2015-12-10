@@ -5,8 +5,9 @@ from pymongo import *
 import bson
 
 def mongodb_init():
-    connection_string = 'mongodb://127.0.0.1:27017'
-    client = MongoClient(connection_string)
+    #connection_string = 'mongodb://127.0.0.1:27017'
+    #client = Connection(connection_string)
+    client=MongoClient('127.0.0.1',27017)
     db = client.yz
     if not client:
         print '[INFO]: MongoDB can not be connected, please check !'

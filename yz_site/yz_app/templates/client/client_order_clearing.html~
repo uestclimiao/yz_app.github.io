@@ -1,0 +1,119 @@
+{% extends 'client/client_Base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/client/css/tasp.css" />
+<link rel="stylesheet" href="/static/client/css/orderconfirm.css"  />
+<style>
+#page{width:auto;}
+#comm-header-inner,#content{width:950px;margin:auto;}
+#logo{padding-top:26px;padding-bottom:12px;}
+#header .wrap-box{margin-top:-67px;}
+#logo .logo{position:relative;overflow:hidden;display:inline-block;width:140px;height:35px;font-size:35px;line-height:35px;color:#f40;}
+#logo .logo .i{position:absolute;width:140px;height:35px;top:0;left:0;background:url(http://a.tbcdn.cn/tbsp/img/header/logo.png);}
+</style>
+{% endblock %}
+
+{% block background %}{% endblock %}
+
+{% block options %}
+<div id="page">
+   <div id="content" class="grid-c">
+    <div id="address" class="address" style="margin-top: 20px;" data-spm="2">
+      <h3>确认收货地址</h3>
+      <div class="col-xs-14 col-lg-24">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>
+                        详细地址
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for address in address_list %}
+                <tr>
+                    <td><input type="radio" name="del_addresss" id="{{ address.addr_id }}"></td>
+                    <td>
+                        {{ address.province_domain }}{{ address.city_domain }}{{ address.town_domain }}{{ address.detail_domain }}
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+
+     <div>
+      <h3 class="dib">确认订单信息</h3>
+      <table cellspacing="0" cellpadding="0" class="order-table" id="J_OrderTable" summary="统一下单订单信息区域">
+       <caption style="display: none">
+        统一下单订单信息区域
+       </caption>
+       <thead>
+        <tr>
+         <th class="s-title">店铺宝贝
+          <hr /></th>
+         <th class="s-price">单价(元)
+          <hr /></th>
+         <th class="s-amount">数量
+          <hr /></th>
+         <th class="s-total">小计(元)
+          <hr /></th>
+        </tr>
+       </thead>
+       <tbody data-spm="3" class="J_Shop" data-tbcbid="0" data-outorderid="47285539868" data-isb2c="false" data-postmode="2" data-sellerid="1704508670">
+        <tr class="first">
+
+
+        <!--商品详情-->
+        {% for commodity in confirm_c_list %}
+        <tr class="item">
+         <td class="s-title"><a class="a_commodity"  href="#"  class="J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.5"> <img src="/static/files/commodity_imgs/{{commodity.commodity_id}}.png" class="itempic" /><span class="title J_MakePoint" >{{ commodity.c_name }}</span></a>
+          <div class="props">
+           <span>尺码: {{ commodity.size }} </span>
+           <span>样式: {{ commodity.color }} </span>
+          </div>
+           </td>
+         <td class="s-price"> <span class="price "> <em class="style-normal-small-black J_ItemPrice">{{ commodity.unit_price }}</em> </span> </td>
+         <td class="s-amount" data-point-url=""> <input type="hidden" class="J_Quantity" value="1" name="19614514619_31175333266_35612993875_quantity" />1 </td>
+         <td class="s-total"> <span class="price "> <em class="style-normal-bold-red J_ItemTotal ">{{ commodity.unit_price }}</em> </span>  </td>
+        </tr>
+        {% endfor %}
+        <tr class="shop-total blue-line">
+         <td colspan="5">店铺合计(<span class="J_Exclude" style="display: none">不</span>含运费<span class="J_ServiceText" style="display: none">，服务费</span>)： <span class="price g_price "> <span>&yen;</span><em class="style-middle-bold-red J_ShopTotal">{{ total_price }}</em> </span></td>
+        </tr>
+       </tbody>
+       <tfoot>
+        <tr>
+         <td colspan="5">
+          <div class="order-go" data-spm="4">
+           <div class="J_AddressConfirm address-confirm">
+            <div class="kd-popup pop-back" style="margin-bottom: 40px;">
+             <a href="#" class="back J_MakePoint"  style="color:#36c">返回购物车</a>
+             <a id="J_Go" class=" btn-go" tabindex="0"  href="javascript:void(0);" onclick="submit_orders()">提交订单<b class="dpl-button"></b></a>
+            </div>
+           </div>
+          </div> </td>
+        </tr>
+       </tfoot>
+      </table>
+     </div>
+   </div>
+  </div>
+<!--提交审定单表单/支付-->
+<form action="{% url 'client_pay_ali' %}" id="order_form" method="post">
+	<input id="money" name="money" type="hidden" value="{{total_price}}">
+    <input id="commodity_id_list_str" name="commodity_id_list_str" type="hidden" value="{{commodity_id_list_str}}">
+</form>
+
+<script type="text/javascript">
+    function submit_orders() {
+            $('#order_form').submit();
+    }
+</script>
+{% endblock %}
+

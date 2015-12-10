@@ -1,40 +1,96 @@
 {% extends 'manage_index.html' %}
-{% block manager_register_css %}
-<link href="/static/css/signin.css" rel="stylesheet">
-{% endblock %}
-{% block page_container %}
-    <div class="container">
 
-      <form enctype="multipart/form-data" id="brand-form" class="form-signin" action="{% url 'modify_brand' %}" method="post">
-        <h2 class="form-signin-heading">修改品牌</h2>
-          <p class="text-danger">{{ message }}</p>
+{% block content %}
+<div class="col-md-8">
+    <div class="card">
+        <div class="header">
+            <h4 class="title">修改品牌</h4>
+        </div>
+        <div class="content">
+            <form enctype="multipart/form-data" id="brand-form" class="form-signin" action="{% url 'modify_brand' %}" method="post">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input id="bid" name="bid" value="{{ brand.b_id }}" type="hidden">
+                            <input id="original_bname" name="original_bname" value="{{ brand.b_name }}" type="hidden">
+                            <label for="bname">品牌名称</label>
+                            <input id="bname" name="bname" class="form-control" value="{{ brand.b_name }}" autofocus type="text">
+                        </div>
+                    </div>
+                </div>
 
-          <input id="bid" name="bid" value="{{ brand.b_id }}" type="hidden">
-          <input id="original_bname" name="original_bname" value="{{ brand.b_name }}" type="hidden">
-          <label for="bname">品牌名称:</label>
-          <input id="bname" name="bname" class="form-control" value="{{ brand.b_name }}" autofocus type="text"><br>
-          <label for="bdesc">品牌介绍:</label>
-          <textarea id="bdesc" name="bdesc" class="form-control" type="text">{{ brand.b_description }}</textarea><br>
-          <label for="bimg">品牌图片上传:</label>
-          <input type="file" name="bimg" id="bimg"><br>
-          <div class="input-group">
-            <div class="input-group-btn">
-                <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown">
-                    请选择
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="javascript:void(0);" id="yes">是</a></li>
-                    <li><a href="javascript:void(0);" id="no">否</a></li>
-                </ul>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown">
+                                        请选择
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="javascript:void(0);" id="yes">是</a></li>
+                                        <li><a href="javascript:void(0);" id="no">否</a></li>
+                                    </ul>
+                                </div>
+                                <input type="text" class="form-control" name="isdesign" id="isdesign" value="是否为独立设计师品牌" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="bdesc">品牌介绍</label>
+                            <textarea rows="5" id="bdesc" name="bdesc" class="form-control" type="text">{{ brand.b_description }}</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="bimg">品牌图片上传</label>
+                            <input class=" border-gray form-control" type="file" name="bimg" id="bimg">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-info btn-fill pull-right">更新修改</button>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="card card-user">
+        <div class="image">
+            <!--<img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="..."/>-->
+        </div>
+        <div class="content">
+            <div class="author">
+                 <a href="#">
+                <img class="avatar border-gray" src="/static/files/brand_imgs/9.jpg" alt="..."/>
+
+                  <h4 class="title">YAZEE<br />
+                     <small>不只是奢侈品</small>
+                  </h4>
+                </a>
             </div>
-            <input type="text" class="form-control" name="isdesign" id="isdesign" value="是否为独立设计师品牌" readonly>
-        </div><br>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
-      </form>
+            <p class="description text-center"> "我们卖的不是奢侈品 <br>
+                                而是能够点亮 <br>
+                                 生活的艺术品"
+            </p>
+        </div>
+        <hr>
 
-    </div> <!-- /container -->
+    </div>
+</div>
 {% endblock %}
+
+
 {% block manager_register_login_options_js %}
 <script src="/static/js/jquery.validate.js"></script>
 <script type="text/javascript">

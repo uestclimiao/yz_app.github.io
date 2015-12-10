@@ -1,62 +1,125 @@
 {% extends 'manage_index.html' %}
-{% block manager_register_css %}
-<link href="/static/css/signin.css" rel="stylesheet">
-<link href="/static/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
-{% endblock %}
-{% block page_container %}
-<div class="container">
 
-    <form id="register-form" class="form-signin" action="{% url 'add_client' %}" method="post">
-        <h2 class="form-signin-heading">会员注册</h2>
-
-        <p class="text-danger">{{ message }}</p>
-
-        <label for="username" class="sr-only">用户名</label>
-        <input id="username" name="username" class="form-control" placeholder="请输入用户名" autofocus type="text"><br>
-        <label for="password" class="sr-only">密码</label>
-        <input id="password" name="password" class="form-control" placeholder="请输入密码" type="password"><br>
-        <label for="confirm_password" class="sr-only">重复密码</label>
-        <input id="confirm_password" name="confirm_password" class="form-control" placeholder="请重复输入密码" type="password"><br>
-
-        <div class="row">
-            <div class="col-xs-6 col-lg-4">
-                <div class="input-group">
-                    <span class="input-group-addon">
-                        <input id="male" name="gender" value="male" type="radio">
-                    </span>
-                    <input type="text" class="form-control" value="男" disabled>
-                </div>
-            </div>
-            <div class="col-xs-6 col-lg-4">
-                <div class="input-group">
-                    <span class="input-group-addon">
-                        <input id="female" name="gender" value="female" type="radio">
-                    </span>
-                    <input type="text" class="form-control" value="女" disabled>
-                </div>
-            </div>
-            <label class="error" for="gender" generated="true" style="display:none"></label>
-        </div><br>
-
-        <div class="form-group">
-            <div class="input-group date form_date col-md-24" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                <input id='date' class="form-control" size="16" name="date" type="text" value="" readonly placeholder="请选择出生日期">
-                <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-            </div>
-            <label class="error" for="date" generated="true" style="display:none"></label>
+{% block content %}
+<div class="col-md-8">
+    <div class="card">
+        <div class="header">
+            <h4 class="title">会员注册</h4>
+            <p class="text-danger">{{ message }}</p>
         </div>
+        <div class="content">
+            <form id="client-form" class="form-signin" action="{% url 'add_client' %}" method="post">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="username">用户名</label>
+                            <input id="username" name="username" class="form-control" placeholder="请输入用户名" autofocus type="text">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="password">密码</label>
+                            <input id="password" name="password" class="form-control" placeholder="请输入密码" type="password">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="confirm_password">重复密码:</label>
+                            <input id="confirm_password" name="confirm_password" class="form-control" placeholder="请重复输入密码" type="password">
+                        </div>
+                    </div>
+                </div>
 
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <input id="male" name="gender" value="male" type="radio">
+                                </span>
+                                  <input type="text" class="form-control" value="男" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <input id="female" name="gender" value="female" type="radio">
+                                </span>
+                                  <input type="text" class="form-control" value="女" disabled>
+                            </div>
+                            <label class="error" for="gender" generated="true" style="display:none"></label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <div class="input-group date form_date col-md-24" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                                  <input id='date' class="form-control" size="16" name="date" type="text" value="" readonly placeholder="请选择出生日期">
+                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                            </div>
+                            <label class="error" for="date" generated="true" style="display:none"></label>
+                        </div>
+                    </div>
+                </div>
 
-        <label for="email" class="sr-only">邮箱地址</label>
-        <input id="email" name="email" class="form-control" placeholder="请输入邮箱地址" type="email"><br>
-        <label for="phone_num" class="sr-only">手机号码</label>
-        <input id="phone_num" name="phone_num" class="form-control" placeholder="请输入手机号码" type="text"><br>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
-    </form>
+                <div class="row">
 
-</div> <!-- /container -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="email">邮箱地址</label>
+                            <input id="email" name="email" class="form-control" placeholder="请输入邮箱地址" type="email">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                             <label for="phone_num">手机号码</label>
+                             <input id="phone_num" name="phone_num" class="form-control" placeholder="请输入手机号码" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                             <!--<label for="cdesc">商品介绍</label>-->
+                             <!--<textarea rows="5" id="cdesc" name="cdesc" class="form-control" type="text">{{ commodity.c_description }}</textarea>-->
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-info btn-fill pull-right">提交</button>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="card card-user">
+        <div class="image">
+            <!--<img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="..."/>-->
+        </div>
+        <div class="content">
+            <div class="author">
+                 <a href="#">
+                <img class="avatar border-gray" src="/static/files/brand_imgs/9.jpg" alt="..."/>
+
+                  <h4 class="title">YAZEE<br />
+                     <small>不只是奢侈品</small>
+                  </h4>
+                </a>
+            </div>
+            <p class="description text-center"> "我们卖的不是奢侈品 <br>
+                                而是能够点亮 <br>
+                                 生活的艺术品"
+            </p>
+        </div>
+        <hr>
+    </div>
+</div>
 {% endblock %}
+
 {% block manager_register_login_options_js %}
 <script src="/static/js/jquery.validate.js"></script>
 <script type="text/javascript" src="/static/js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>

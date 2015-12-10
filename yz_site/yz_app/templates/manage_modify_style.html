@@ -1,22 +1,54 @@
 {% extends 'manage_index.html' %}
-{% block manager_register_css %}
-<link href="/static/css/signin.css" rel="stylesheet">
+
+{% block content %}
+<div class="col-md-8">
+    <div class="card">
+        <div class="header">
+            <h4 class="title">修改颜色/款式</h4>
+            <p class="text-danger">{{ message }}</p>
+        </div>
+        <div class="content">
+            <form id="style-form" class="form-signin" action="{% url 'modify_style' %}" method="post">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input id="style_id" name="style_id" value="{{ style.style_id }}" type="hidden">
+                            <label for="style_name">颜色/款式名称</label>
+                            <input id="style_name" name="style_name" class="form-control"  value="{{ style.style_name }}" autofocus type="text">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-info btn-fill pull-right">更新修改</button>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="card card-user">
+        <div class="image">
+            <!--<img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="..."/>-->
+        </div>
+        <div class="content">
+            <div class="author">
+                 <a href="#">
+                <img class="avatar border-gray" src="/static/files/brand_imgs/9.jpg" alt="..."/>
+
+                  <h4 class="title">YAZEE<br />
+                     <small>不只是奢侈品</small>
+                  </h4>
+                </a>
+            </div>
+            <p class="description text-center"> "我们卖的不是奢侈品 <br>
+                                而是能够点亮 <br>
+                                 生活的艺术品"
+            </p>
+        </div>
+        <hr>
+    </div>
+</div>
 {% endblock %}
-{% block page_container %}
-    <div class="container">
 
-      <form id="style-form" class="form-signin" action="{% url 'modify_style' %}" method="post">
-        <h2 class="form-signin-heading">修改颜色/款式</h2>
-          <p class="text-danger">{{ message }}</p>
-
-          <input id="style_id" name="style_id" value="{{ style.style_id }}" type="hidden">
-          <label for="style_name">颜色/款式名称:</label>
-          <input id="style_name" name="style_name" class="form-control"  value="{{ style.style_name }}" autofocus type="text"><br>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
-      </form>
-
-    </div> <!-- /container -->
-{% endblock %}
 {% block manager_register_login_options_js %}
 <script src="/static/js/jquery.validate.js"></script>
 <script type="text/javascript">

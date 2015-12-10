@@ -205,26 +205,6 @@ input[type=text]:focus,textarea:focus {
 	left:0
 }
 
-.btn-go1 {
-	width:127px;
-	height:36px;
-	position:absolute;
-	right:-1px;
-	bottom:-35px;
-	_right:-2px;
-	_bottom:-36px;
-	font:700 18px/36px arial
-}
-.btn-go1 b {
-	background:url(http://img04.taobaocdn.com/tps/i4/T1OF12XbxrXXXXXXXX-128-36.png) no-repeat scroll 0 1px transparent;
-	width:127px;
-	height:36px;
-	float:left;
-	position:absolute;
-	top:0;
-	left:0
-}
-
 .blue-line {
 	background:url(http://img04.taobaocdn.com/tps/i4/T1Ll1iXfNXXXXXXXXX-950-1.png) no-repeat 0 bottom
 }

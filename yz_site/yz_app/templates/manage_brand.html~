@@ -1,0 +1,198 @@
+{% extends 'manage_index.html' %}
+
+{% block options %}
+ <div class="sidebar-wrapper">
+    <div class="logo">
+        <a href="http://yzsp.woyii.com/" class="simple-text">
+            YAZEE
+        </a>
+    </div>
+
+    <ul class="nav">
+                <li >
+                    <a href="{% url 'index' %}">
+                        <i class="pe-7s-graph"></i>
+                        <p>商品管理</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="{% url 'req_brand' %}">
+                        <i class="pe-7s-helm"></i>
+                        <p>品牌管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'req_class' %}">
+                        <i class="pe-7s-ribbon"></i>
+                        <p>分类管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'req_style' %}">
+                        <i class="pe-7s-diamond"></i>
+                        <p>颜色/款式管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'req_size' %}">
+                        <i class="pe-7s-voicemail"></i>
+                        <p>尺寸管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="pe-7s-file"></i>
+                        <p>订单管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="pe-7s-plane"></i>
+                        <p>发货管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'req_shop_addr' %}">
+                        <i class="pe-7s-culture"></i>
+                        <p>门店管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'req_admin' %}">
+                        <i class="pe-7s-user"></i>
+                        <p>管理员管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'req_client' %}">
+                        <i class="pe-7s-users"></i>
+                        <p>会员管理</p>
+                    </a>
+                </li>
+            </ul>
+ </div>
+{% endblock %}
+
+{% block content %}
+<div class="col-md-12">
+    <div class="card">
+        <div class="header">
+            <h4 class="title">品牌列表</h4>
+            <!--<p class="category"></p>可以添加副标题-->
+        </div>
+        <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>品牌名称</th>
+                    <th>品牌介绍</th>
+                    <th>是否为独立设计师品牌</th>
+                    <th>品牌图片</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for brand in brands_list %}
+                <tr>
+                    <td><input type="checkbox" name="del_brands" id="{{ brand.b_id }}"></td>
+                    <td>{{ brand.b_name }}</td>
+                    <td>
+                        <div id="div_{{ brand.b_id }}" style="display: none">
+                            {{ brand.b_description }}
+                        </div>
+                        <a href="javascript:void(0)" class="check_info_1" myvalue="{{ brand.b_id }}">详情</a>
+                    </td>
+                    <td>{{ brand.isdesign }}</td>
+                    <td>
+                        <div id="img_{{ brand.b_id }}" style="display: none">
+                            <img src="/static/files/brand_imgs/{{ brand.b_id }}.png"/>
+                        </div>
+                        <a href="javascript:void(0)" class="check_info_2" myvalue="{{ brand.b_id }}">详情</a>
+                    </td>
+                    <td><p><a class="btn btn-default" href="{% url 'req_modify_brand' %}?bid={{ brand.b_id }}" role="button">修改品牌</a></p></td>
+                </tr>
+                {% endfor %}
+                <div class="test">
+                    <p id="info" style="line-height:2;text-indent:1.2em;"></p>
+                </div>
+                </tbody>
+            </table>
+            <a class="btn btn-default" href="javascript:void(0);" onclick="del_items()" role="button">删除选中的品牌</a>
+            <a class="btn btn-default" href="{% url 'req_add_brand' %}" role="button">添加品牌</a>
+        </div>
+    </div>
+</div><!--/.col-xs-6.col-lg-4-->
+{% endblock %}
+
+{% block manager_register_login_options_js %}
+{{ message|safe }}
+<link rel="stylesheet" href="/static/css/fbmodal.css"/>
+<script src="/static/js/jquery.fbmodel.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $(".check_info_1").click(function () {
+            var myvalue = $(this).attr("myvalue");
+            var myid = "div_"+myvalue;
+            var text = document.getElementById(myid).innerHTML;
+            document.getElementById("info").innerHTML=text;
+
+            $(".test").fbmodal({
+                okaybutton: true,
+                cancelbutton: false,
+                buttons: true,
+                opacity: 0.35,
+                fadeout: true,
+                overlayclose: true,
+                modaltop: "30%",
+                modalwidth: "400"
+            });
+        });
+        $(".check_info_2").click(function () {
+            var myvalue = $(this).attr("myvalue");
+            var myid = "img_"+myvalue;
+            var text = document.getElementById(myid).innerHTML;
+            document.getElementById("info").innerHTML=text;
+
+            $(".test").fbmodal({
+                okaybutton: true,
+                cancelbutton: false,
+                buttons: true,
+                opacity: 0.35,
+                fadeout: true,
+                overlayclose: true,
+                modaltop: "30%",
+                modalwidth: "800"
+            });
+        });
+    });
+    function del_items() {
+        if (window.confirm("您确定要删除吗？")) {
+            //var username = "{{login_user}}";
+            var url = "/manage/delete_items/";
+            var i = 0;
+            var deleList = new Array();
+            $("input[name='del_brands']:checked").each(function () {
+                i++;
+                deleList[i] = $(this).attr('id');
+            });
+            $.post(url,
+                    {
+                        del_object: 'brand',
+                        del_item_list: deleList.toString()
+                    }, function (data) {
+                        for (var i = 1; i < deleList.length; i++) {
+                            var del_node = document.getElementById(deleList[i]);
+                            var del_tr = del_node.parentNode.parentNode;
+                            del_tr.parentNode.removeChild(del_tr);
+                        }
+                        var del_box_list = document.getElementsByName("del_brands");
+                        for (var i = 0; i < del_box_list.length; i++) {
+                            del_box_list[i].checked = false;
+                        }
+                        alert(data);
+                    });
+        }
+    }
+</script>
+{% endblock %}

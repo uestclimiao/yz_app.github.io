@@ -104,18 +104,7 @@
         }
 
         function put_in_cart(){
-            if ( $('#size_id').attr("value") == "" )
-            {
-              alert("请选择尺码再提交");
-            }
-            else if( $('#color_id').attr("value") == "" )
-            {
-              alert("请选择样式再提交");
-            }
-            else
-            {
-              $('#cart_form').submit();
-            }
+            $('#cart_form').submit();
         }
     </script>
 {% endblock %}

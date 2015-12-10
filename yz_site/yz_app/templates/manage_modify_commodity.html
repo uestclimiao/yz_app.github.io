@@ -1,60 +1,136 @@
 {% extends 'manage_index.html' %}
-{% block manager_register_css %}
-<link href="/static/css/signin.css" rel="stylesheet">
-<link href="/static/css/jquery.searchableSelect.css" rel="stylesheet">
-<link rel="stylesheet" href="/static/css/jquery.multiselect.css" />
-<link rel="stylesheet" href="/static/css/style.css" />
-<link rel="stylesheet" href="/static/css/prettify.css" />
-<link rel="stylesheet" href="/static/css/jquery-ui.css" />
-{% endblock %}
-{% block page_container %}
-<div class="container">
 
-    <form enctype="multipart/form-data" id="commodity-form" class="form-signin" action="{% url 'modify_commodity' %}"
-          method="post">
-        <h2 class="form-signin-heading">修改商品</h2>
-        <input id="cid" name="cid" value="{{ commodity.c_id }}" type="hidden">
-        <label for="cname">商品名称:</label>
-        <input id="cname" name="cname" class="form-control" value="{{ commodity.c_name }}" autofocus type="text"><br>
-        <label for="cprice">商品价格:</label>
-        <input id="cprice" name="cprice" class="form-control" value="{{ commodity.c_price }}" type="text"><br>
-        <label for="cdesc">商品介绍:</label>
-        <textarea id="cdesc" name="cdesc" class="form-control" type="text">{{ commodity.c_description }}</textarea><br>
-        <label for="cpostage">商品邮费:</label>
-        <input id="cpostage" name="cpostage" class="form-control" value="{{ commodity.c_postage }}" type="text"><br>
-        <label for="cnum">剩余商品个数:</label>
-        <input id="cnum" name="cnum" class="form-control" value="{{ commodity.c_num }}" type="number"><br>
-        <label for="cimg">商品图片上传:</label>
-        <input type="file" name="cimg" id="cimg"><br>
-        <label>提供的尺寸</label><br>
-        <select id="c_size" class="multi_select" multiple="multiple" name="c_size" size="5">
-            {% for size in sizes_list %}
-            <option value="{{ size.size_name }}">{{ size.size_name }}</option>
-            {% endfor %}
-        </select><br><br>
-        <label>提供的颜色/款式</label>
-        <select id="c_style" class="multi_select" multiple="multiple" name="c_style" size="5">
-            {% for style in styles_list %}
-            <option value="{{ style.style_name }}">{{ style.style_name }}</option>
-            {% endfor %}
-        </select><br><br>
-        <label>所属类别:</label>
-        <select name="c_class" class="belong">
-            {% for class in classes_list %}
-            <option value="{{ class.class_name }}">{{ class.class_name }}</option>
-            {% endfor %}
-        </select><br><br>
-        <label>所属品牌:</label>
-        <select name="c_brand" class="belong">
-            {% for brand in brands_list %}
-            <option value="{{ brand.b_name }}">{{ brand.b_name }}</option>
-            {% endfor %}
-        </select><br><br>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
-    </form>
+{% block content %}
+<div class="col-md-8">
+    <div class="card">
+        <div class="header">
+            <h4 class="title">修改商品</h4>
+        </div>
+        <div class="content">
+            <form enctype="multipart/form-data" id="commodity-form" class="form-signin" action="{% url 'modify_commodity' %}" method="post">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <input id="cid" name="cid" value="{{ commodity.c_id }}" type="hidden">
+                            <label for="cname">商品名称</label>
+                            <input id="cname" name="cname" class="form-control" value="{{ commodity.c_name }}" autofocus type="text">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>所属类别</label><br>
+                            <select name="c_class" class="form-control">
+                                {% for class in classes_list %}
+                                <option value="{{ class.class_name }}">{{ class.class_name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>所属品牌</label><br/>
+                            <select name="c_brand" class="form-control">
+                                {% for brand in brands_list %}
+                                <option value="{{ brand.b_name }}">{{ brand.b_name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
 
-</div> <!-- /container -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>提供的尺寸</label><br>
+                            <select id="c_size" class="form-control"  name="c_size">
+                                {% for size in sizes_list %}
+                                <option value="{{ size.size_name }}">{{ size.size_name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>提供的颜色/款式</label><br/>
+                            <select id="c_style" class="form-control"  name="c_style">
+                                {% for style in styles_list %}
+                                <option value="{{ style.style_name }}">{{ style.style_name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="cprice">商品价格</label>
+                            <input id="cprice" name="cprice" class="form-control" value="{{ commodity.c_price }}" type="text">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="cnum">剩余商品个数</label>
+                            <input id="cnum" name="cnum" class="form-control" value="{{ commodity.c_num }}" type="number">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                             <label for="cpostage">商品邮费</label>
+                             <input id="cpostage" name="cpostage" class="form-control" value="{{ commodity.c_postage }}" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                             <label for="cdesc">商品介绍</label>
+                             <textarea rows="5" id="cdesc" name="cdesc" class="form-control" type="text">{{ commodity.c_description }}</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cimg">商品图片上传</label>
+                            <input class=" border-gray form-control" type="file" name="cimg" id="cimg">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-info btn-fill pull-right">更新修改</button>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="card card-user">
+        <div class="image">
+            <!--<img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="..."/>-->
+        </div>
+        <div class="content">
+            <div class="author">
+                 <a href="#">
+                <img class="avatar border-gray" src="/static/files/brand_imgs/9.jpg" alt="..."/>
+
+                  <h4 class="title">YAZEE<br />
+                     <small>不只是奢侈品</small>
+                  </h4>
+                </a>
+            </div>
+            <p class="description text-center"> "我们卖的不是奢侈品 <br>
+                                而是能够点亮 <br>
+                                 生活的艺术品"
+            </p>
+        </div>
+        <hr>
+    </div>
+</div>
 {% endblock %}
+
 {% block manager_register_login_options_js %}
 <script src="/static/js/jquery.validate.js"></script>
 <script src="/static/js/jquery.searchableSelect.js"></script>

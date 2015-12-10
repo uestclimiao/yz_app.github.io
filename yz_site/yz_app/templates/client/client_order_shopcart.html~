@@ -1,0 +1,114 @@
+{% extends 'client/client_Base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/client/css/shopcar.css"/>
+<script type="text/javascript" src="/static/client/js/shopcar.js"></script>
+{% endblock %}
+{% block bootstrap %}{% endblock %}
+{% block background %}
+{% endblock %}
+
+
+{% block options %}
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div class="catbox">
+
+	<table id="cartTable">
+		<thead>
+			<tr>
+				<th><label><input class="check-all check" type="checkbox"/>&nbsp;全选</label></th>
+                <th>商品</th>
+				<th>单价</th>
+				<th>数量</th>
+				<th>小计</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for commodity in commoditys_list %}
+			<tr>
+				<td class="checkbox"><input class="check-one check" name="del_commoditys" id="{{ commodity.c_id }}" type="checkbox"/></td>
+				<td class="goods"><img src="/static/files/commodity_imgs/{{commodity.c_id}}.png" alt=""/><span>{{commodity.c_name}}<br/>{{commodity.c_size}}<br/>{{commodity.c_style}}</span></td>
+				<td class="price">{{commodity.c_price}}</td>
+				<td class="count"><span class="reduce"></span><input class="count-input" type="text" value="1"/><span class="add">+</span></td>
+				<td class="subtotal">{{commodity.c_price}}</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+	
+	<div class="foot" id="foot">
+		<label class="fl select-all"><input type="checkbox" class="check-all check"/>&nbsp;全选</label>
+        <a href="javascript:void(0);" onclick="del_items()" style="color: cornflowerblue">删除</a>
+		<div href="javascript:void(0);" onclick="submit_carts()" class="fr closing" >结 算</div>
+
+
+		<div class="fr total">合计：￥<span id="priceTotal">0.00</span></div>
+		<div class="fr selected" id="selected">已选商品<span id="selectedTotal">0</span>件<span class="arrow up">︽</span><span class="arrow down">︾</span></div>
+		<div class="selected-view">
+			<div id="selectedViewList" class="clearfix">
+				<!--<div><img src="/static/files/shopcar/1.jpg"><span>取消选择</span></div>-->
+			</div>
+			<span class="arrow">◆<span>◆</span></span>
+		</div>
+	</div>
+</div>
+<!--提交购物车表单-->
+<form action="{% url 'client_confirm_order' %}" id="cart_form" method="post">
+	<input id="commodity_id_list" name="commodity_id_list" type="hidden">
+	<input id="money" name="money" type="hidden">
+</form>
+
+<script type="text/javascript">
+    function del_items() {
+        if (window.confirm("您确定要删除吗？")) {
+            var url = "/client/del_cart_c/";
+            var i = 0;
+            var deleList = new Array();
+            $("input[name='del_commoditys']:checked").each(function () {
+                i++;
+                deleList[i] = $(this).attr('id');
+            });
+            $.post(url,
+                    {
+                        del_object: 'commodity',
+                        del_item_list: deleList.toString()
+                    }, function (data) {
+                        for (var i = 1; i < deleList.length; i++) {
+                            var del_node = document.getElementById(deleList[i]);
+                            var del_tr = del_node.parentNode.parentNode;
+                            del_tr.parentNode.removeChild(del_tr);
+                        }
+                        var del_box_list = document.getElementsByName("del_commoditys");
+                        for (var i = 0; i < del_box_list.length; i++) {
+                            del_box_list[i].checked = false;
+                        }
+                        alert(data);
+                    });
+        }
+    }
+    function submit_carts() {
+            var i = 0;
+            var inputList = new Array();
+            $("input[name='del_commoditys']:checked").each(function () {
+                i++;
+                inputList[i] = $(this).attr('id');
+            });
+            if (i==0){
+                alert("你什么都没有选吖，贱人");
+            }
+            else{
+                $('#commodity_id_list').attr("value", inputList.toString());
+
+                var price=$("#priceTotal").html();
+                $('#money').attr("value", price);
+                $('#cart_form').submit();
+            }
+
+    }
+</script>
+
+{% endblock %}

@@ -1,0 +1,85 @@
+﻿{% extends 'client/client_Base.html' %}
+{% load staticfiles %}
+{% block background %}{% endblock %}
+{% block options %}
+<script type="text/javascript" src="{% static 'client/js/calendar.js' %}"></script>
+<script type="text/javascript" src="{% static 'client/js/jquery.validate.js' %}"></script>
+<script type="text/javascript">
+
+    $().ready(function () {
+        $("#newreg").validate({
+            rules: {
+                email: {
+                    required: true,
+                    email: true
+                },
+		username: {
+                    required: true
+                },
+		gender:{
+                    required: true
+                },
+		date:{
+                    required: true
+                },
+                phonenum: {
+                    required: true
+                },
+                paw1: {
+                    required: true
+                },
+                paw2: {
+                    equalTo: "#paw1"
+                },                                          
+            },
+            messages: {               
+                email: {
+                    required: "<br>请输入邮箱地址",
+                    email: "<br>输入的邮箱地址不符合格式"
+                },
+		username: {
+                    required: "<br>请输入用户名"
+                },
+  		gender:{
+                    required: "<br>请选择性别"
+                },
+ 		date:{
+                    required: "<br>请选择出生日期"
+                },
+                phonenum: {
+                    required: "<br>请输入手机号码"
+                },
+                paw1: {
+                    required: "<br>请输入密码"
+                },
+                paw2: {
+                    equalTo: "<br>两次输入的密码不一致"
+                },                                          
+            }
+        });
+    });
+</script>
+	
+	<div class="width_1035" style="min-height:550px;">
+		<div class="reg_form">
+		<form id="newreg" name="newreg" action="{% url 'client_register' %}" method="post">
+			<h3>创建账户</h3>
+ 			<p>{{message}}</p>
+			<p>*************************</p>
+			<p><span>电子邮箱地址*</span><input id="email" name="email" type="text" /></p>
+			<p><span>用户名*</span><input id="username" name="username" type="text" /></p>
+			<p><span>性别*</span><input id="male" name="gender" value="male" type="radio">男&nbsp;&nbsp;<input id="female" name="gender" value="female" type="radio">女</p>
+			<p><span>出生日期*</span><input name="date" type="text" style="padding-left:5px;" id="txtDate" onclick="SetDate(this)" readonly="readonly" /></p>
+			<p><span>手机号*</span><input id="phonenum" name="phonenum" type="text" /></p>
+			<p><span>密码*</span><input id="paw1" name="paw1" type="password" /></p>
+			<p><span>请再次输入密码*</span><input id="paw2" name="paw2" type="password" /></p>
+			<p class="right"><input name="btnsubmit" type="submit" value="注册" /></p>
+		</form>
+		</div>
+	</div>
+	<div class="clear"></div>
+
+
+
+	
+{% endblock %}

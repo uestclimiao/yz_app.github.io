@@ -16,26 +16,31 @@ urlpatterns = [
     url(r'^manage/req_admin_login/$', 'yz_app.views.req_admin_login', name='req_admin_login'),
     url(r'^manage/admin_login/$', 'yz_app.views.admin_login', name='admin_login'),
     url(r'^manage/admin_logout/$', 'yz_app.views.admin_logout', name='admin_logout'),
+
     url(r'^manage/req_add_commodity/$', 'yz_app.views.req_add_commodity', name='req_add_commodity'),
     url(r'^manage/add_commodity/$', 'yz_app.views.add_commodity', name='add_commodity'),
     url(r'^manage/delete_items/$', 'yz_app.views.delete_items', name='delete_items'),
     url(r'^manage/req_modify_commodity/$', 'yz_app.views.req_modify_commodity', name='req_modify_commodity'),
     url(r'^manage/modify_commodity/$', 'yz_app.views.modify_commodity', name='modify_commodity'),
+
     url(r'^manage/req_brand/$', 'yz_app.views.req_brand', name='req_brand'),
     url(r'^manage/req_add_brand/$', 'yz_app.views.req_add_brand', name='req_add_brand'),
     url(r'^manage/add_brand/$', 'yz_app.views.add_brand', name='add_brand'),
     url(r'^manage/req_modify_brand/$', 'yz_app.views.req_modify_brand', name='req_modify_brand'),
     url(r'^manage/modify_brand/$', 'yz_app.views.modify_brand', name='modify_brand'),
+
     url(r'^manage/req_class/$', 'yz_app.views.req_class', name='req_class'),
     url(r'^manage/req_add_class/$', 'yz_app.views.req_add_class', name='req_add_class'),
     url(r'^manage/add_class/$', 'yz_app.views.add_class', name='add_class'),
     url(r'^manage/req_modify_class/$', 'yz_app.views.req_modify_class', name='req_modify_class'),
     url(r'^manage/modify_class/$', 'yz_app.views.modify_class', name='modify_class'),
+
     url(r'^manage/req_client/$', 'yz_app.views.req_client', name='req_client'),
     url(r'^manage/req_add_client/$', 'yz_app.views.req_add_client', name='req_add_client'),
     url(r'^manage/add_client/$', 'yz_app.views.add_client', name='add_client'),
     url(r'^manage/req_modify_client/$', 'yz_app.views.req_modify_client', name='req_modify_client'),
     url(r'^manage/modify_client/$', 'yz_app.views.modify_client', name='modify_client'),
+
     url(r'^manage/req_admin/$', 'yz_app.views.req_admin', name='req_admin'),
     url(r'^manage/req_style/$', 'yz_app.views.req_style', name='req_style'),
     url(r'^manage/req_add_style/$', 'yz_app.views.req_add_style', name='req_add_style'),

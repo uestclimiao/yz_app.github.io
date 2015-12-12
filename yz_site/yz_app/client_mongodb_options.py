@@ -9,6 +9,11 @@ def find_client_by_username_password(db, username, password):
     client = db.clients.find_one({'username': username, 'password': password})    # 存在的话，返回一条记录，否则返回NoneType类型的变量，即返回空
     return client
 
+def update_users_status(db,username):
+    user = db.clients.update({'username': username},{'$set':{'status':'true'}})    # 存在的话，返回一条记录，否则返回NoneType类型的变量，即返回空
+    return user
+
+
 def insert_addr(db, username, addrs_list):
     db.client_addrs.insert({'username': username, 'addrs_list': addrs_list})
 

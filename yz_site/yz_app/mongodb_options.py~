@@ -110,8 +110,8 @@ def find_clients(db):
         clients_list.append(client)
     return clients_list
 
-def insert_client(db, client_id, username, password, gender, age, date, email, phone_num,status):
-    db.clients.insert({'client_id': client_id, 'username': username, 'password': password, 'gender': gender, 'age': age, 'date': date, 'email': email, 'phone_num': phone_num,'status':status})
+def insert_client(db, client_id, username, password, gender, age, date, email, phone_num):
+    db.clients.insert({'client_id': client_id, 'username': username, 'password': password, 'gender': gender, 'age': age, 'date': date, 'email': email, 'phone_num': phone_num})
 
 def find_client_by_username(db, username):
     client = db.clients.find_one({'username': username})

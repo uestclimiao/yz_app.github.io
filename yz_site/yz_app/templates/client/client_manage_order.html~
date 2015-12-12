@@ -51,7 +51,17 @@
             </div> </th>
            <th>收货人</th>
            <th>总计</th>
-           <th>全部状态</th>
+           <th>
+            <div class="deal-state-cont" id="orderState">
+             <div class="state-txt">
+              全部状态
+              <b></b>
+              <span class="blank"></span>
+             </div>
+             <div class="state-list">
+              
+             </div>
+            </div> </th>
            <th>操作</th>
           </tr>
          </thead>

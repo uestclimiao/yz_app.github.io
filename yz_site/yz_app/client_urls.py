@@ -11,6 +11,7 @@ urlpatterns = [
     # 李苗：登录注册地址管理
     url(r'^client/req_register/$', 'yz_app.client_views.req_register', name='client_req_register'),
     url(r'^client/register/$', 'yz_app.client_views.register', name='client_register'),
+    url(r'^client/user_active/$', 'yz_app.client_views.user_active', name='client_active'),
     url(r'^client/req_login/$', 'yz_app.client_views.req_login', name='client_req_login'),
     url(r'^client/login/$', 'yz_app.client_views.login', name='client_login'),
     url(r'^client/main_options/$', 'yz_app.client_views.main_options', name='client_main_options'),

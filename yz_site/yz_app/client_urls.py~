@@ -31,5 +31,7 @@ urlpatterns = [
     url(r'^client/del_cart_c/$', 'yz_app.client_views.del_cart_c', name='client_del_cart_c'),
     url(r'^client/confirm_order/$', 'yz_app.client_views.confirm_order', name='client_confirm_order'),
     url(r'^client/pay', 'yz_app.client_views.pay_ali', name='client_pay_ali'),
+
+    url(r'^client/show_order', 'yz_app.client_views.show_order', name='client_show_order'),
     #####################
 ]

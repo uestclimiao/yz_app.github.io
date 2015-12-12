@@ -10,6 +10,13 @@ import client_mongodb_options
 import time
 import p_alipay.alipay
 
+import smtplib
+from email import encoders
+from email.header import Header
+from email.mime.text import MIMEText
+from email.utils import parseaddr,formataddr
+import base64
+
 db = mongodb_options.mongodb_init()
 
 
@@ -125,15 +132,52 @@ def register(request):
     password = request.POST['paw1']
     user = mongodb_options.find_client_by_username(db, username)
     if not user:
-        mongodb_options.insert_client(db, client_id, username, password, gender, age, date, email, phone_num)
+	smtp_to_user(username,email)
+        mongodb_options.insert_client(db, client_id, username, password, gender, age, date, email, phone_num,'false')
         return render(request, 'client/client_register_success.html',
                       {'classes_list': classes_list, 'brands_list': brands_list,
-                       'brands_list_design': brands_list_design})
+                       'brands_list_design': brands_list_design,'message':'<script type="text/javascript">alert("恭喜您,注册成功！您的账户处于待激活状态，请到邮箱点击激活链接进行激活！！");</script>'})
     else:
         return render(request, 'client/client_register_error.html',
                       {'classes_list': classes_list, 'brands_list': brands_list,
                        'brands_list_design': brands_list_design})
 
+def _format_addr(s):
+    name,addr=parseaddr(s)
+    return formataddr((\
+            Header(name,'utf-8').encode(),\
+            addr.encode('utf-8') if isinstance(addr,unicode) else addr))
+
+def smtp_to_user(u,e):
+    from_addr = 'lm_306@163.com'
+    password_admin='limiao_2014'
+
+    smtp_server = 'smtp.163.com'
+    to_addr=e
+
+    ub=base64.encodestring(u)
+    u1=ub.encode('utf-8')
+    str2='<p>本邮件由雅致奢品发送，请点击<a herf=\"http://localhost:8000/manage/user_active/?a=%s\">http://localhost:8000/client/user_active/?a=%s</a>。如果不能跳转，请将链接复制至浏览器地址栏进行访问。谢谢合作！！！</p>' %(u1,u1)
+    msg=MIMEText('<html><body><h1>尊敬的用户，您好！</h1>'+str2+'</body></html>','html','utf-8')
+
+    msg['From']=_format_addr(u'雅致 <%s>' % from_addr)
+    msg['To']=_format_addr(u'管理员 <%s>' % to_addr)
+    msg['Subject']=Header(u'欢迎注册雅致奢品','utf-8').encode()
+
+    server = smtplib.SMTP(smtp_server,25)
+    server.set_debuglevel(1)
+    server.login(from_addr,password_admin)
+    server.sendmail(from_addr,[to_addr],msg.as_string())
+    server.quit()
+
+    return 1
+
+def user_active(request):
+    username=request.GET['a']
+    ude=base64.decodestring(username)
+    client_mongodb_options.update_users_status(db,ude)
+
+    return render(request, 'client/client_login.html',{'message':'<script type="text/javascript">alert("恭喜您激活成功！请登录");</script>'})
 
 def req_login(request):
     classes_list = mongodb_options.find_classes(db)
@@ -157,13 +201,16 @@ def login(request):
     password = request.POST['password']
     client = client_mongodb_options.find_client_by_username_password(db, username, password)
     if client:
-        request.session['login_user'] = username
-        cart = client_mongodb_options.find_cart(db, username)
-	if 'c_num' not in request.POST:
-		c_num=0
+	if client['status']=='false':
+		 return render(request, 'client/client_login.html',{'message':'<script type="text/javascript">alert("您的账户处于待激活状态，请到邮箱点击激活链接进行激活！！");</script>'})
 	else:
-        	c_num = cart['c_num']
-        return render(request, 'client/client_login_success.html',
+        	request.session['login_user'] = username
+        	cart = client_mongodb_options.find_cart(db, username)
+		if 'c_num' not in request.POST:
+			c_num=0
+		else:
+        		c_num = cart['c_num']
+        	return render(request, 'client/client_login_success.html',
                       {'username': username, 'flag': True, 'c_num': c_num, 'classes_list': classes_list, 'brands_list': brands_list,
                        'brands_list_design': brands_list_design})
     else:

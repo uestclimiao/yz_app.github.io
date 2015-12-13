@@ -81,7 +81,7 @@ def admin_logout(request):
         del request.session['username']
         return HttpResponseRedirect('/')
     else:
-        return render(request, 'manage_index.html', {'message': '<script type="text/javascript">alert("你都没有登录，还注销个毛线吖，尼码！");</script>'})
+        return render(request, 'manage_index.html', {'message': '<script type="text/javascript">alert("您还没登录，无法注销！");</script>'})
 
 def req_add_commodity(request):
     flag = False
@@ -95,7 +95,7 @@ def req_add_commodity(request):
     if flag:
         return render(request, 'manage_add_commodity.html', {'login_user': username, 'flag': flag, 'brands_list': brands_list, 'classes_list': classes_list, 'styles_list': styles_list, 'sizes_list': sizes_list})
     else:
-        return render(request, 'manage_index.html', {'message': '<script type="text/javascript">alert("你妹，你居然擅自修改页面，NMB");</script>'})
+        return render(request, 'manage_index.html', {'message': '<script type="text/javascript">alert("对不起，您无法修改页面！");</script>'})
 
 def add_commodity(request):
     cid = uuid.uuid1()

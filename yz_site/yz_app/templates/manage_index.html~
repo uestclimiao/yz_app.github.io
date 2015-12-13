@@ -341,7 +341,7 @@
                     &copy; 2015 <a href="http://www.uestc.edu.cn">Uestc</a>, made with love for a better web
                 </p>
             </div>
-        </footer>/home/dang/桌面/yz_site_xin
+        </footer>
 
         
     </div>
@@ -375,7 +375,7 @@
 
     <script src="/static/js/offcanvas.js"></script>
 
-	
+	<!--
 	<script type="text/javascript">
     	$(document).ready(function(){
         	
@@ -391,7 +391,8 @@
             });
             
     	});
-</script>
+	</script>
+	-->
 
 {% block manager_register_login_options_js %}
 {{ message|safe }} <!--加上safe后防止标签转义-->

@@ -3,10 +3,18 @@
 from django.shortcuts import render
 from django.shortcuts import HttpResponse, HttpResponseRedirect
 import mongodb_options
+import client_util_functions
 import uuid
 import util_functions
 from PIL import Image
 # Create your views here.
+
+import smtplib
+from email import encoders
+from email.header import Header
+from email.mime.text import MIMEText
+from email.utils import parseaddr,formataddr
+import base64
 
 db = mongodb_options.mongodb_init()
 
@@ -47,6 +55,35 @@ def contact(request):
 def req_admin_register(request):
     return render(request, 'manage_register.html')
 
+def _format_addr(s):
+    name,addr=parseaddr(s)
+    return formataddr((\
+            Header(name,'utf-8').encode(),\
+            addr.encode('utf-8') if isinstance(addr,unicode) else addr))
+
+def smtp_to_user(u,e):
+    from_addr = 'lm_306@163.com'
+    password_admin='limiao_2014'
+
+    smtp_server = 'smtp.163.com'
+    to_addr=e
+
+    ub=base64.encodestring(u)
+    u1=ub.encode('utf-8')
+    str2='<p>本邮件由雅致奢品发送，请点击<a herf=\"http://localhost:8000/client/user_active/?a=%s\">http://localhost:8000/client/user_active/?a=%s</a>。如果不能跳转，请将链接复制至浏览器地址栏进行访问。谢谢合作！！！</p>' %(u1,u1)
+    msg=MIMEText('<html><body><h1>尊敬的用户，您好！</h1>'+str2+'</body></html>','html','utf-8')
+
+    msg['From']=_format_addr(u'雅致 <%s>' % from_addr)
+    msg['To']=_format_addr(u'管理员 <%s>' % to_addr)
+    msg['Subject']=Header(u'欢迎注册雅致奢品','utf-8').encode()
+
+    server = smtplib.SMTP(smtp_server,25)
+    server.set_debuglevel(1)
+    server.login(from_addr,password_admin)
+    server.sendmail(from_addr,[to_addr],msg.as_string())
+    server.quit()
+
+    return 1
 
 def admin_register(request):
     username = request.POST['username']
@@ -55,6 +92,7 @@ def admin_register(request):
     phone_num = request.POST['phone_num']
     user = mongodb_options.find_user_by_username(db, username)
     if not user:
+	
         mongodb_options.insert_user(db, username, password, email, phone_num)
         return render(request, 'manage_index.html', {'message': '<script type="text/javascript">alert("恭喜您,注册成功了！");</script>'})
     else:
@@ -339,18 +377,17 @@ def add_client(request):
     password = request.POST['password']
     gender = request.POST['gender']
     date = request.POST['date']
-    date_list = date.split()
-    day = date_list[0]
-    month_CN = date_list[1]
-    year = date_list[2]
-    month = util_functions.date_cn_to_num(month_CN)
-    age = str(util_functions.get_age(year, month, day))
-    date = year+'-'+month+'-'+day
+    date_list = date.split('-')
+    day = date_list[2]
+    month = date_list[1]
+    year = date_list[0]
+    age = str(client_util_functions.get_age(year, month, day))
     email = request.POST['email']
     phone_num = request.POST['phone_num']
     client = mongodb_options.find_client_by_username(db, username)
     if not client:
-        mongodb_options.insert_client(db, client_id, username, password, gender, age, date, email, phone_num)
+	smtp_to_user(username,email)
+        mongodb_options.insert_client(db, client_id, username, password, gender, age, date, email, phone_num,'false')
         return HttpResponseRedirect('/manage/req_client/')
     else:
         return render(request, 'manage_client_register.html', {'login_user': login_user, 'flag': True, 'message': '用户名已被注册了'})
@@ -374,13 +411,11 @@ def modify_client(request):
             password = request.POST['password']
             gender = request.POST['gender']
             date = request.POST['date']
-            date_list = date.split()
-            day = date_list[0]
-            month_CN = date_list[1]
-            year = date_list[2]
-            month = util_functions.date_cn_to_num(month_CN)
-            age = str(util_functions.get_age(year, month, day))
-            date = year+'-'+month+'-'+day
+	    date_list = date.split('-')
+	    day = date_list[2]
+	    month = date_list[1]
+	    year = date_list[0]
+	    age = str(client_util_functions.get_age(year, month, day))
             email = request.POST['email']
             phone_num = request.POST['phone_num']
             mongodb_options.update_client(db, client_id, username, password, gender, age, date, email, phone_num)
@@ -391,13 +426,11 @@ def modify_client(request):
         password = request.POST['password']
         gender = request.POST['gender']
         date = request.POST['date']
-        date_list = date.split()
-        day = date_list[0]
-        month_CN = date_list[1]
-        year = date_list[2]
-        month = util_functions.date_cn_to_num(month_CN)
-        age = str(util_functions.get_age(year, month, day))
-        date = year+'-'+month+'-'+day
+        date_list = date.split('-')
+        day = date_list[2]
+        month = date_list[1]
+        year = date_list[0]
+        age = str(client_util_functions.get_age(year, month, day))
         email = request.POST['email']
         phone_num = request.POST['phone_num']
         mongodb_options.update_client(db, client_id, username, password, gender, age, date, email, phone_num)

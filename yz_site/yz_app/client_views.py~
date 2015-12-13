@@ -308,7 +308,7 @@ def add_address(request):
             if brand['isdesign'] == u'是':
                 brands_list_design.append(brand)
         return render(request, 'client/client_index.html',
-                      {'flag': flag, 'message': '<script type="text/javascript">alert("你都没有登录，还添加个毛线吖，尼码！");</script>',
+                      {'flag': flag, 'message': '<script type="text/javascript">alert("您还没登录，无法添加！");</script>',
                        'classes_list': classes_list, 'brands_list': brands_list,
                        'brands_list_design': brands_list_design})
 
@@ -334,7 +334,7 @@ def delete_address(request):
             if brand['isdesign'] == u'是':
                 brands_list_design.append(brand)
         return render(request, 'client/client_index.html',
-                      {'flag': flag, 'message': '<script type="text/javascript">alert("你都没有登录，还删除个毛线吖，尼码！");</script>',
+                      {'flag': flag, 'message': '<script type="text/javascript">alert("您还没登录，无法删除！");</script>',
                        'classes_list': classes_list, 'brands_list': brands_list,
                        'brands_list_design': brands_list_design})
 
@@ -353,7 +353,7 @@ def logout(request):
             if brand['isdesign'] == u'是':
                 brands_list_design.append(brand)
         return render(request, 'client/client_index.html',
-                      {'message': '<script type="text/javascript">alert("你都没有登录，还注销个毛线吖，尼码！");</script>','classes_list': classes_list, 'brands_list': brands_list,
+                      {'message': '<script type="text/javascript">alert("您还没登录，无法注销！");</script>','classes_list': classes_list, 'brands_list': brands_list,
                        'brands_list_design': brands_list_design})
 
 
@@ -510,7 +510,7 @@ def add_cart(request):
             if brand['isdesign'] == u'是':
                 brands_list_design.append(brand)
         return render(request, 'client/client_index.html',
-                      {'message': '<script type="text/javascript">alert("你都没有登录，还看个毛线吖，尼码！");</script>', 'flag': flag, 'classes_list': classes_list, 'brands_list': brands_list,
+                      {'message': '<script type="text/javascript">alert("您还没登录，无法查看！");</script>', 'flag': flag, 'classes_list': classes_list, 'brands_list': brands_list,
                        'brands_list_design': brands_list_design})
 
 def show_cart(request):
@@ -527,7 +527,7 @@ def show_cart(request):
     if not flag:
         c_num = 0
         return render(request, 'client/client_index.html',
-                      {'message': '<script type="text/javascript">alert("你都没有登录，还看个毛线吖，尼码！");</script>','flag': flag, 'c_num': c_num, 'classes_list': classes_list, 'brands_list': brands_list,
+                      {'message': '<script type="text/javascript">alert("您还没登录，无法查看！");</script>','flag': flag, 'c_num': c_num, 'classes_list': classes_list, 'brands_list': brands_list,
                        'brands_list_design': brands_list_design})
     else:
         cart = client_mongodb_options.find_cart(db, username)

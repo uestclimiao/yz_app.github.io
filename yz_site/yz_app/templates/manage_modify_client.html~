@@ -72,16 +72,14 @@
 
                     <div class="col-md-6">
                         <div class="form-group">
-			    <label for="email">出生日期</label>                      
-                            <input id="txtDate" name="date" type="text" class="form-control" placeholder="请输入出生日期" onclick="SetDate(this)" />
-                        </div>
-			
-                    </div>
-
-		    <div class="col-md-6">
-                        <div class="form-group">
                             <label for="email">邮箱地址</label>
-                            <input id="email" name="email" class="form-control" placeholder="请输入邮箱地址" type="email">
+                            <input id="email" name="email" class="form-control" value="{{ client.email }}" type="text">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                             <label for="phone_num">手机号码</label>
+                             <input id="phone_num" name="phone_num" class="form-control" value="{{ client.phone_num }}" type="text"><br>
                         </div>
                     </div>
                 </div>

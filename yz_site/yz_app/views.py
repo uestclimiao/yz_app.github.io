@@ -7,6 +7,7 @@ import client_util_functions
 import uuid
 import util_functions
 from PIL import Image
+import datetime
 # Create your views here.
 
 import smtplib
@@ -563,3 +564,59 @@ def modify_shop_addr(request):
     info_addr = request.POST['info_addr']
     mongodb_options.update_shop_addr(db, shop_addr_id, province_domain, city_domain, town_domain, info_addr)
     return HttpResponseRedirect('/manage/req_shop_addr/')
+
+#-----------------------新闻代码-----------------------------------------------------------------------------
+def req_news(request):
+    if "username" in request.session:
+        username=request.session['username']
+    news_list=mongodb_options.find_news(db)
+    return render(request,'manage_news.html',{'login_user':username,'flag':True,'news_list':news_list})
+
+def req_add_news(request):
+    if "username" in request.session:
+        username=request.session['username']
+        today=datetime.date.today()
+    return render(request,'manage_add_news.html',{'login_user':username,'flag':True,'today':today})
+
+def add_news(request):
+    if "username" in request.session:
+        username=request.session['username']
+    c_id=uuid.uuid1()
+    title=request.POST['title']
+    subtitle=request.POST['subtitle']
+    author=request.POST['author']
+    pub_date=request.POST['pub_date']
+    reqimg=request.FILES['cimg']
+    cimg=Image.open(reqimg)
+    img_path="/home/limiao/yz_app.github.io/yz_site/yz_app/static/files/news_imgs/"
+    img_name=str(c_id)+'.png'
+    cimg.save(img_path+img_name)      
+    src=request.POST['src']
+    content=request.POST['content']
+    mongodb_options.insert_news(db, c_id, title,subtitle,author,src,content,pub_date)
+    return HttpResponseRedirect('/manage/req_news/')
+
+def req_modify_news(request):
+    if "username" in request.session:
+        username=request.session['username']
+    news_id=request.GET['news_id']
+    news=mongodb_options.find_news_by_cid(db,news_id)
+    return render(request,'manage_modify_news.html',{'login_user':username,'flag':True,'news':news})
+
+def modify_news(request):
+    if "username" in request.session:
+        username=request.session['username']
+    c_id=request.POST['c_id']
+    title=request.POST['title']
+    subtitle=request.POST['subtitle']
+    author=request.POST['author']
+    pub_date=request.POST['pub_date']
+    reqimg=request.FILES['cimg']
+    cimg=Image.open(reqimg)
+    img_path="/home/limiao/yz_app.github.io/yz_site/yz_app/static/files/news_imgs/"
+    img_name=str(c_id)+'.png'
+    cimg.save(img_path+img_name)    
+    src=request.POST['src']
+    content=request.POST['content']
+    mongodb_options.update_news(db,c_id, title,subtitle,author,src,content,pub_date)
+    return HttpResponseRedirect('/manage/req_news/')

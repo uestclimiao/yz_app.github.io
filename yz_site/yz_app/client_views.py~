@@ -9,6 +9,7 @@ import client_util_functions
 import client_mongodb_options
 import time
 import p_alipay.alipay
+import json
 
 import smtplib
 from email import encoders
@@ -157,7 +158,7 @@ def smtp_to_user(u,e):
 
     ub=base64.encodestring(u)
     u1=ub.encode('utf-8')
-    str2='<p>本邮件由雅致奢品发送，请点击<a herf=\"http://localhost:8000/manage/user_active/?a=%s\">http://localhost:8000/client/user_active/?a=%s</a>。如果不能跳转，请将链接复制至浏览器地址栏进行访问。谢谢合作！！！</p>' %(u1,u1)
+    str2='<p>本邮件由雅致奢品发送，请点击<a herf=\"http://localhost:8000/client/user_active/?a=%s\">http://localhost:8000/client/user_active/?a=%s</a>。如果不能跳转，请将链接复制至浏览器地址栏进行访问。谢谢合作！！！</p>' %(u1,u1)
     msg=MIMEText('<html><body><h1>尊敬的用户，您好！</h1>'+str2+'</body></html>','html','utf-8')
 
     msg['From']=_format_addr(u'雅致 <%s>' % from_addr)
@@ -719,4 +720,38 @@ def show_order(request):
                   {'username': username, 'flag': True, 'c_num': c_num, 'classes_list': classes_list,
                    'brands_list': brands_list, 'brands_list_design': brands_list_design,
                    'order_list': order_list})
+
+
+#瀑布流 @author 姜亚东、张帅帅
+def news_PBL(request):
+    classes_list=mongodb_options.find_classes(db)
+    brands_list=mongodb_options.find_brands(db)
+    brands_list_design=[]
+    for brand in brands_list:
+        if brand["isdesign"]==u"是":
+            brands_list_design.append(brand)
+    news_list=mongodb_options.find_news(db)
+    news_list1=news_list[:15]
+    news_list2=news_list[15:]
+    json.dumps('news_list2',news_list2)
+    flag=False
+    if "login_user" in request.session:
+        username=request.session['login_user']
+        flag=True
+    if flag:
+        cart=client_mongodb_options.find_cart(db,username)
+        if cart:
+            c_num=cart['c_num']
+        else:
+            c_num=0
+        return render(request,'client/client_newsPBL.html',{'flag':flag,'c_num':c_num,'username':username,'classes_list':classes_list,'brands_list':brands_list,'brands_list_design': brands_list_design,"news_list2":news_list2,"news_list1":news_list1})
+    else:
+        return render(request,'client/client_newsPBL.html',{'flag':flag,'classes_list': classes_list,'brands_list': brands_list,'brands_list_design': brands_list_design,'news_list2':news_list2,'news_list1':news_list1})
+
+#新闻页 @author 张帅帅、姜亚东
+def shownews(request):
+    src=request.GET["src"]
+   # print src
+    news=mongodb_options.find_news_by_cid(db,src)
+    return render(request,'client/client_newsContent.html',{'news':news})
 

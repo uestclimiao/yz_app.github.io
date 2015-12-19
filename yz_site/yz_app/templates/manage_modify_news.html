@@ -1,0 +1,138 @@
+{% extends 'manage_index.html' %}
+
+{% block content %}
+<div class="col-md-8">
+    <div class="card">
+        <div class="header">
+            <h4 class="title">修改新闻</h4>
+            <p class="text-danger">{{ message }}</p>
+        </div>
+        <div class="content">
+            <form enctype="multipart/form-data" id="news-form" class="form-signin" action="{% url 'modify_news' %}" method="post">
+			    <div class="row">
+                    <div class="col-md-7">
+                        <div class="form-group">
+							<input id="c_id" name="c_id" value="{{ news.c_id }}" type="hidden">
+                            <label for="title">新闻标题</label>
+                            <input id="title" name="title" class="form-control" value="{{ news.title}}" autofocus type="text">
+                        </div>
+                    </div>
+					<div class="col-md-5">
+                        <div class="form-group">
+                            <label for="subtitle">新闻副标题</label>
+                            <input id="subtitle" name="subtitle" class="form-control" value="{{ news.subtitle }}" autofocus type="text">
+                        </div>
+                    </div>
+                </div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+                            <label for="author">新闻作者</label>
+                            <input id="author" name="author" class="form-control" value="{{ news.author}}" autofocus type="text">
+                        </div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+                            <label class="required" for="pub_date">发表时间</label>
+							<p class="datetime">Date: <input class="vDateField" id="pub_date" name="pub_date" value="{{ news.pub_date }}" type="text" /></p>
+                        </div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="cimg">商品图片上传:</label>
+							<input type="file" name="cimg" id="cimg"><br>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+                            <label for="src">新闻来源</label>
+                            <input id="src" name="src" class="form-control" value="{{news.src}}" autofocus type="text">
+                        </div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label for="content">内容:</label>
+							<div>
+									<textarea id="content" name="content" class="form-control" cols="80" rows="10">{{ news.content }}</textarea>
+							</div>
+					</div>
+				</div>
+                <button type="submit" class="btn btn-info btn-fill pull-right">更新修改</button>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="card card-user">
+        <div class="image">
+            <!--<img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="..."/>-->
+        </div>
+        <div class="content">
+            <div class="author">
+                 <a href="#">
+                <img class="avatar border-gray" src="/static/files/brand_imgs/9.jpg" alt="..."/>
+
+                  <h4 class="title">YAZEE<br />
+                     <small>不只是奢侈品</small>
+                  </h4>
+                </a>
+            </div>
+            <p class="description text-center"> "我们卖的不是奢侈品 <br>
+                                而是能够点亮 <br>
+                                 生活的艺术品"
+            </p>
+        </div>
+        <hr>
+
+    </div>
+</div>
+{% endblock %}
+
+{% block manager_register_login_options_js %}
+<script src="/static/js/jquery.validate.js"></script>
+<script type="text/javascript">
+    $().ready(function(){
+        $("#news-form").validate({
+            rules:{
+				title: {
+                    required:true
+                }
+				subtitle: {
+                    required:true
+                }
+				author: {
+                    required:true
+                }
+				src: {
+                    required:true
+                }
+				content: {
+                    required:true
+                }
+            },
+            messages:{
+				title: {
+                    required: "请输入标题"
+                }
+				subtitle: {
+                    required: "请输入副标题"
+                }
+				author: {
+                    required: "请输入作者"
+                }
+				src: {
+                    required: "请输入来源"
+                }
+				content: {
+                    required: "请输入新闻内容"
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}
+

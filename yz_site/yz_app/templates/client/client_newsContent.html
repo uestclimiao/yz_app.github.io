@@ -1,0 +1,31 @@
+{% extends 'client/client_Base.html' %}
+{% load staticfiles %}
+{% block background %}{% endblock %}
+{% block options %}
+
+<div class="list_main">
+  <div class="showmessage" align="center">
+    <caption>
+    <h2>&nbsp;</h2>
+    <h2>{{ news.title }}</h2>
+    </caption>
+    <p>发表时间:{{ news.pub_date }}</p>
+    <p>来源:{{ news.src }}</p>
+    <p><img src="/static/files/news_imgs/{{ news.c_id }}.png"></p>
+    <p>{{ news.content }}</p>
+    <nav>
+    <ul class="pager">
+      <li><a style="text-decoration:none; color:black;" href="/client/news_PBL/">更多资讯</a></li>  
+    </ul>
+    </nav>
+    
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+  </div>
+  <div class="clear"></div>
+</div>
+
+{% endblock %}

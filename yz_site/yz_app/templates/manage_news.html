@@ -1,0 +1,154 @@
+{% extends 'manage_index.html' %}
+
+{% block options %}
+ <div class="sidebar-wrapper">
+    <div class="logo">
+        <a href="http://yzsp.woyii.com/" class="simple-text">
+            YAZEE
+        </a>
+    </div>
+
+    <ul class="nav">
+                <li >
+                    <a href="{% url 'index' %}">
+                        <i class="pe-7s-graph"></i>
+                        <p>商品管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'req_brand' %}">
+                        <i class="pe-7s-helm"></i>
+                        <p>品牌管理</p>
+                    </a>
+                </li>
+		<li>
+                    <a href="{% url 'req_news' %}">
+                        <i class="pe-7s-helm"></i>
+                        <p>新闻资讯</p>
+                    </a>
+                </li> 
+                <li>
+                    <a href="{% url 'req_class' %}">
+                        <i class="pe-7s-ribbon"></i>
+                        <p>分类管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'req_style' %}">
+                        <i class="pe-7s-diamond"></i>
+                        <p>颜色/款式管理</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="{% url 'req_size' %}">
+                        <i class="pe-7s-voicemail"></i>
+                        <p>尺寸管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="pe-7s-file"></i>
+                        <p>订单管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="pe-7s-plane"></i>
+                        <p>发货管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'req_shop_addr' %}">
+                        <i class="pe-7s-culture"></i>
+                        <p>门店管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'req_admin' %}">
+                        <i class="pe-7s-user"></i>
+                        <p>管理员管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'req_client' %}">
+                        <i class="pe-7s-users"></i>
+                        <p>会员管理</p>
+                    </a>
+                </li>
+            </ul>
+ </div>
+{% endblock %}
+
+{% block content %}
+<div class="col-md-12">
+    <div class="card">
+        <div class="header">
+            <h4 class="title">新闻列表</h4>
+            <!--<p class="category"></p>可以添加副标题-->
+        </div>
+        <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+                <thead>
+                <tr>
+					<td></td>
+                    <th><small>标题</small></th>
+					<th><small>副标题</small></th>
+					<th><small>作者</small></th>
+					<th><small>发表时间</small></th>
+					<th><small>来源</small></th>
+					<th><small>操作</small></th>
+				</tr>
+                </thead>
+                <tbody>
+                {% for news in news_list %}
+                <tr>
+                    <td><input type="checkbox" name="del_news" id="{{ news.c_id }}"></td>
+                    <td><small>{{ news.title }}</small></td>
+					<td><small>{{ news.subtitle }}</small></td>
+					<td><small>{{ news.author }}</small></td>
+					<td><small>{{ news.pub_date }}</small></td>
+					<td><small>{{ news.src }}</small></td>
+                    <td><p><a class="btn btn-default" href="{% url 'req_modify_news' %}?news_id={{ news.c_id }}" role="button">修改新闻</a></p></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <a class="btn btn-default" href="javascript:void(0);" onclick="del_items()" role="button">删除选中新闻</a>
+            <a class="btn btn-default" href="{% url 'req_add_news' %}" role="button">添加新闻</a>
+        </div><!--/.col-xs-6.col-lg-4-->
+    </div>
+</div>
+{% endblock %}
+
+{% block manager_register_login_options_js %}
+<script type="text/javascript">
+    function del_items() {
+        if (window.confirm("您确定要删除吗？")) {
+            //var username = "{{login_user}}";
+            var url = "/manage/delete_items/";
+            var i = 0;
+            var deleList = new Array();
+            $("input[name='del_news']:checked").each(function () {
+                i++;
+                deleList[i] = $(this).attr('id');
+            });
+            $.post(url,
+                    {
+                        del_object: 'news',
+                        del_item_list: deleList.toString()
+                    }, function (data) {
+                        for (var i = 1; i < deleList.length; i++) {
+                            var del_node = document.getElementById(deleList[i]);
+                            var del_tr = del_node.parentNode.parentNode;
+                            del_tr.parentNode.removeChild(del_tr);
+                        }
+                        var del_box_list = document.getElementsByName("del_sizes");
+                        for (var i = 0; i < del_box_list.length; i++) {
+                            del_box_list[i].checked = false;
+                        }
+                        alert(data);
+                    });
+        }
+    }
+</script>
+{% endblock %}

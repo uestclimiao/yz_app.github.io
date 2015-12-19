@@ -210,3 +210,32 @@ def find_shop_addr_by_id(db, shop_addr_id):
 def update_shop_addr(db, shop_addr_id, province_domain, city_domain, town_domain, info_addr):
     uid = bson.binary.UUID(shop_addr_id)
     db.shop_addrs.update({'shop_addr_id': uid}, {'$set': {'province_domain': province_domain, 'city_domain': city_domain, 'town_domain': town_domain, 'info_addr': info_addr}})
+
+
+#时尚资讯 姜亚东
+def find_news(db):
+    news_list=[]
+    news=db.news.find().sort([('pub_date',-1)])
+    for new in news:
+        news_list.append(new)
+    return news_list
+
+def del_news(db,c_id):
+    uid=bson.binary.UUID(c_id)
+    db.news.remove({'c_id':uid})
+
+def insert_news(db, c_id, title,subtitle,author,src,content,pub_date):
+    db.news.insert({'c_id':c_id,'title':title,'subtitle':subtitle,'author':author, 'src':src,'content':content,'pub_date':pub_date})
+
+def find_news_by_cid(db,c_id):
+    uid=bson.binary.UUID(c_id)
+    news=db.news.find_one({'c_id':uid})
+    return news
+
+def update_news(db, c_id, title,subtitle,author,src,content,pub_date):
+    uid=bson.binary.UUID(c_id)
+    db.news.update({'c_id':uid},{'$set':{'title':title,'subtitle':subtitle,'author':author, 'src':src,'content':content,'pub_date':pub_date}})
+
+def find_news_by_title(db,title):
+    news=db.news.find_one({'title':title})
+    return news

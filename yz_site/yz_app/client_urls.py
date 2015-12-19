@@ -35,4 +35,9 @@ urlpatterns = [
 
     url(r'^client/show_order', 'yz_app.client_views.show_order', name='client_show_order'),
     #####################
+
+    #张、姜：瀑布流 、新闻页  
+    url(r'^client/news_PBL/$','yz_app.client_views.news_PBL',name='news_PBL'),
+    url(r'^client/shownews/$','yz_app.client_views.shownews',name='shownews'),
+
 ]

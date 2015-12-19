@@ -21,24 +21,26 @@
                         <p>品牌管理</p>
                     </a>
                 </li>
+		<li>
+                    <a href="{% url 'req_news' %}">
+                        <i class="pe-7s-news-paper"></i>
+                        <p>新闻资讯</p>
+                    </a>
+                </li> 
                 <li>
                     <a href="{% url 'req_class' %}">
                         <i class="pe-7s-ribbon"></i>
                         <p>分类管理</p>
                     </a>
                 </li>
-                <li>
-                    <a href="{% url 'req_style' %}">
-                        <i class="pe-7s-diamond"></i>
-                        <p>颜色/款式管理</p>
-                    </a>
-                </li>
+                
                 <li>
                     <a href="{% url 'req_size' %}">
                         <i class="pe-7s-voicemail"></i>
                         <p>尺寸管理</p>
                     </a>
                 </li>
+<!--
                 <li>
                     <a href="#">
                         <i class="pe-7s-file"></i>
@@ -51,6 +53,7 @@
                         <p>发货管理</p>
                     </a>
                 </li>
+-->
                 <li>
                     <a href="{% url 'req_shop_addr' %}">
                         <i class="pe-7s-culture"></i>

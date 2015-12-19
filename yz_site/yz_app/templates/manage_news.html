@@ -3,7 +3,7 @@
 {% block options %}
  <div class="sidebar-wrapper">
     <div class="logo">
-        <a href="http://yzsp.woyii.com/" class="simple-text">
+        <a href="#" class="simple-text">
             YAZEE
         </a>
     </div>
@@ -21,9 +21,9 @@
                         <p>品牌管理</p>
                     </a>
                 </li>
-		<li>
+		<li class="active">
                     <a href="{% url 'req_news' %}">
-                        <i class="pe-7s-helm"></i>
+                        <i class="pe-7s-news-paper"></i>
                         <p>新闻资讯</p>
                     </a>
                 </li> 
@@ -39,12 +39,13 @@
                         <p>颜色/款式管理</p>
                     </a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="{% url 'req_size' %}">
                         <i class="pe-7s-voicemail"></i>
                         <p>尺寸管理</p>
                     </a>
                 </li>
+<!--
                 <li>
                     <a href="#">
                         <i class="pe-7s-file"></i>
@@ -57,6 +58,7 @@
                         <p>发货管理</p>
                     </a>
                 </li>
+-->
                 <li>
                     <a href="{% url 'req_shop_addr' %}">
                         <i class="pe-7s-culture"></i>

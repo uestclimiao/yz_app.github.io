@@ -21,6 +21,12 @@
                         <p>品牌管理</p>
                     </a>
                 </li>
+		<li>
+                    <a href="{% url 'req_news' %}">
+                        <i class="pe-7s-news-paper"></i>
+                        <p>新闻资讯</p>
+                    </a>
+                </li> 
                 <li>
                     <a href="{% url 'req_class' %}">
                         <i class="pe-7s-ribbon"></i>

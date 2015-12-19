@@ -61,8 +61,8 @@
                     </a>
                 </li> 
 		<li>
-                    <a href="{% url 'req_brand' %}">
-                        <i class="pe-7s-helm"></i>
+                    <a href="{% url 'req_news' %}">
+                        <i class="pe-7s-news-paper"></i>
                         <p>新闻资讯</p>
                     </a>
                 </li> 

@@ -9,73 +9,75 @@
     </div>
 
     <ul class="nav">
-        <li>
-            <a href="{% url 'index' %}">
-                <i class="pe-7s-graph"></i>
-                <p>商品管理</p>
-            </a>
-        </li>
-        <li>
-            <a href="{% url 'req_brand' %}">
-                <i class="pe-7s-user"></i>
-                <p>品牌管理</p>
-            </a>
-        </li>
-	<li>
-	    <a href="{% url 'req_news' %}">
-		<i class="pe-7s-helm"></i>
-		<p>新闻资讯</p>
-	    </a>
-	</li> 
-        <li>
-            <a href="{% url 'req_class' %}">
-                <i class="pe-7s-note2"></i>
-                <p>分类管理</p>
-            </a>
-        </li>
-        <li class="active">
-            <a href="{% url 'req_style' %}">
-                <i class="pe-7s-news-paper"></i>
-                <p>颜色/款式管理</p>
-            </a>
-        </li>
-        <li>
-            <a href="{% url 'req_size' %}">
-                <i class="pe-7s-science"></i>
-                <p>尺寸管理</p>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class="pe-7s-map-marker"></i>
-                <p>订单管理</p>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class="pe-7s-bell"></i>
-                <p>发货管理</p>
-            </a>
-        </li>
-        <li>
-            <a href="{% url 'req_shop_addr' %}">
-                <i class="pe-7s-bell"></i>
-                <p>门店管理</p>
-            </a>
-        </li>
-        <li>
-            <a href="{% url 'req_admin' %}">
-                <i class="pe-7s-user"></i>
-                <p>管理员管理</p>
-            </a>
-        </li>
-        <li>
-            <a href="{% url 'req_client' %}">
-                <i class="pe-7s-bell"></i>
-                <p>会员管理</p>
-            </a>
-        </li>
-    </ul>
+       		<li >
+                    <a href="{% url 'index' %}">
+                        <i class="pe-7s-graph"></i>
+                        <p>商品管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'req_brand' %}">
+                        <i class="pe-7s-helm"></i>
+                        <p>品牌管理</p>
+                    </a>
+                </li>
+		<li>
+                    <a href="{% url 'req_news' %}">
+                        <i class="pe-7s-news-paper"></i>
+                        <p>新闻资讯</p>
+                    </a>
+                </li> 
+                <li>
+                    <a href="{% url 'req_class' %}">
+                        <i class="pe-7s-ribbon"></i>
+                        <p>分类管理</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="{% url 'req_style' %}">
+                        <i class="pe-7s-diamond"></i>
+                        <p>颜色/款式管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'req_size' %}">
+                        <i class="pe-7s-voicemail"></i>
+                        <p>尺寸管理</p>
+                    </a>
+                </li>
+<!--
+                <li>
+                    <a href="#">
+                        <i class="pe-7s-file"></i>
+                        <p>订单管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="pe-7s-plane"></i>
+                        <p>发货管理</p>
+                    </a>
+                </li>
+-->
+                <li>
+                    <a href="{% url 'req_shop_addr' %}">
+                        <i class="pe-7s-culture"></i>
+                        <p>门店管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'req_admin' %}">
+                        <i class="pe-7s-user"></i>
+                        <p>管理员管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'req_client' %}">
+                        <i class="pe-7s-users"></i>
+                        <p>会员管理</p>
+                    </a>
+                </li>
+            </ul>
  </div>
 {% endblock %}
 

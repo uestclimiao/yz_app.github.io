@@ -191,6 +191,10 @@ def delete_items(request):
     elif del_object == 'shop_addr':
         for item_id in del_item_list:
             mongodb_options.del_shop_addr(db, str(item_id))
+
+    elif del_object == 'news':
+        for item_id in del_item_list:
+            mongodb_options.del_news(db, str(item_id))
     return HttpResponse("删除成功")
 
 def req_modify_commodity(request):

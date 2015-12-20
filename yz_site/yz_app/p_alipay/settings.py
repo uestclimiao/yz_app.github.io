@@ -15,7 +15,7 @@ ALIPAY_NOTIFY_URL = 'http://example/alipay_notify'
 
 # 付完款后跳转的页面 要用 http://格式的完整路径，不允许加?id=123这类自定义参数
 # return_url的域名不能写成http://localhost/js_php_utf8/return_url.php ，否则会导致return_url执行无效
-ALIPAY_RETURN_URL = 'http://127.0.0.1:8000/client/show_order'
+ALIPAY_RETURN_URL = 'http://120.24.169.214:8000/client/show_order'
 
 # 网站商品的展示地址，不允许加?id=123这类自定义参数
 ALIPAY_SHOW_URL = 'http://www.baidu.com'

@@ -225,7 +225,7 @@ $(function(){
 				k+='0';
 			 }
 			 k+=i;
-			 var src="http://cued.xunlei.com/demos/publ/img/P_"+k+".jpg";
+			 var src="#/demos/publ/img/P_"+k+".jpg";
 			 html+='<li class="cell"><a href="#"><img src="'+src+'" /><p>'+k+'</p></a></li>';
 		  }
 		  return $(html);

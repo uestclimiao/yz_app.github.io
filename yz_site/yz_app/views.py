@@ -71,7 +71,7 @@ def smtp_to_user(u,e):
 
     ub=base64.encodestring(u)
     u1=ub.encode('utf-8')
-    str2='<p>本邮件由雅致奢品发送，请点击<a herf=\"http://localhost:8000/client/user_active/?a=%s\">http://localhost:8000/client/user_active/?a=%s</a>。如果不能跳转，请将链接复制至浏览器地址栏进行访问。谢谢合作！！！</p>' %(u1,u1)
+    str2='<p>本邮件由雅致奢品发送，请点击<a herf=\"http://120.24.169.214:8000/client/user_active/?a=%s\">http://120.24.169.214:8000/client/user_active/?a=%s</a>。如果不能跳转，请将链接复制至浏览器地址栏进行访问。谢谢合作！！！</p>' %(u1,u1)
     msg=MIMEText('<html><body><h1>尊敬的用户，您好！</h1>'+str2+'</body></html>','html','utf-8')
 
     msg['From']=_format_addr(u'雅致 <%s>' % from_addr)
@@ -157,7 +157,7 @@ def add_commodity(request):
     c_brand = request.POST['c_brand']
     reqimg = request.FILES['cimg']
     cimg = Image.open(reqimg)
-    img_path = "/home/limiao/yz_app.github.io/yz_site/yz_app/static/files/commodity_imgs/"
+    img_path = "/root/yz_app.github.io/yz_site/yz_app/static/files/commodity_imgs/"
     img_name = str(cid)+".png"
     cimg.save(img_path+img_name)  # 保存图片
     mongodb_options.insert_commodity(db, cid, cname, cprice, cdesc, cpostage, cnum, c_class, c_brand, final_sizes, final_styles)
@@ -229,7 +229,7 @@ def modify_commodity(request):
     c_brand = request.POST['c_brand']
     reqimg = request.FILES['cimg']
     cimg = Image.open(reqimg)
-    img_path = "/home/limiao/yz_app.github.io/yz_site/yz_app/static/files/commodity_imgs/"
+    img_path = "/root/yz_app.github.io/yz_site/yz_app/static/files/commodity_imgs/"
     img_name = str(cid)+".png"
     cimg.save(img_path+img_name)  # 保存图片
     mongodb_options.update_commodity(db, cid, cname, cprice, cdesc, cpostage, cnum, c_class, c_brand, final_sizes, final_styles)
@@ -256,7 +256,7 @@ def add_brand(request):
         bdesc = request.POST['bdesc']
         reqimg = request.FILES['bimg']
         bimg = Image.open(reqimg)
-        img_path = "/home/limiao/yz_app.github.io/yz_site/yz_app/static/files/brand_imgs/"
+        img_path = "/root/yz_app.github.io/yz_site/yz_app/static/files/brand_imgs/"
         img_name = str(bid)+".png"
         bimg.save(img_path+img_name)  # 保存图片
         isdesign = request.POST['isdesign']
@@ -290,7 +290,7 @@ def modify_brand(request):
             bdesc = request.POST['bdesc']
             reqimg = request.FILES['bimg']
             bimg = Image.open(reqimg)
-            img_path = "/home/limiao/yz_app.github.io/yz_site/yz_app/static/files/brand_imgs/"
+            img_path = "/root/yz_app.github.io/yz_site/yz_app/static/files/brand_imgs/"
             img_name = str(bid)+".png"
             bimg.save(img_path+img_name)  # 保存图片
             isdesign = request.POST['isdesign']
@@ -308,7 +308,7 @@ def modify_brand(request):
         bdesc = request.POST['bdesc']
         reqimg = request.FILES['bimg']
         bimg = Image.open(reqimg)
-        img_path = "/home/limiao/yz_app.github.io/yz_site/yz_app/static/files/brand_imgs/"
+        img_path = "/root/yz_app.github.io/yz_site/yz_app/static/files/brand_imgs/"
         img_name = str(bid)+".png"
         bimg.save(img_path+img_name)  # 保存图片
         isdesign = request.POST['isdesign']
@@ -592,7 +592,7 @@ def add_news(request):
     pub_date=request.POST['pub_date']
     reqimg=request.FILES['cimg']
     cimg=Image.open(reqimg)
-    img_path="/home/limiao/yz_app.github.io/yz_site/yz_app/static/files/news_imgs/"
+    img_path="/root/yz_app.github.io/yz_site/yz_app/static/files/news_imgs/"
     img_name=str(c_id)+'.png'
     cimg.save(img_path+img_name)      
     src=request.POST['src']
@@ -617,7 +617,7 @@ def modify_news(request):
     pub_date=request.POST['pub_date']
     reqimg=request.FILES['cimg']
     cimg=Image.open(reqimg)
-    img_path="/home/limiao/yz_app.github.io/yz_site/yz_app/static/files/news_imgs/"
+    img_path="/root/yz_app.github.io/yz_site/yz_app/static/files/news_imgs/"
     img_name=str(c_id)+'.png'
     cimg.save(img_path+img_name)    
     src=request.POST['src']

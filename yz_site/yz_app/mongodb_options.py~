@@ -110,8 +110,8 @@ def find_clients(db):
         clients_list.append(client)
     return clients_list
 
-def insert_client(db, client_id, username, password, gender, age, date, email, phone_num,status):
-    db.clients.insert({'client_id': client_id, 'username': username, 'password': password, 'gender': gender, 'age': age, 'date': date, 'email': email, 'phone_num': phone_num,'status':status})
+def insert_client(db, client_id, username, password, gender, age, date, email, phone_num,pay_flag,status):
+    db.clients.insert({'client_id': client_id, 'username': username, 'password': password, 'gender': gender, 'age': age, 'date': date, 'email': email, 'phone_num': phone_num,'pay_flag':1,'status':status})
 
 def find_client_by_username(db, username):
     client = db.clients.find_one({'username': username})
@@ -230,11 +230,6 @@ def insert_news(db, c_id, title,subtitle,author,src,content,pub_date):
 def find_news_by_cid(db,c_id):
     uid=bson.binary.UUID(c_id)
     news=db.news.find_one({'c_id':uid})
-    return news
-
-#对应前端按来源查找
-def find_news_by_src(db,src):
-    news=db.news.find_one({'src':src})
     return news
 
 def update_news(db, c_id, title,subtitle,author,src,content,pub_date):

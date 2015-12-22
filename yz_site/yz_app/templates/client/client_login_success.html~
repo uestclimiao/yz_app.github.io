@@ -12,7 +12,6 @@
     <caption>
     <h2>&nbsp;</h2>
     <h2>信息提示</h2>
-    {{message|safe}}
     </caption>
     <p>恭喜您,登录成功！正跳转到个人中心……</p>
     

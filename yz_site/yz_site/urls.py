@@ -58,6 +58,10 @@ urlpatterns = [
     url(r'^manage/req_modify_shop_addr/$', 'yz_app.views.req_modify_shop_addr', name='req_modify_shop_addr'),
     url(r'^manage/modify_shop_addr/$', 'yz_app.views.modify_shop_addr', name='modify_shop_addr'),
 
+    url(r'^manage/req_order/$', 'yz_app.views.req_order', name='req_order'),
+    url(r'^manage/req_pay_order/$', 'yz_app.views.req_pay_order', name='req_pay_order'),
+    url(r'^manage/req_back_order/$', 'yz_app.views.req_back_order', name='req_back_order'),
+
     # 前端请求
     url(r'', include('yz_app.client_urls')),
 

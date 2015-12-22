@@ -2,7 +2,7 @@
 # coding=utf-8
 from django.shortcuts import render
 from django.shortcuts import HttpResponse, HttpResponseRedirect
-import mongodb_options
+import mongodb_options,client_mongodb_options
 import client_util_functions
 import uuid
 import util_functions
@@ -191,6 +191,10 @@ def delete_items(request):
     elif del_object == 'shop_addr':
         for item_id in del_item_list:
             mongodb_options.del_shop_addr(db, str(item_id))
+
+    elif del_object == 'orders':
+        for item_id in del_item_list:
+            client_mongodb_options.del_orders(db, str(item_id))
 
     elif del_object == 'news':
         for item_id in del_item_list:
@@ -568,6 +572,37 @@ def modify_shop_addr(request):
     info_addr = request.POST['info_addr']
     mongodb_options.update_shop_addr(db, shop_addr_id, province_domain, city_domain, town_domain, info_addr)
     return HttpResponseRedirect('/manage/req_shop_addr/')
+
+def req_order(request):
+    if "username" in request.session:
+        username = request.session['username']
+    order_list = client_mongodb_options.find_orderall(db)
+    return render(request, 'manage_order.html', {'login_user': username, 'flag': True, 'order_list': order_list})
+
+def req_pay_order(request):
+    if "username" in request.session:
+        username = request.session['username']
+
+    if "client_username" in request.GET:
+	client_username=request.GET['client_username']
+
+    order_list = client_mongodb_options.find_orderall(db)
+    
+    client_mongodb_options.update_users_paystatus(db,client_username)
+
+    return render(request,'manage_order.html',{'login_user': username, 'flag': True, 'order_list': order_list,'message':'<script type="text/javascript">alert("该用户下次登录时将提醒其订单还未支付！！");</script>'})
+
+def req_back_order(request):
+    if "username" in request.session:
+        username = request.session['username']
+
+    if "oid" in request.GET:
+	oid=request.GET['oid']
+
+    client_mongodb_options.update_order_payback(db,oid)
+    order_list = client_mongodb_options.find_orderall(db)
+
+    return render(request,'manage_order.html',{'login_user': username, 'flag': True, 'order_list': order_list,'message':'<script type="text/javascript">alert("该用户退款申请正在处理中...");</script>'})
 
 #-----------------------新闻代码-----------------------------------------------------------------------------
 def req_news(request):

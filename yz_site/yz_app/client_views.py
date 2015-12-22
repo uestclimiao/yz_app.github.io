@@ -134,7 +134,7 @@ def register(request):
     user = mongodb_options.find_client_by_username(db, username)
     if not user:
 	smtp_to_user(username,email)
-        mongodb_options.insert_client(db, client_id, username, password, gender, age, date, email, phone_num,'false')
+        mongodb_options.insert_client(db, client_id, username, password, gender, age, date, email, phone_num,1,'false')
         return render(request, 'client/client_register_success.html',
                       {'classes_list': classes_list, 'brands_list': brands_list,
                        'brands_list_design': brands_list_design,'message':'<script type="text/javascript">alert("恭喜您,注册成功！您的账户处于待激活状态，请到邮箱点击激活链接进行激活！！");</script>'})
@@ -211,9 +211,15 @@ def login(request):
 			c_num=0
 		else:
         		c_num = cart['c_num']
-        	return render(request, 'client/client_login_success.html',
-                      {'username': username, 'flag': True, 'c_num': c_num, 'classes_list': classes_list, 'brands_list': brands_list,
-                       'brands_list_design': brands_list_design})
+                if client['pay_flag']==0:
+        		return render(request, 'client/client_login_success.html',
+                      		{'username': username, 'flag': True, 'c_num': c_num, 'classes_list': classes_list, 'brands_list': brands_list,
+                       		'brands_list_design': brands_list_design,'message':'<script type="text/javascript">alert("您还有订单未完成付款！！");</script>'})
+		else:
+			return render(request, 'client/client_login_success.html',
+                      		{'username': username, 'flag': True, 'c_num': c_num, 'classes_list': classes_list, 'brands_list': brands_list,
+                       		'brands_list_design': brands_list_design})
+			
     else:
         return render(request, 'client/client_login_error.html',
                       {'classes_list': classes_list, 'brands_list': brands_list,

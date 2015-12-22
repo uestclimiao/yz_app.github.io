@@ -27,7 +27,7 @@
                         <p>新闻资讯</p>
                     </a>
                 </li> 
-                <li class="active">
+                <li>
                     <a href="{% url 'req_class' %}">
                         <i class="pe-7s-ribbon"></i>
                         <p>分类管理</p>
@@ -45,13 +45,14 @@
                         <p>尺寸管理</p>
                     </a>
                 </li>
-<!--
-                <li>
-                    <a href="#">
+
+                <li class="active">
+                    <a href="{% url 'req_order' %}">
                         <i class="pe-7s-file"></i>
                         <p>订单管理</p>
                     </a>
                 </li>
+<!--
                 <li>
                     <a href="#">
                         <i class="pe-7s-plane"></i>
@@ -85,7 +86,8 @@
 <div class="col-md-12">
     <div class="card">
         <div class="header">
-            <h4 class="title">分类列表</h4>
+            <h4 class="title">订单列表</h4>
+            {{message|safe}}
             <!--<p class="category"></p>可以添加副标题-->
         </div>
         <div class="content table-responsive table-full-width">
@@ -93,22 +95,37 @@
                 <thead>
                 <tr>
                     <th></th>
-                    <th>分类名称</th>
+                    <th><small>订单号</small></th>
+                    <th><small>下单时间</small></th>
+                    <th><small>订单金额</small></th>
+                    <th><small>支付状态</small></th>
+                    <th><small>下单用户</small></th>		  
+		    <th><small>操作选项</small></th>
                     <th></th>
                 </tr>
                 </thead>
                 <tbody>
-                {% for class in classes_list %}
+                {% for order in order_list %}
                 <tr>
-                    <td><input type="checkbox" name="del_classes" id="{{ class.class_id }}"></td>
-                    <td>{{ class.class_name }}</td>
-                    <td><p><a class="btn btn-default" href="{% url 'req_modify_class' %}?class_id={{ class.class_id }}" role="button">修改分类</a></p></td>
+                    <td><input type="checkbox" name="del_orders" id="{{ order.o_id }}"></td>
+                    <td><small>{{ order.o_id }}</small></td>
+                    <td><small>{{ order.time }}</small></td>
+                    <td><small>{{ order.money }}</small></td>
+                    <td><small>{{ order.state }}</small></td>
+                    <td><small>{{ order.username }}</small></td>
+                    <td>
+			{% ifequal order.state "未付款" %}
+                        <p><a class="btn btn-default btn-sm" href="{% url 'req_pay_order' %}?client_username={{ order.username }}" role="button">催单</a></p>
+			{% else %}
+                        <p><a class="btn btn-default btn-sm" href="{% url 'req_back_order' %}?oid={{ order.o_id }}" role="button">退款</a></p>
+			{% endifequal %}
+                    </td>
                 </tr>
                 {% endfor %}
                 </tbody>
             </table>
-            <a class="btn btn-default" href="javascript:void(0);" onclick="del_items()" role="button">删除选中的分类</a>
-            <a class="btn btn-default" href="{% url 'req_add_class' %}" role="button">添加分类</a>
+            <a class="btn btn-default btn-sm" href="javascript:void(0);" onclick="del_items()" role="button">删除选中的订单</a>
+           
         </div><!--/.col-xs-6.col-lg-4-->
     </div>
 </div>
@@ -122,13 +139,13 @@
             var url = "/manage/delete_items/";
             var i = 0;
             var deleList = new Array();
-            $("input[name='del_classes']:checked").each(function () {
+            $("input[name='del_orders']:checked").each(function () {
                 i++;
                 deleList[i] = $(this).attr('id');
             });
             $.post(url,
                     {
-                        del_object: 'class',
+                        del_object: 'orders',
                         del_item_list: deleList.toString()
                     }, function (data) {
                         for (var i = 1; i < deleList.length; i++) {
@@ -136,7 +153,7 @@
                             var del_tr = del_node.parentNode.parentNode;
                             del_tr.parentNode.removeChild(del_tr);
                         }
-                        var del_box_list = document.getElementsByName("del_classes");
+                        var del_box_list = document.getElementsByName("del_orders");
                         for (var i = 0; i < del_box_list.length; i++) {
                             del_box_list[i].checked = false;
                         }

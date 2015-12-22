@@ -9,18 +9,18 @@
     </div>
 
     <ul class="nav">
-                <li class="active">
+                <li >
                     <a href="{% url 'index' %}">
-                        <i class="pe-7s-graph"></i> 
+                        <i class="pe-7s-graph"></i>
                         <p>商品管理</p>
-                    </a>            
+                    </a>
                 </li>
                 <li>
                     <a href="{% url 'req_brand' %}">
                         <i class="pe-7s-helm"></i>
                         <p>品牌管理</p>
                     </a>
-                </li> 
+                </li>
 		<li>
                     <a href="{% url 'req_news' %}">
                         <i class="pe-7s-news-paper"></i>
@@ -31,35 +31,35 @@
                     <a href="{% url 'req_class' %}">
                         <i class="pe-7s-ribbon"></i>
                         <p>分类管理</p>
-                    </a>        
+                    </a>
                 </li>
                 <li>
                     <a href="{% url 'req_style' %}">
                         <i class="pe-7s-diamond"></i>
                         <p>颜色/款式管理</p>
-                    </a>        
+                    </a>
                 </li>
                 <li>
                     <a href="{% url 'req_size' %}">
                         <i class="pe-7s-voicemail"></i>
                         <p>尺寸管理</p>
-                    </a>        
+                    </a>
                 </li>
 <!--
                 <li>
                     <a href="#">
                         <i class="pe-7s-file"></i>
                         <p>订单管理</p>
-                    </a>        
+                    </a>
                 </li>
                 <li>
                     <a href="#">
                         <i class="pe-7s-plane"></i>
                         <p>发货管理</p>
-                    </a>        
+                    </a>
                 </li>
 -->
-                <li>
+                <li class="active">
                     <a href="{% url 'req_shop_addr' %}">
                         <i class="pe-7s-culture"></i>
                         <p>门店管理</p>
@@ -77,7 +77,7 @@
                         <p>会员管理</p>
                     </a>
                 </li>
-            </ul> 
+            </ul>
  </div>
 {% endblock %}
 

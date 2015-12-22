@@ -33,13 +33,13 @@
                         <p>分类管理</p>
                     </a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="{% url 'req_style' %}">
                         <i class="pe-7s-diamond"></i>
                         <p>颜色/款式管理</p>
                     </a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="{% url 'req_size' %}">
                         <i class="pe-7s-voicemail"></i>
                         <p>尺寸管理</p>

@@ -21,7 +21,7 @@
                         <p>品牌管理</p>
                     </a>
                 </li>
-		<li>
+		<li class="active">
                     <a href="{% url 'req_news' %}">
                         <i class="pe-7s-news-paper"></i>
                         <p>新闻资讯</p>
@@ -39,7 +39,7 @@
                         <p>颜色/款式管理</p>
                     </a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="{% url 'req_size' %}">
                         <i class="pe-7s-voicemail"></i>
                         <p>尺寸管理</p>

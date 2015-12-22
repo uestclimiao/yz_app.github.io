@@ -13,6 +13,10 @@ def update_users_status(db,username):
     user = db.clients.update({'username': username},{'$set':{'status':'true'}})    # 存在的话，返回一条记录，否则返回NoneType类型的变量，即返回空
     return user
 
+def update_users_paystatus(db,username):
+    user = db.clients.update({'username': username},{'$set':{'pay_flag':0}})    # 存在的话，返回一条记录，否则返回NoneType类型的变量，即返回空
+    return user
+
 
 def insert_addr(db, username, addrs_list):
     db.client_addrs.insert({'username': username, 'addrs_list': addrs_list})
@@ -74,10 +78,26 @@ def find_order(db, username):
         order_list.append(order)
     return order_list
 
+def find_orderall(db):
+    order_list = []
+    orders = db.orders.find()
+    for order in orders:
+        order_list.append(order)
+    return order_list
+
+def del_orders(db,o_id):
+    oid=bson.binary.UUID(o_id)
+    db.orders.remove({'o_id':oid})
+
 def update_order_by_id(db, o_id):
     oid = bson.binary.UUID(o_id)
 
     db.orders.update({'o_id': oid}, {'$set': {'state': '已付款'}})
+
+def update_order_payback(db, o_id):
+    oid = bson.binary.UUID(o_id)
+
+    db.orders.update({'o_id': oid}, {'$set': {'state': '正在处理中...'}})
 
 
 

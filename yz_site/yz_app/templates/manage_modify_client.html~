@@ -27,13 +27,13 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="password">密码</label>
-                            <input id="password" name="password" class="form-control" placeholder="请输入密码" type="password">
+                            <input id="password" name="password" class="form-control" value="{{ client.password }}" placeholder="请输入密码" type="password">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="confirm_password">重复密码:</label>
-                            <input id="confirm_password" name="confirm_password" class="form-control" placeholder="请重复输入密码" type="password">
+                            <input id="confirm_password" name="confirm_password" class="form-control" value="{{ client.password }}" placeholder="请重复输入密码" type="password">
                         </div>
                     </div>
                 </div>
@@ -43,9 +43,13 @@
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon">
-                                    <input id="male" name="gender" value="male" type="radio">
+				{% ifequal client.gender "male" %}
+                                    <input id="male" name="gender" value="male" type="radio" checked>
+				{% else %}
+				    <input id="male" name="gender" value="male" type="radio" >
                                 </span>
                                   <input type="text" class="form-control" value="男" disabled>
+				{% endifequal %}
                             </div>
                         </div>
                     </div>
@@ -53,16 +57,20 @@
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon">
-                                    <input id="female" name="gender" value="female" type="radio">
+				{% ifequal client.gender "female" %}
+                                    <input id="female" name="gender" value="female" type="radio" checked>
+				{% else %}
+				    <input id="female" name="gender" value="female" type="radio" >
                                 </span>
                                   <input type="text" class="form-control" value="女" disabled>
+				{% endifequal %}
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                        <div class="form-group">
                          
-                             <input id="phone_num" name="phone_num" class="form-control" placeholder="请输入手机号码" type="text">
+                             <input id="phone_num" name="phone_num" class="form-control" value="{{ client.phone_num }}" placeholder="请输入手机号码" type="text">
                         </div>
                     </div>
 
@@ -72,14 +80,16 @@
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="email">邮箱地址</label>
-                            <input id="email" name="email" class="form-control" value="{{ client.email }}" type="text">
+			    <label for="email">出生日期</label>                      
+                            <input id="txtDate" name="date" type="text" class="form-control" value="{{ client.date }}" placeholder="请输入出生日期" onclick="SetDate(this)" />
                         </div>
+			
                     </div>
-                    <div class="col-md-6">
+
+		    <div class="col-md-6">
                         <div class="form-group">
-                             <label for="phone_num">手机号码</label>
-                             <input id="phone_num" name="phone_num" class="form-control" value="{{ client.phone_num }}" type="text"><br>
+                            <label for="email">邮箱地址</label>
+                            <input id="email" name="email" class="form-control" value="{{ client.email }}" placeholder="请输入邮箱地址" type="email">
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,46 @@
+﻿{% extends 'client/client_Base.html' %}
+{% load staticfiles %}
+{% block background %}{% endblock %}
+{% block options %}
+
+<script type="text/javascript" src="{% static 'client/js/jquery.validate.js' %}"></script>
+<script type="text/javascript">
+
+    $().ready(function () {
+        $("#newreg").validate({
+            rules: {
+                email: {
+                    required: true,
+                    email: true
+                },
+		                                      
+            },
+            messages: {               
+                email: {
+                    required: "<br>请输入邮箱地址",
+                    email: "<br>输入的邮箱地址不符合格式"
+                },
+		                                 
+            }
+        });
+    });
+</script>
+	
+	<div class="width_1035" style="min-height:550px;">
+		<div class="reg_form">
+		<form id="newreg" name="newreg" action="{% url 'client_forgotpass_do' %}" method="post">
+			<h3>用户认证</h3>
+ 			<p>{{message}}</p>
+			<p>忘记密码？不用担心。请您填写注册邮箱，系统将认证您的有效身份。</p>
+			<p><span>电子邮箱地址*</span><input id="email" name="email" type="text" /></p>
+			<p><span>用户名*</span><input id="username" name="username" type="text" /></p>
+			<p class="right"><input name="btnsubmit" type="submit" value="提交" /></p>
+		</form>
+		</div>
+	</div>
+	<div class="clear"></div>
+
+
+
+	
+{% endblock %}

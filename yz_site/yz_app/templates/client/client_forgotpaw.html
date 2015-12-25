@@ -1,0 +1,51 @@
+﻿{% extends 'client/client_Base.html' %}
+{% load staticfiles %}
+{% block background %}{% endblock %}
+{% block options %}
+<script type="text/javascript" src="{% static 'client/js/calendar.js' %}"></script>
+<script type="text/javascript" src="{% static 'client/js/jquery.validate.js' %}"></script>
+<script type="text/javascript">
+
+    $().ready(function () {
+        $("#newreg").validate({
+            rules: {
+               
+                paw1: {
+                    required: true
+                },
+                paw2: {
+                    equalTo: "#paw1"
+                },                                          
+            },
+            messages: {               
+               
+                paw1: {
+                    required: "<br>请输入密码"
+                },
+                paw2: {
+                    equalTo: "<br>两次输入的密码不一致"
+                },                                          
+            }
+        });
+    });
+</script>
+	
+	<div class="width_1035" style="min-height:550px;">
+		<div class="reg_form">
+		<form id="newreg" name="newreg" action="{% url 'client_forgotpaw_do' %}" method="post">
+			<h3>用户认证-重置密码</h3>
+ 			<p>欢迎您：{{username}}</p>			
+					
+			<p><span>新密码*</span><input id="paw1" name="paw1" type="password" /></p>
+			<p><span>请再次输入密码*</span><input id="paw2" name="paw2" type="password" /></p>
+			<input type="hidden" name="username" value={{username}} />
+			<p class="right"><input name="btnsubmit" type="submit" value="提交" /></p>
+		</form>
+		</div>
+	</div>
+	<div class="clear"></div>
+
+
+
+	
+{% endblock %}

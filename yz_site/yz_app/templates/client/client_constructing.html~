@@ -1,0 +1,28 @@
+{% extends 'client/client_Base.html' %}
+{% load staticfiles %}
+{% block background %}{% endblock %}
+{% block options %}
+
+
+<meta http-equiv="refresh" content="3;url={% url 'client_main_options' %}">
+
+
+<div class="list_main">
+  <div class="showmessage" align="center">
+    <caption>
+    <h2>&nbsp;</h2>
+    <h2>信息提示</h2>
+    {{message|safe}}
+    </caption>
+    <p>网页正在建设中，敬请期待……</p>
+    
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+  </div>
+  <div class="clear"></div>
+</div>
+
+{% endblock %}

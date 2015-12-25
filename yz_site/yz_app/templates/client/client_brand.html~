@@ -40,8 +40,8 @@
 		</div>
 -->
 		<div class="right_btn">
-			<img src="/static/client/imgs/pre.png">
-			<img src="/static/client/imgs/next.png">
+			<img src="/static/client/img/pre.png">
+			<img src="/static/client/img/next.png">
 		</div>
 	</div>
 	<div class="fot_text" style=" text-align:right;">

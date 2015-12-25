@@ -16,15 +16,20 @@
 				<span>确定<em></em></span>
 			</div>
 		</div>
+		
 		<div class="login_form">
+		
 		<form action="{% url 'client_login' %}" name="denglu" method="post">
 			<p class="tle"><span>&nbsp;</span>已注册用户</p>
 			<p><span>用户名*</span><input name="username" type="text" /></p>
 			<p><span>密码*</span><input name="password" type="password" /></p>
 			<p class="right"><input name="btnsubmit" type="submit" value="立即登录" /></p>
-			<p class="right"><a href="#">忘记密码？</a></p>
+			<p class="right"><a href="{% url 'client_forgotpass' %}">忘记密码？</a></p>
 		</form>
+		
 		</div>
+		
+<!--该功能暂未定义
 		<div class="login_form">
 		<form action="#" name="jiesuan" method="post">
 			<p class="tle"><span>&nbsp;</span>快速结算</p>
@@ -32,6 +37,7 @@
 			<p class="right"><input name="" type="submit" value="快速结束通道" /></p>
 		</form>
 		</div>
+-->
 	</div>
 	<div class="clear"></div>
 {% endblock %}

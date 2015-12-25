@@ -4,17 +4,21 @@
 from pymongo import *
 import bson
 
-# 李苗：登录注册地址管理
+# 登录注册地址管理，我的收藏
 def find_client_by_username_password(db, username, password):
     client = db.clients.find_one({'username': username, 'password': password})    # 存在的话，返回一条记录，否则返回NoneType类型的变量，即返回空
     return client
 
 def update_users_status(db,username):
-    user = db.clients.update({'username': username},{'$set':{'status':'true'}})    # 存在的话，返回一条记录，否则返回NoneType类型的变量，即返回空
+    user = db.clients.update({'username': username},{'$set':{'status':'true'}})   
+    return user
+
+def update_users_pass(db,username,password):
+    user = db.clients.update({'username': username},{'$set':{'password':password}})   
     return user
 
 def update_users_paystatus(db,username):
-    user = db.clients.update({'username': username},{'$set':{'pay_flag':0}})    # 存在的话，返回一条记录，否则返回NoneType类型的变量，即返回空
+    user = db.clients.update({'username': username},{'$set':{'pay_flag':0}})  
     return user
 
 
@@ -37,6 +41,19 @@ def del_addr(db, username, addr_id):
         if not addr['addr_id'] == uid:
             temp_list.append(addr)
     db.client_addrs.update({'username': username}, {'$set': {'addrs_list': temp_list}})
+
+def del_goods(db,c_id):
+    cid=bson.binary.UUID(c_id)
+    db.goodsave.remove({'c_id':str(cid)})
+    print cid
+
+def find_goods(db, username):
+    goods = db.goodsave.find({'c_username': username})
+    return goods
+
+def save_commodity(db, c_id, c_name, c_description, c_class, c_price,c_username):
+    db.goodsave.insert({'c_id': c_id, 'c_name': c_name, 'c_description': c_description, 'c_class': c_class,'c_price': c_price,'c_username':c_username})
+
 #####################
 
 def find_commodity_by_cbrand(db, cbrand):
@@ -93,6 +110,11 @@ def update_order_by_id(db, o_id):
     oid = bson.binary.UUID(o_id)
 
     db.orders.update({'o_id': oid}, {'$set': {'state': '已付款'}})
+
+def update_order_payback(db, o_id):
+    oid = bson.binary.UUID(o_id)
+
+    db.orders.update({'o_id': oid}, {'$set': {'state': '正在处理中...'}})
 
 
 

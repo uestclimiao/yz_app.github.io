@@ -1,0 +1,90 @@
+﻿{% extends 'client/client_Base.html' %}
+{% load staticfiles %}
+{% block background %}{% endblock %}
+{% block options %}
+
+<script type="text/javascript">
+
+    function del_items() {
+        if (window.confirm("您确定要删除吗？")) {
+            //var username = "{{login_user}}";
+            var url = "/client/delete_goods/";
+            var i = 0;
+            var deleList = new Array();
+            $("input[name='del_goods']:checked").each(function () {
+                i++;
+                deleList[i] = $(this).attr('id');
+            });
+            $.post(url,
+                    {
+                        del_object: 'goods',
+                        del_item_list: deleList.toString()
+                    }, function (data) {
+                        for (var i = 1; i < deleList.length; i++) {
+                            var del_node = document.getElementById(deleList[i]);
+                            var del_tr = del_node.parentNode.parentNode;
+                            del_tr.parentNode.removeChild(del_tr);
+                        }
+                        var del_box_list = document.getElementsByName("del_goods");
+                        for (var i = 0; i < del_box_list.length; i++) {
+                            del_box_list[i].checked = false;
+                        }
+                        alert(data);
+                    });
+        }
+    }
+
+</script>
+
+<div class="member_index width_900">
+    <div class="center_tle">
+        <h3>我的账户</h3>
+
+        <p>欢迎您 {{username}}，这是您的YAZEE个人账户。点击进入以下部分来查看您需要的信息。</p>
+    </div>
+    <ul class="member_meun">
+        <li><a href="#">我的账户</a></li>
+        <li><a href="{% url 'client_req_address' %}">地址管理</a></li>
+        <li><a href="#">账户信息</a></li>
+        <li><a href="#">我的雅币</a></li>
+        <li><a href="{% url 'client_show_order' %}">我的订单</a></li>
+        <li class="on"><a href="{% url 'client_goods_save' %}">我的收藏</a></li>
+        <li><a href="#">我的关注品牌</a></li>
+    </ul>
+    <div class="member_rightbox address">
+
+        <div class="col-xs-14 col-lg-24">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+		    <th></th>             
+                    <th>商品详情</th>
+		    <th>商品名</th>
+		    <th>商品描述</th>
+		    <th>商品类别</th>
+		    <th>商品价格</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for goods in goods_list %}
+                <tr>
+                    <td><input type="checkbox" name="del_goods" id="{{ goods.c_id }}"></td>
+                    <td><img  src="/static/files/commodity_imgs/{{goods.c_id}}.png" title="" data-lazy-img="done" width="60" height="60" /></td>
+		    <td>{{goods.c_name}}</td>
+		    <td>{{goods.c_description}}</td>
+		    <td>{{goods.c_class}}</td>
+		    <td>{{goods.c_price}}</td>
+
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <a class="btn btn-default  btn-sm" href="javascript:void(0);" onclick="del_items()"
+               role="button">删除选中的商品</a>
+
+        </div>
+        <!--/.col-xs-6.col-lg-4-->
+    </div>
+
+</div>
+{% endblock %}

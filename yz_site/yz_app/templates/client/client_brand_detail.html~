@@ -7,7 +7,7 @@
 {% block options %}
 
 <div class="shop_tle width_1035">
-<p style="FONT-SIZE: 16px" >雅峙奢品-我的品牌</p>
+<p style="FONT-SIZE: 16px" >雅歭奢品-我的品牌</p>
 		<div class="left">
 			<!---品牌图片--->
 			<img src="/static/files/brand_imgs/{{ brand.b_id }}.png" height="200px">
@@ -45,7 +45,7 @@
 		</div>
 	</div>
 	<div class="shop_box width_1035">
-	<p style="FONT-SIZE: 16px" >雅峙奢品-我的商品</p>
+	<p style="FONT-SIZE: 16px" >雅歭奢品-我的商品</p>
 <!--暂时无定义
 		<div class="shop_menu">
 			<h3>
@@ -95,7 +95,7 @@
 			<p><a href="#">我们的APP</a></p>
 		</div>
 		<div class="fr">
-			<h3>订阅雅峙</h3>
+			<h3>订阅雅歭</h3>
 			<input name="" type="text" placeholder="订阅YAZEE 电子快报">
 		</div>
 		<div class="clear"></div>

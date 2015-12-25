@@ -4,7 +4,7 @@ var isFocus=false; //是否为焦点
 function SetDate(obj,strFormat)
 {
     var date = new Date();
-    var by = date.getFullYear()-70; //最小值 → 70 年前
+    var by = date.getFullYear()-50; //最小值 → 30 年前
     var ey = date.getFullYear(); //最大值 → 本年
     //初始化为中文版，1为英文版
     cal = (cal==null) ? new Calendar(by, ey, 0,strFormat) : (cal.dateFormatStyle == strFormat ? cal : new Calendar(by, ey, 0,strFormat));

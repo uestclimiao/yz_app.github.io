@@ -98,9 +98,24 @@ def design_brand(request):
                       {'flag': flag, 'classes_list': classes_list, 'brands_list': brands_list,
                        'brands_list_design': brands_list_design})
 
+def constructing(request):
+    flag = False
+    if "login_user" in request.session:
+        username = request.session['login_user']
+        flag = True
+    if flag:
+        cart = client_mongodb_options.find_cart(db, username)
+        if cart:
+            c_num = cart['c_num']
+        else:
+            c_num = 0
+        return render(request, 'client/client_constructing.html',
+                      {'username': username, 'flag': flag, 'c_num': c_num})
+    else:
+        return render(request, 'client/client_constructing.html',{'flag': flag})
 
-#####################
-# 李苗：登录注册地址管理
+################################################################################################
+# 登录注册地址管理
 def req_register(request):
     classes_list = mongodb_options.find_classes(db)
     brands_list = mongodb_options.find_brands(db)
@@ -158,12 +173,36 @@ def smtp_to_user(u,e):
 
     ub=base64.encodestring(u)
     u1=ub.encode('utf-8')
-    str2='<p>本邮件由雅致奢品发送，请点击<a herf=\"http://120.24.169.214:8000/client/user_active/?a=%s\">http://120.24.169.214:8000/client/user_active/?a=%s</a>。如果不能跳转，请将链接复制至浏览器地址栏进行访问。谢谢合作！！！</p>' %(u1,u1)
+    str2='<p>本邮件由雅峙奢品发送，请点击<a href=\"http://120.24.169.214:8000/client/user_active/?a=%s\">雅峙奢品(http://120.24.169.214:8000/client/user_active/?a=%s)</a>。如果不能跳转，请将链接复制至浏览器地址栏进行访问。谢谢合作！！！</p>' %(u1,u1)
     msg=MIMEText('<html><body><h1>尊敬的用户，您好！</h1>'+str2+'</body></html>','html','utf-8')
 
-    msg['From']=_format_addr(u'雅致 <%s>' % from_addr)
+    msg['From']=_format_addr(u'雅峙 <%s>' % from_addr)
     msg['To']=_format_addr(u'管理员 <%s>' % to_addr)
-    msg['Subject']=Header(u'欢迎注册雅致奢品','utf-8').encode()
+    msg['Subject']=Header(u'欢迎注册雅峙奢品','utf-8').encode()
+
+    server = smtplib.SMTP(smtp_server,25)
+    server.set_debuglevel(1)
+    server.login(from_addr,password_admin)
+    server.sendmail(from_addr,[to_addr],msg.as_string())
+    server.quit()
+
+    return 1
+
+def smtp_to_user_forgotpass(u,e):
+    from_addr = 'lm_306@163.com'
+    password_admin='limiao_2014'
+
+    smtp_server = 'smtp.163.com'
+    to_addr=e
+
+    ub=base64.encodestring(u)
+    u1=ub.encode('utf-8')
+    str2='<p>本邮件由雅峙奢品发送，请点击<a herf=\"http://120.24.169.214:8000/client/forgotpaw/?a=%s\">雅峙奢品(http://120.24.169.214:8000/client/forgotpaw/?a=%s)</a>。如果不能跳转，请将链接复制至浏览器地址栏进行访问。谢谢合作！！！</p>' %(u1,u1)
+    msg=MIMEText('<html><body><h1>尊敬的用户，您好！</h1>'+str2+'</body></html>','html','utf-8')
+
+    msg['From']=_format_addr(u'雅峙 <%s>' % from_addr)
+    msg['To']=_format_addr(u'管理员 <%s>' % to_addr)
+    msg['Subject']=Header(u'欢迎访问雅峙奢品','utf-8').encode()
 
     server = smtplib.SMTP(smtp_server,25)
     server.set_debuglevel(1)
@@ -179,6 +218,8 @@ def user_active(request):
     client_mongodb_options.update_users_status(db,ude)
 
     return render(request, 'client/client_login.html',{'message':'<script type="text/javascript">alert("恭喜您激活成功！请登录");</script>'})
+
+
 
 def req_login(request):
     classes_list = mongodb_options.find_classes(db)
@@ -224,6 +265,29 @@ def login(request):
         return render(request, 'client/client_login_error.html',
                       {'classes_list': classes_list, 'brands_list': brands_list,
                        'brands_list_design': brands_list_design})
+
+def forgotpass(request):
+    return render(request,'client/client_forgotpass.html')
+
+def forgotpass_do(request):
+    if "email" in request.POST:
+	email=request.POST['email']
+	username=request.POST['username']
+    smtp_to_user_forgotpass(username,email)
+    return render(request,'client/client_login.html',{'message':'<script type="text/javascript">alert("雅峙奢品已向您邮箱发送认证邮件，请前往查收！");</script>'})
+
+def forgotpaw(request):
+    username=request.GET['a']
+    ude=base64.decodestring(username)
+    return render(request,'client/client_forgotpaw.html',{'username':ude})
+
+def forgotpaw_do(request):
+    if 'username' in request.POST:
+	username=request.POST['username']
+        print username
+    	password=request.POST['paw1']
+    client_mongodb_options.update_users_pass(db,username,password)
+    return render(request,'client/client_login.html',{'message':'<script type="text/javascript">alert("恭喜您，修改密码成功！请使用新密码登录雅峙奢品。");</script>'})
 
 
 def main_options(request):
@@ -428,6 +492,91 @@ def commodity_detail(request):
     return render(request, 'client/client_commodity_detail.html',
                   {'username': username, 'flag': flag, 'c_num': c_num, 'classes_list': classes_list, 'brands_list': brands_list, 'brands_list_design': brands_list_design,
                    'commodity': commodity, 'sizes_list': sizes_list, 'colors_list': colors_list})
+
+def commodity_save(request):
+    #返回原页面
+    flag = False
+    if "login_user" in request.session:
+        username = request.session['login_user']
+        flag = True
+	com_save_id = request.GET['commodity_id']
+        commodity = mongodb_options.find_commodity_by_cid(db, com_save_id)
+        com_save_cname=commodity['c_name']
+	com_save_cdesp=commodity['c_description']
+	com_save_class=commodity['c_class']
+	com_save_cprice=commodity['c_price']
+	com_save_username=username
+	client_mongodb_options.save_commodity(db,com_save_id,com_save_cname,com_save_cdesp,com_save_class, com_save_cprice,com_save_username)
+    classes_list = mongodb_options.find_classes(db)
+    brands_list = mongodb_options.find_brands(db)
+    brands_list_design = []
+    for brand in brands_list:
+        if brand['isdesign'] == u'是':
+            brands_list_design.append(brand)
+    # 获取品牌id,品牌名
+    brand_id = request.GET['brand_id']
+    m_brand = mongodb_options.find_brand_by_bid(db, brand_id)
+
+    brand_name = m_brand['b_name']
+    # 获取商品列表
+    commodity_list = client_mongodb_options.find_commodity_by_cbrand(db, brand_name)
+
+    if not flag:
+        username = ''
+        c_num = 0
+	return render(request, 'client/client_brand_detail.html',
+                  {'username': username, 'flag': flag, 'c_num': c_num, 'classes_list': classes_list, 'brands_list': brands_list,
+                   'brands_list_design': brands_list_design,
+                   'brand': m_brand, 'commodity_list': commodity_list,'message':'<script type="text/javascript">alert("您还没登录，请先登录雅峙奢品！");</script>'})
+    else:
+        cart = client_mongodb_options.find_cart(db, username)
+        if cart:
+            c_num = cart['c_num']
+        else:
+            c_num = 0
+    	return render(request, 'client/client_brand_detail.html',
+                  {'username': username, 'flag': flag, 'c_num': c_num, 'classes_list': classes_list, 'brands_list': brands_list,
+                   'brands_list_design': brands_list_design,
+                   'brand': m_brand, 'commodity_list': commodity_list,'message':'<script type="text/javascript">alert("收藏成功！您可以在我的收藏中查看。");</script>'})
+
+
+def goods_save(request):
+    classes_list = mongodb_options.find_classes(db)
+    brands_list = mongodb_options.find_brands(db)
+    brands_list_design = []
+    for brand in brands_list:
+        if brand['isdesign'] == u'是':
+            brands_list_design.append(brand)
+    flag = False
+    if "login_user" in request.session:
+        username = request.session['login_user']
+        flag = True
+    if flag:
+        goods = client_mongodb_options.find_goods(db, username)
+        
+        cart = client_mongodb_options.find_cart(db, username)
+        if cart:
+            c_num = cart['c_num']
+        else:
+            c_num = 0
+        return render(request, 'client/client_goods_save.html',
+                      {'username': username, 'flag': flag, 'c_num': c_num, 'classes_list': classes_list, 'brands_list': brands_list,
+                       'brands_list_design': brands_list_design, 'goods_list': goods})
+    else:
+        return render(request, 'client/client_goods_save.html',
+                      {'flag': flag, 'classes_list': classes_list, 'brands_list': brands_list,
+                       'brands_list_design': brands_list_design})
+
+def delete_goods(request):
+   
+    del_object = request.POST['del_object']
+    del_item_list_str = request.POST['del_item_list']
+    del_item_list = del_item_list_str[1:].split(',')  # 获取到的del_item_list_str字符串开头多了1个逗号，所以此时需要分片
+    if del_object == 'goods':
+        for item_id in del_item_list:	   
+            client_mongodb_options.del_goods(db, str(item_id))	   
+    return HttpResponse("删除成功")
+
 
 # -----------艺术品--------------#
 def artwork_index(request):

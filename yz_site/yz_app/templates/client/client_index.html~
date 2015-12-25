@@ -11,26 +11,26 @@
 			<div class="idx_text">
 				<h3>LOUIS VUTION</h3>
 				<h4>时尚大帝        经典重现</h4>
-				<a href="{% url 'client_constructing' %}">立即探索</a>
+				<a href="#">立即探索</a>
 			</div>
 		</div>
 		<div class="idx_box2 idx_box">
 			<img class="idx_boxback" src="{% static 'client/imgs/idx_box2.jpg' %}" style="display: inline;">
-			<div class="idx_text"><a href="{% url 'client_constructing' %}">
+			<div class="idx_text"><a href="#">
 				<h4>GUCCI 15年秋冬</h4>
 				<h4>全新上市</h4>
 			</a></div>
 		</div>
 		<div class="idx_box3 idx_box">
 			<img class="idx_boxback" src="{% static 'client/imgs/idx_box3.jpg' %}" style="display: inline;">
-			<div class="idx_text"><a href="{% url 'client_constructing' %}">
+			<div class="idx_text"><a href="#">
 				<h3>MISS DIOR</h3>
 				<h4>致命诱惑</h4>
 			</a></div>
 		</div>
 		<div class="idx_box4 idx_box">
 			<img class="idx_boxback" src="{% static 'client/imgs/idx_box4.jpg' %}" style="display: inline;">
-			<div class="idx_text"><a href="{% url 'client_constructing' %}">
+			<div class="idx_text"><a href="#">
 				<h3>CHANEL BUGS</h3>
 				<h4>低调于行 创意非凡</h4>
 			</a></div>

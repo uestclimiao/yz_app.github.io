@@ -30,7 +30,7 @@
 		<div class="reg_form">
 		<form id="newreg" name="newreg" action="{% url 'client_forgotpass_do' %}" method="post">
 			<h3>用户认证</h3>
- 			<p>{{message}}</p>
+ 			<p>{{message|safe}}</p>
 			<p>忘记密码？不用担心。请您填写注册邮箱，系统将认证您的有效身份。</p>
 			<p><span>电子邮箱地址*</span><input id="email" name="email" type="text" /></p>
 			<p><span>用户名*</span><input id="username" name="username" type="text" /></p>

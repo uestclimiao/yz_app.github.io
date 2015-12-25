@@ -9,6 +9,10 @@ def find_client_by_username_password(db, username, password):
     client = db.clients.find_one({'username': username, 'password': password})    # 存在的话，返回一条记录，否则返回NoneType类型的变量，即返回空
     return client
 
+def find_client_by_username_password(db, username, email):
+    client = db.clients.find_one({'username': username, 'email': email})    
+    return client
+
 def update_users_status(db,username):
     user = db.clients.update({'username': username},{'$set':{'status':'true'}})   
     return user
@@ -54,7 +58,7 @@ def find_goods(db, username):
 def save_commodity(db, c_id, c_name, c_description, c_class, c_price,c_username):
     db.goodsave.insert({'c_id': c_id, 'c_name': c_name, 'c_description': c_description, 'c_class': c_class,'c_price': c_price,'c_username':c_username})
 
-#####################
+##########################################################################################################################
 
 def find_commodity_by_cbrand(db, cbrand):
     commoditys_list = []

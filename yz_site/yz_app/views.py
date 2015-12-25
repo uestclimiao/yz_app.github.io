@@ -71,7 +71,7 @@ def smtp_to_user(u,e):
 
     ub=base64.encodestring(u)
     u1=ub.encode('utf-8')
-    str2='<p>本邮件由雅峙奢品发送，请点击<a herf=\"http://120.24.169.214:8000/client/user_active/?a=%s\">雅峙奢品(http://120.24.169.214:8000/client/user_active/?a=%s)</a>。如果不能跳转，请将链接复制至浏览器地址栏进行访问。谢谢合作！！！</p>' %(u1,u1)
+    str2='<p>本邮件由雅峙奢品发送，请点击<a href=\"http://120.24.169.214:8000/client/user_active/?a=%s\">雅峙奢品(http://120.24.169.214:8000/client/user_active/?a=%s)</a>。如果不能跳转，请将链接复制至浏览器地址栏进行访问。谢谢合作！！！</p>' %(u1,u1)
     msg=MIMEText('<html><body><h1>尊敬的用户，您好！</h1>'+str2+'</body></html>','html','utf-8')
 
     msg['From']=_format_addr(u'雅峙 <%s>' % from_addr)

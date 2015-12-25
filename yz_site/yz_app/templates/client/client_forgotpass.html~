@@ -33,7 +33,7 @@
  			<p>{{message}}</p>
 			<p>忘记密码？不用担心。请您填写注册邮箱，系统将认证您的有效身份。</p>
 			<p><span>电子邮箱地址*</span><input id="email" name="email" type="text" /></p>
-			
+			<p><span>用户名*</span><input id="username" name="username" type="text" /></p>
 			<p class="right"><input name="btnsubmit" type="submit" value="提交" /></p>
 		</form>
 		</div>

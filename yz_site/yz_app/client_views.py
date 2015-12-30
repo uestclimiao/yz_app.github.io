@@ -850,6 +850,30 @@ def pay_ali(request):
     return render(request, 'client/pay.html', {'pay_url': pay_url})
     # return HttpResponse("删除成功")
 
+def pay_repeat(request):
+    o_id=request.GET['o_id']
+    total_price=request.GET['price']
+    pay_url = p_alipay.alipay.create_direct_pay_by_user(o_id, "充值测试", "hello zhong",
+                                                            total_price) 
+    return render(request, 'client/pay.html', {'pay_url': pay_url})
+
+def orderpay_del(request):
+    o_id=request.GET['o_id']
+    client_mongodb_options.del_orders(db, str(o_id))
+    flag = False
+    if "login_user" in request.session:
+        username = request.session['login_user']
+        flag = True
+    if flag:
+        cart = client_mongodb_options.find_cart(db, username)
+        if cart:
+            c_num = cart['c_num']
+        else:
+            c_num = 0
+        return render(request, 'client/client_orderpay_del.html',
+                      {'username': username, 'flag': flag, 'c_num': c_num})
+    else:
+        return render(request, 'client/client_orderpay_del.html',{'flag': flag})
 
 def show_order(request):
     username = request.session['login_user']

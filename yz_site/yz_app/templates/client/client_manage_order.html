@@ -111,31 +111,24 @@
            <td rowspan="10">
             <div class="operate">
              <div id="pay-button-10409060459" _baina="0"></div>
-              <!--<a href="#" class="btn-again" target="_blank" ><b></b>立即购买</a>-->
+	      {% ifequal order.state '未付款' %}
+              <a href="{% url 'client_orderpay_repeat' %}?o_id={{order.o_id}}&price={{ order.money }}" class="btn-again" target="_blank" ><b></b>去付款</a> <a href="{% url 'client_orderpay_del' %}?o_id={{order.o_id}}" class="btn-again" target="_blank" >/删除订单</a>
+              {% endifequal %}
+ 
+	      {% ifequal order.state '已付款' %}
+              <a href="{% url 'client_constructing' %}" class="btn-again" target="_blank" ><b></b>去评价</a> <a href="#" class="btn-again" target="_blank" >/删除订单</a>
+              {% endifequal %}
+
+              {% ifequal order.state '正在处理中...' %}
+              <a href="{% url 'client_constructing' %}" class="btn-again" target="_blank" ><b></b>请等待</a>
+              {% endifequal %}
+
              <br />
             </div> </td>
           </tr>
             {% endif %}
           {% endfor %}
-          <!--<tr class="tr-bd" >-->
-           <!--<td>-->
-            <!--<div class="goods-item p-586890">-->
-             <!--<div class="p-img">-->
-              <!--<a href="#" target="_blank"> <img class="" src="#" title="美国进口柯可兰 Kirkland整粒蓝莓干567g 新老包装随机发放" data-lazy-img="done" width="60" height="60" /> </a>-->
-             <!--</div>-->
-             <!--<div class="p-msg">-->
-              <!--<div class="p-name">-->
-               <!--<a href="#" class="a-link" clstag="click|keycount|orderinfo|order_product" target="_blank" title="美国进口柯可兰 Kirkland整粒蓝莓干567g 新老包装随机发放">美国进口柯可兰 Kirkland整粒蓝莓干567g 新老包装随机发放</a>-->
-              <!--</div>-->
-             <!--</div>-->
-            <!--</div>-->
-            <!--<div class="goods-number">-->
-              <!--x1-->
-            <!--</div>-->
-            <!--<div class="goods-repair">-->
-            <!--</div>-->
-            <!--<div class="clr"></div> </td>-->
-          <!--</tr>-->
+         
          </tbody>
 
 

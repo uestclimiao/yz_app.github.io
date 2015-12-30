@@ -1,0 +1,28 @@
+{% extends 'client/client_Base.html' %}
+{% load staticfiles %}
+{% block background %}{% endblock %}
+{% block options %}
+
+
+
+
+
+<div class="list_main">
+  <div class="showmessage" align="center">
+    <caption>
+    <h2>&nbsp;</h2>
+    <h2>信息提示</h2>
+    {{message|safe}}
+    </caption>
+    <p>该订单已被删除！</p>
+    
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+  </div>
+  <div class="clear"></div>
+</div>
+
+{% endblock %}

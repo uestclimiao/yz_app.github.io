@@ -29,6 +29,8 @@ urlpatterns = [
 
     url(r'^client/logout/$', 'yz_app.client_views.logout', name='client_logout'),
     url(r'^client/constructing/$', 'yz_app.client_views.constructing', name='client_constructing'),
+    url(r'^client/orderpay/$', 'yz_app.client_views.pay_repeat', name='client_orderpay_repeat'),
+    url(r'^client/orderpay_del/$', 'yz_app.client_views.orderpay_del', name='client_orderpay_del'),
 
 
     # 范：文艺品商品

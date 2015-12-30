@@ -278,7 +278,7 @@ def forgotpass_do(request):
     	smtp_to_user_forgotpass(username,email)
     	return render(request,'client/client_login.html',{'message':'<script type="text/javascript">alert("雅峙奢品已向您邮箱发送认证邮件，请前往查收！");</script>'})
     else:
-	return render(request,'client/client_login.html',{'message':'<script type="text/javascript">alert("很抱歉，雅峙奢品找不到您的信息！请您重新输入。");</script>'})
+	return render(request,'client/client_forgotpass.html',{'message':'<script type="text/javascript">alert("很抱歉，雅峙奢品找不到您的信息！请您重新输入。");</script>'})
 
 def forgotpaw(request):
     username=request.GET['a']
@@ -850,6 +850,17 @@ def pay_ali(request):
     return render(request, 'client/pay.html', {'pay_url': pay_url})
     # return HttpResponse("删除成功")
 
+def pay_repeat(request):
+    o_id=request.GET['o_id']
+    total_price=request.GET['price']
+    pay_url = p_alipay.alipay.create_direct_pay_by_user(o_id, "充值测试", "hello zhong",
+                                                            total_price) 
+    return render(request, 'client/pay.html', {'pay_url': pay_url})
+
+def orderpay_del(request):
+    o_id=request.GET['o_id']
+    client_mongodb_options.del_orders(db, str(o_id))
+    return render(request,'client/client_orderpay_del.html')
 
 def show_order(request):
     username = request.session['login_user']

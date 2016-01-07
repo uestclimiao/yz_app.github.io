@@ -1,6 +1,8 @@
 #! /usr/bin/env python
 # coding=utf-8
 
+
+
 from django.shortcuts import render
 from django.shortcuts import HttpResponse, HttpResponseRedirect
 import mongodb_options
@@ -17,6 +19,10 @@ from email.header import Header
 from email.mime.text import MIMEText
 from email.utils import parseaddr,formataddr
 import base64
+import sys
+
+reload(sys)   
+sys.setdefaultencoding('utf8') 
 
 db = mongodb_options.mongodb_init()
 
@@ -137,6 +143,7 @@ def register(request):
     client_id = uuid.uuid1()
     email = request.POST['email']
     username = request.POST['username']
+    
     gender = request.POST['gender']
     date = request.POST['date']
     date_list = date.split('-')
@@ -860,7 +867,20 @@ def pay_repeat(request):
 def orderpay_del(request):
     o_id=request.GET['o_id']
     client_mongodb_options.del_orders(db, str(o_id))
-    return render(request,'client/client_orderpay_del.html')
+    flag = False
+    if "login_user" in request.session:
+        username = request.session['login_user']
+        flag = True
+    if flag:
+        cart = client_mongodb_options.find_cart(db, username)
+        if cart:
+            c_num = cart['c_num']
+        else:
+            c_num = 0
+        return render(request, 'client/client_orderpay_del.html',
+                      {'username': username, 'flag': flag, 'c_num': c_num})
+    else:
+        return render(request, 'client/client_orderpay_del.html',{'flag': flag})
 
 def show_order(request):
     username = request.session['login_user']

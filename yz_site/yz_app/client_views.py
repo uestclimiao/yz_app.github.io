@@ -1,6 +1,8 @@
 #! /usr/bin/env python
 # coding=utf-8
 
+
+
 from django.shortcuts import render
 from django.shortcuts import HttpResponse, HttpResponseRedirect
 import mongodb_options
@@ -17,6 +19,10 @@ from email.header import Header
 from email.mime.text import MIMEText
 from email.utils import parseaddr,formataddr
 import base64
+import sys
+
+reload(sys)   
+sys.setdefaultencoding('utf8') 
 
 db = mongodb_options.mongodb_init()
 
@@ -137,6 +143,7 @@ def register(request):
     client_id = uuid.uuid1()
     email = request.POST['email']
     username = request.POST['username']
+    
     gender = request.POST['gender']
     date = request.POST['date']
     date_list = date.split('-')

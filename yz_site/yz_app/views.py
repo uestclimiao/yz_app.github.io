@@ -550,9 +550,14 @@ def req_add_shop_addr(request):
 
 def add_shop_addr(request):
     shop_addr_id = uuid.uuid1()
+    '''
     province_domain = request.POST['provincedomain']
     city_domain = request.POST['citydomain']
     town_domain = request.POST['towndomain']
+    '''
+    province_domain = request.POST.get('provincedomain','')
+    city_domain = request.POST.get('citydomain','')
+    town_domain = request.POST.get('towndomain','')
     info_addr = request.POST['info_addr']
     mongodb_options.insert_shop_addr(db, shop_addr_id, province_domain, city_domain, town_domain, info_addr)
     return HttpResponseRedirect('/manage/req_shop_addr/')
@@ -566,9 +571,14 @@ def req_modify_shop_addr(request):
 
 def modify_shop_addr(request):
     shop_addr_id = request.POST['shop_addr_id']
+    '''
     province_domain = request.POST['provincedomain']
     city_domain = request.POST['citydomain']
     town_domain = request.POST['towndomain']
+    '''
+    province_domain = request.POST.get('provincedomain','')
+    city_domain = request.POST.get('citydomain','')
+    town_domain = request.POST.get('towndomain','')
     info_addr = request.POST['info_addr']
     mongodb_options.update_shop_addr(db, shop_addr_id, province_domain, city_domain, town_domain, info_addr)
     return HttpResponseRedirect('/manage/req_shop_addr/')

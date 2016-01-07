@@ -45,13 +45,14 @@
                         <p>尺寸管理</p>
                     </a>
                 </li>
-<!--
+
                 <li>
-                    <a href="#">
+                    <a href="{% url 'req_order' %}">
                         <i class="pe-7s-file"></i>
                         <p>订单管理</p>
                     </a>
                 </li>
+<!--
                 <li>
                     <a href="#">
                         <i class="pe-7s-plane"></i>
@@ -122,7 +123,12 @@
 {% block manager_register_login_options_js %}
 <script type="text/javascript">
     function del_items() {
-        if (window.confirm("您确定要删除吗？")) {
+	var flag=false;
+	$("input[name='del_shop_addrs']:checked").each(function () {
+                flag=true;
+            });
+
+        if ( flag && window.confirm("您确定要删除吗？")) {
             //var username = "{{login_user}}";
             var url = "/manage/delete_items/";
             var i = 0;

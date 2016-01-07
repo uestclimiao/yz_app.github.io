@@ -19,7 +19,11 @@
     });
 
     function del_items() {
-        if (window.confirm("您确定要删除吗？")) {
+	var flag=false
+	$("input[name='del_addresss']:checked").each(function () {
+                flag=true
+            });
+        if ( flag && window.confirm("您确定要删除吗？")) {
 
             var url = "/client/delete_address/";
             var i = 0;
@@ -45,6 +49,9 @@
                         //   alert(data);
                     });
         }
+	else{
+	    alert("您还没选择删除项，请先选择！");
+	}
     }
 </script>
 

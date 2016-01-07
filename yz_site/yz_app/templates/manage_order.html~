@@ -118,7 +118,7 @@
                         <p><a class="btn btn-default btn-sm" href="{% url 'req_pay_order' %}?client_username={{ order.username }}" role="button">催单</a></p>
 			{% else %}
                         <p><a class="btn btn-default btn-sm" href="{% url 'req_back_order' %}?oid={{ order.o_id }}" role="button">退款</a></p>
-			{% endif %}
+			{% endifequal %}
                     </td>
                 </tr>
                 {% endfor %}

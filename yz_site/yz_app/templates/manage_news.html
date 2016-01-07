@@ -126,7 +126,16 @@
 {% block manager_register_login_options_js %}
 <script type="text/javascript">
     function del_items() {
-        if (window.confirm("您确定要删除吗？")) {
+	var flag=false;
+
+	$("input[name='del_news']:checked").each(function () {
+                flag=true;
+            });
+       
+        if ( flag && window.confirm("您确定要删除吗？")) {
+	     
+	   
+	 
             //var username = "{{login_user}}";
             var url = "/manage/delete_items/";
             var i = 0;
@@ -151,7 +160,13 @@
                         }
                         alert(data);
                     });
+
+
         }
+	else{
+	    alert("您还没选择删除项，请先选择！");
+	}
+
     }
 </script>
 {% endblock %}

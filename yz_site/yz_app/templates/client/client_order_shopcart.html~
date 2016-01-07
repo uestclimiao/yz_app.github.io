@@ -30,7 +30,7 @@
 		<tbody>
 		{% for commodity in commoditys_list %}
 			<tr>
-				<td class="checkbox"><input class="check-one check" name="del_commoditys" id="{{ commodity.c_id }}" type="checkbox"/></td>
+				<td class="checkbox"><input class="check-one check" name="del_commoditys" id="{{ commodity.c_id }}"  type="checkbox"/></td>
 				<td class="goods"><img src="/static/files/commodity_imgs/{{commodity.c_id}}.png" alt=""/><span>{{commodity.c_name}}<br/>{{commodity.c_size}}<br/>{{commodity.c_style}}</span></td>
 				<td class="price">{{commodity.c_price}}</td>
 				<td class="count"><span class="reduce"></span><input class="count-input" type="text" value="1"/><span class="add">+</span></td>
@@ -59,12 +59,17 @@
 <!--提交购物车表单-->
 <form action="{% url 'client_confirm_order' %}" id="cart_form" method="post">
 	<input id="commodity_id_list" name="commodity_id_list" type="hidden">
+    <input id="amount_list" name="amount_list" type="hidden">
 	<input id="money" name="money" type="hidden">
 </form>
 
 <script type="text/javascript">
     function del_items() {
-        if (window.confirm("您确定要删除吗？")) {
+	var flag=false;
+	$("input[name='del_commoditys']:checked").each(function () {
+                flag=true;
+            });
+        if ( flag && window.confirm("您确定要删除吗？")) {
             var url = "/client/del_cart_c/";
             var i = 0;
             var deleList = new Array();
@@ -91,18 +96,23 @@
         }
     }
     function submit_carts() {
+            //alert($('.count-input').attr('value'))
             var i = 0;
+            var amountList = new Array();
             var inputList = new Array();
             $("input[name='del_commoditys']:checked").each(function () {
                 i++;
                 inputList[i] = $(this).attr('id');
+                count=$(this).parent().next().next().next().find("input").attr('value');
+                //alert(count);
+                amountList[i]= count;
             });
             if (i==0){
-                alert("你什么都没有选吖，贱人");
+                alert("请至少选择一项商品再提交");
             }
             else{
                 $('#commodity_id_list').attr("value", inputList.toString());
-
+                $('#amount_list').attr("value", amountList.toString());
                 var price=$("#priceTotal").html();
                 $('#money').attr("value", price);
                 $('#cart_form').submit();

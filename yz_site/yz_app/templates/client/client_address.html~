@@ -19,7 +19,11 @@
     });
 
     function del_items() {
-        if (window.confirm("您确定要删除吗？")) {
+	var flag=false
+	$("input[name='del_addresss']:checked").each(function () {
+                flag=true
+            });
+        if ( flag && window.confirm("您确定要删除吗？")) {
 
             var url = "/client/delete_address/";
             var i = 0;
@@ -55,13 +59,13 @@
         <p>欢迎您 {{username}}，这是您的YAZEE个人账户。点击进入以下部分来查看您需要的信息。</p>
     </div>
     <ul class="member_meun">
-        <li><a href="#">我的账户</a></li>
+        <li><a href="{% url 'client_constructing' %}">我的账户</a></li>
         <li class="on"><a href="{% url 'client_req_address' %}">地址管理</a></li>
-        <li><a href="#">账户信息</a></li>
-        <li><a href="#">我的雅币</a></li>
+        <li><a href="{% url 'client_constructing' %}">账户信息</a></li>
+        <li><a href="{% url 'client_constructing' %}">我的雅币</a></li>
         <li><a href="{% url 'client_show_order' %}">我的订单</a></li>
         <li><a href="{% url 'client_goods_save' %}">我的收藏</a></li>
-        <li><a href="#">我的关注品牌</a></li>
+        <li><a href="{% url 'client_constructing' %}">我的关注品牌</a></li>
     </ul>
     <div class="member_rightbox address">
         <h3 class="tle">送货地址</h3>
